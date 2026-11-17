@@ -2040,7 +2040,7 @@ section#byty .st.sold{background:#F2B8C6!important;color:#1E2A1D!important;box-s
 (function(){const sl=[...document.querySelectorAll(".hero .slides img")];if(sl.length<2||matchMedia("(prefers-reduced-motion: reduce)").matches)return;let i=0;setInterval(()=>{sl[i].classList.remove("on");i=(i+1)%sl.length;sl[i].classList.add("on")},7500)})();
 const hd=document.querySelector("header");
 function onS(){
-  const hb=document.querySelector(".heroB"),hbt=document.querySelector(".hb-top"),lk=document.querySelector('.hb-nav a[href="#lokalita"]'),thr=hb?(innerWidth>1000&&lk?Math.max(40,lk.getBoundingClientRect().top+scrollY):Math.max(40,hbt.offsetHeight-70)):40;hd.classList.toggle("scrolled",scrollY>thr||document.body.classList.contains("menu-open"));
+  const hb=document.querySelector(".heroB"),hbt=document.querySelector(".hb-top"),lk=document.querySelector('.hb-nav a[href="#lokalita"]'),thr=hb?(innerWidth>1000&&lk?Math.max(40,lk.getBoundingClientRect().top+scrollY):8):8;hd.classList.toggle("scrolled",scrollY>thr||document.body.classList.contains("menu-open"));
 }
 addEventListener("scroll",onS,{passive:true});onS();
 (function(){const q=document.querySelector(".quote"),bgq=q&&q.querySelector(".bg");if(!bgq||matchMedia("(prefers-reduced-motion: reduce)").matches)return;let t=false;
