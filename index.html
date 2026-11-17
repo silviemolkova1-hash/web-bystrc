@@ -1814,6 +1814,15 @@ section#byty .st.free{background:#D7EF5B!important;color:#1E2A1D!important}
 section#byty .st.res{background:#FFFFFF!important;color:#1E2A1D!important;box-shadow:none!important}
 section#byty .st.sold{background:#F2B8C6!important;color:#1E2A1D!important;box-shadow:none!important}
 section#lokalita .loc-head .lead{padding-top:8px}
+
+/* tlačítko nabídky v pravém panelu pod menu, limetkové */
+.hb-pbtn2{display:inline-flex;align-items:center;padding:12px 14px;background:#D7EF5B;color:#1E2A1D;font-size:11px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;line-height:1.35;border-radius:2px;transition:background .3s,transform .3s;margin-top:6px}
+.hb-pbtn2:hover{background:#E3F57F;transform:translateY(-2px)}
+.hb-ctaw{display:flex}
+.hb-ctaw .hb-cta{flex:1}
+@media(min-width:1001px){.hb-ctaw{background:#1E2A1D}.hb-ctaw .hb-cta{display:none}}
+@media(max-width:1000px){.heroB .hb-ctaw{grid-column:1/-1}.heroB .hb-cta{background:#D7EF5B!important}.heroB .hb-cta-b{color:#1E2A1D}}
+.hb-pbtn2{width:100%;box-sizing:border-box;padding:12px;letter-spacing:.08em;white-space:normal}
 </style>
 </head>
 <body>
@@ -1846,6 +1855,7 @@ section#lokalita .loc-head .lead{padding-top:8px}
     <aside class="hb-panel">
       <a href="#" class="hb-logo" aria-label="Bystrc Obora, zpět nahoru"><svg width="58" height="35" viewBox="0 0 328 196" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="7" stroke-linejoin="miter" stroke-miterlimit="10"><polyline points="10,190 10,110 60,60 110,110 110,190"/><polyline points="125,190 125,110 175,60 225,110 225,190"/><polygon points="248,190 263,112 278,190"/><polygon points="285,190 302,92 319,190"/><line x1="0" y1="190" x2="328" y2="190"/></g></svg></a>
       <nav class="hb-nav" aria-label="Hlavní menu"><a href="#projekt">O projektu</a><a href="#byty">Nabídka bytů</a><a href="#lokalita">Lokalita</a><a href="#galerie">Galerie</a><a href="#kontakt">Kontakt</a></nav>
+      <a class="hb-pbtn2" href="#byty">Prohlédnout nabídku bytů</a>
     </aside>
   </div>
   <div class="hb-bot">
@@ -1855,7 +1865,7 @@ section#lokalita .loc-head .lead{padding-top:8px}
       <div class="hb-st"><span class="hb-ic" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="13" cy="4" r="1.6"/><path d="M10 21l2-6 3 3v3M9 12l2-4 3 1 2 3 3 1M12 15l-1-4"/></svg></span><b>13 minut</b><span class="hb-l">Pěšky k Brněnské přehradě</span></div>
       <div class="hb-st"><span class="hb-ic" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M9 3v4M15 3v4"/></svg></span><b>2027</b><span class="hb-l">Plánované dokončení</span></div>
     </div>
-    <a class="hb-cta" href="#byty"><span class="hb-cta-b">Prohlédnout nabídku bytů<svg width="22" height="12" viewBox="0 0 22 12" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M0 6h20M15 1l5 5-5 5"/></svg></span></a>
+    <div class="hb-ctaw"><a class="hb-cta" href="#byty"><span class="hb-cta-b">Prohlédnout nabídku bytů<svg width="22" height="12" viewBox="0 0 22 12" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M0 6h20M15 1l5 5-5 5"/></svg></span></a></div>
   </div>
 </section>
 <section class="about sand" id="projekt">
