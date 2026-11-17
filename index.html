@@ -1897,6 +1897,14 @@ details.qa[open] p{animation:qaOpen .45s ease both}
 .qa .qb{transition:transform .35s ease,background .3s}
 @media(max-width:700px){.qa summary{grid-template-columns:36px 1fr 40px;font-size:18px;padding:20px 0}.qa p{margin:-4px 0 22px 50px}}
 @media(prefers-reduced-motion:reduce){details.qa[open] p{animation:none}}
+
+/* FAQ zarovnani jako sekce Klid */
+#dotazy .qa-al{grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:clamp(40px,6vw,110px);align-items:stretch}
+#dotazy .qa-al .qa-img{aspect-ratio:auto;height:100%;min-height:420px}
+#dotazy .qa-h2{font-size:clamp(28px,2.8vw,44px);font-weight:300;text-align:left;margin:0 0 28px}
+#dotazy .qa-list details.qa:first-of-type summary{padding-top:14px}
+@media(min-width:1001px) and (max-width:1180px){#dotazy .qa-al{grid-template-columns:1fr}#dotazy .qa-al .qa-img{aspect-ratio:16/10;height:auto;min-height:0}}
+@media(max-width:900px){#dotazy .qa-al{grid-template-columns:1fr;gap:28px}#dotazy .qa-al .qa-img{order:2;aspect-ratio:4/3;height:auto;min-height:0}}
 </style>
 </head>
 <body>
@@ -2056,10 +2064,10 @@ details.qa[open] p{animation:qaOpen .45s ease both}
 </section>
 <section class="qa-sec s-white" id="dotazy">
   <div class="wrap">
-    <h2 class="qa-h qa-h-r rv">Často vás zajímá</h2>
-    <div class="qa-grid qa-rev rv">
+    <div class="qa-grid qa-rev qa-al rv">
       <div class="qa-img"><img loading="lazy" decoding="async" src="img/balkony.webp" alt="Balkony bytového domu Bystrc Obora v zeleni"></div>
       <div class="qa-list">
+        <h2 class="qa-h qa-h2">Často vás zajímá</h2>
         <details class="qa" name="faq" open><summary><span class="qn">01</span><span class="qt">Kdy budou byty dokončené?</span><span class="qb" aria-hidden="true"></span></summary><p>Předpokládaný termín dokončení projektu je v roce 2027.</p></details>
         <details class="qa" name="faq"><summary><span class="qn">02</span><span class="qt">Je součástí bytu parkovací stání?</span><span class="qb" aria-hidden="true"></span></summary><p>[Upřesnit, zda je parkovací stání součástí ceny, případně zda je možné jej dokoupit a za jakých podmínek.]</p></details>
         <details class="qa" name="faq"><summary><span class="qn">03</span><span class="qt">Je možné provádět klientské změny?</span><span class="qb" aria-hidden="true"></span></summary><p>[Upřesnit možnosti individuálních úprav bytu a termín, do kterého je možné změny zadat.]</p></details>
