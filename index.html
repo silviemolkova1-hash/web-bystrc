@@ -497,6 +497,8 @@ details{border-bottom:1px solid var(--line)}details:first-of-type{border-top:1px
 details p{color:var(--text)}
 /* kontakt */
 .contact{background:#1E2A1D;color:#fff;padding:80px 0}
+.contact .grid{grid-template-columns:1fr 1fr;gap:64px;max-width:var(--max);margin:0 auto;align-items:start}
+@media(max-width:900px){.contact .grid{grid-template-columns:1fr;gap:40px}}
 .contact form{border-radius:20px;box-shadow:none}
 input:focus,select:focus,textarea:focus{border-color:#161616;box-shadow:0 2px 0 0 #161616}
 /* patička */
@@ -580,6 +582,57 @@ header.hd5 .burger{display:none;position:absolute;right:14px;top:50%;transform:t
 .qa summary:hover .qb{background:#E0E0DA}
 .qa p{margin:-8px 58px 26px 66px;font-size:15px;color:var(--text);max-width:none}
 @media(max-width:900px){.qa-grid{grid-template-columns:1fr;gap:36px}.qa-rev .qa-img{order:2}.qa-h-r{text-align:left}.qa summary{grid-template-columns:38px 1fr 44px;font-size:18px}.qa .qn{font-size:18px}.qa p{margin:-8px 0 22px 52px}}
+
+/* ===== úvod: fotka přes celou obrazovku + plovoucí hlavička ===== */
+.heroA{position:relative;height:100svh;min-height:600px;padding:0;margin:0;overflow:hidden;color:#fff;isolation:isolate}
+.ha-media{position:absolute;inset:0;z-index:0}
+.ha-media img{width:100%;height:100%;object-fit:cover;display:block}
+.ha-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,18,12,.52) 0%,rgba(14,18,12,.18) 34%,rgba(14,18,12,.12) 52%,rgba(14,18,12,.60) 100%)}
+.ha-in{position:relative;z-index:2;height:100%;max-width:var(--max);margin:0 auto;padding:0 64px 44px;display:flex;flex-direction:column;justify-content:flex-end;gap:44px}
+.ha-txt{max-width:780px}
+.ha-note{display:inline-flex;align-items:center;gap:9px;margin-bottom:22px;padding:9px 16px;border-radius:999px;background:rgba(255,255,255,.16);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.3);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#fff}
+.ha-note::before{content:"";width:7px;height:7px;border-radius:50%;background:#A8D49C}
+.heroA h1{font-size:clamp(40px,6vw,86px);font-weight:300;line-height:1.02;letter-spacing:-.025em;color:#fff;text-shadow:0 2px 30px rgba(0,0,0,.28)}
+.heroA h1 span{display:block}
+.ha-lead{margin-top:20px;font-size:clamp(16px,1.35vw,20px);line-height:1.55;color:rgba(255,255,255,.92);max-width:520px;text-shadow:0 1px 16px rgba(0,0,0,.3)}
+.ha-chips{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.hc{padding:20px 22px 18px;border-radius:18px;background:rgba(255,255,255,.14);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.26);color:#fff}
+.hc svg{opacity:.85;margin-bottom:12px;display:block}
+.hc b{display:block;font-size:clamp(20px,1.8vw,26px);font-weight:400;line-height:1.1}
+.hc span{display:block;margin-top:4px;font-size:13px;color:rgba(255,255,255,.78)}
+/* plovoucí hlavička nad fotkou */
+header.hd5,header.hd5.scrolled{position:fixed;left:0;right:0;top:0;height:92px;padding:0 64px;background:transparent;color:#fff;box-shadow:none;transition:background .35s,color .35s,height .35s}
+header.hd5 .logo{color:#fff;transform:translateY(-13px)}
+header.hd5 .hnav{justify-self:center;gap:4px;padding:7px;border-radius:999px;background:rgba(255,255,255,.16);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.26);color:#fff}
+header.hd5 .hnav a{padding:11px 18px;border-radius:999px;color:#fff;transition:background .25s,color .25s}
+header.hd5 .hnav a:hover{background:rgba(255,255,255,.22);color:#fff}
+header.hd5 .hcta{height:52px;padding:0 8px 0 24px;gap:14px;background:#fff;color:#161616;border-radius:999px;transition:background .25s,color .25s}
+header.hd5 .hcta:hover{background:#F0F0EC}
+header.hd5 .hcta .ar{width:36px;height:36px;border-radius:50%;background:#161616;color:#fff;display:inline-flex;align-items:center;justify-content:center;transition:background .25s,color .25s}
+header.hd5 .burger{color:#fff}
+header.hd5.scrolled{background:rgba(255,255,255,.94);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);color:#161616;height:76px;box-shadow:0 1px 0 rgba(0,0,0,.06)}
+header.hd5.scrolled .logo{color:#161616}
+header.hd5.scrolled .hnav{background:rgba(22,22,22,.05);border-color:rgba(22,22,22,.08);color:#2A2A2A}
+header.hd5.scrolled .hnav a{color:#2A2A2A}
+header.hd5.scrolled .hnav a:hover{background:rgba(22,22,22,.07);color:#161616}
+header.hd5.scrolled .hcta{background:#161616;color:#fff}
+header.hd5.scrolled .hcta:hover{background:#1E2A1D}
+header.hd5.scrolled .hcta .ar{background:#fff;color:#161616}
+header.hd5.scrolled .burger{color:#161616}
+@media(max-width:1100px){header.hd5 .hnav,header.hd5.scrolled .hnav{display:none}}
+@media(max-width:1000px){header.hd5 .hcta,header.hd5.scrolled .hcta{display:none}}
+@media(max-width:860px){
+  header.hd5,header.hd5.scrolled{height:72px;padding:0 18px}
+  header.hd5.scrolled{height:64px}
+  .ha-in{padding:0 20px 24px;gap:26px}
+  .ha-chips{grid-template-columns:1fr 1fr;gap:8px}
+  .hc{padding:14px 16px 13px;border-radius:14px}
+  .hc svg{width:24px;height:17px;margin-bottom:8px}
+  .hc span{font-size:12px}
+  .ha-lead{margin-top:14px}
+  .ha-note{margin-bottom:16px;padding:7px 13px;font-size:11px}
+  .mnav{top:72px}
+}
 </style>
 <style>/* Leaflet 1.9.4 */
 /* required styles */
@@ -1252,7 +1305,7 @@ svg.leaflet-image-layer.leaflet-interactive path {
 <header class="hd5">
   <a href="#" class="logo" aria-label="Bystrc Obora"><svg class="lm" width="68" height="41" viewBox="0 0 328 196" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="7" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"><polyline points="10,190 10,110 60,60 110,110 110,190"/><polyline points="125,190 125,110 175,60 225,110 225,190"/><polygon points="248,190 263,112 278,190"/><polygon points="285,190 302,92 319,190"/><line x1="0" y1="190" x2="328" y2="190"/></g></svg><span class="lt"><b>Bystrc</b> <span>Obora</span></span></a>
   <nav class="hnav"><a href="#projekt">O projektu</a><a href="#byty">Byty</a><a href="#lokalita">Lokalita</a><a href="#galerie">Galerie</a><a href="#kontakt">Kontakt</a></nav>
-  <a class="hcta" href="#kontakt">Mám zájem</a>
+  <a class="hcta" href="#kontakt"><span>Mám zájem</span><i class="ar" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11L11 3M5 3h6v6"/></svg></i></a>
   <button class="burger" aria-label="Otevřít menu" aria-expanded="false"><span></span></button>
 </header>
 <nav class="mnav" aria-label="Mobilní menu">
@@ -1261,22 +1314,24 @@ svg.leaflet-image-layer.leaflet-interactive path {
 </nav>
 <a href="#" class="totop" aria-label="Zpět nahoru"><svg width="16" height="18" viewBox="0 0 16 18" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M8 17V1M1 8l7-7 7 7"/></svg></a>
 
-<section class="hero5">
-<div class="pn">
-<div class="mid"><h1>Bydlete v&nbsp;srdci <span>přírody</span></h1>
-<p class="lead">Prémiové bytové domy u&nbsp;Brněnské přehrady. Brno máte na dosah.</p></div>
-<div class="tiles">
-<div class="t1"><svg width="34" height="24" viewBox="0 0 44 30" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><polygon points="9,28 15,6 21,28"/><polygon points="20,28 27,2 34,28"/><line x1="0" y1="28.5" x2="44" y2="28.5"/></svg><b>Příroda</b><span>za okny</span></div>
-<div class="t2"><svg width="34" height="24" viewBox="0 0 44 30" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><polyline points="2,28.5 2,12 12,4 22,12 22,28.5"/><polyline points="22,28.5 22,12 32,4 42,12 42,28.5"/><line x1="0" y1="28.5" x2="44" y2="28.5"/></svg><b>[počet] bytů</b><span>2+kk až 4+kk</span></div>
-<div class="t3"><svg width="34" height="24" viewBox="0 0 44 30" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2 12c5-4 9-4 14 0s9 4 14 0 9-4 12 0"/><path d="M2 21c5-4 9-4 14 0s9 4 14 0 9-4 12 0"/><line x1="0" y1="28.5" x2="44" y2="28.5"/></svg><b>13 min</b><span>pěšky k přehradě</span></div>
-<div class="t4"><svg width="34" height="24" viewBox="0 0 44 30" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="8" y="5" width="28" height="20"/><line x1="8" y1="11" x2="36" y2="11"/><line x1="15" y1="2" x2="15" y2="8"/><line x1="29" y1="2" x2="29" y2="8"/><line x1="0" y1="28.5" x2="44" y2="28.5"/></svg><b>2027</b><span>dokončení</span></div>
-</div>
-</div>
-<div class="ph">
-<div class="slides"><img class="on" src="img/detail.webp" alt="Bytový dům Bystrc Obora s rohovými okny"><img src="img/balkony.webp" alt="Balkony do lesa"><img src="img/uvod.webp" alt="Oba bytové domy v lese"><img src="img/domy-bok.webp" alt="Domy z boku"></div>
-
-<p class="hnote">Nové byty v Bystrci · dokončení 2027</p>
-</div>
+<section class="heroA">
+  <div class="ha-media">
+    <img src="img/uvod.webp" alt="Bytové domy Bystrc Obora obklopené lesem" fetchpriority="high">
+    <span class="ha-shade"></span>
+  </div>
+  <div class="ha-in">
+    <div class="ha-txt">
+      <p class="ha-note">Nové byty v Bystrci · dokončení 2027</p>
+      <h1>Bydlete v&nbsp;srdci <span>přírody</span></h1>
+      <p class="ha-lead">Prémiové bytové domy u&nbsp;Brněnské přehrady. Brno máte na dosah.</p>
+    </div>
+    <div class="ha-chips">
+      <div class="hc"><svg width="30" height="21" viewBox="0 0 44 30" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><polygon points="9,28 15,6 21,28"/><polygon points="20,28 27,2 34,28"/><line x1="0" y1="28.5" x2="44" y2="28.5"/></svg><b>Příroda</b><span>za okny</span></div>
+      <div class="hc"><svg width="30" height="21" viewBox="0 0 44 30" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><polyline points="2,28.5 2,12 12,4 22,12 22,28.5"/><polyline points="22,28.5 22,12 32,4 42,12 42,28.5"/><line x1="0" y1="28.5" x2="44" y2="28.5"/></svg><b>[počet] bytů</b><span>2+kk až 4+kk</span></div>
+      <div class="hc"><svg width="30" height="21" viewBox="0 0 44 30" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2 12c5-4 9-4 14 0s9 4 14 0 9-4 12 0"/><path d="M2 21c5-4 9-4 14 0s9 4 14 0 9-4 12 0"/><line x1="0" y1="28.5" x2="44" y2="28.5"/></svg><b>13 min</b><span>pěšky k přehradě</span></div>
+      <div class="hc"><svg width="30" height="21" viewBox="0 0 44 30" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="8" y="5" width="28" height="20"/><line x1="8" y1="11" x2="36" y2="11"/><line x1="15" y1="2" x2="15" y2="8"/><line x1="29" y1="2" x2="29" y2="8"/></svg><b>2027</b><span>dokončení</span></div>
+    </div>
+  </div>
 </section>
 <section class="about sand" id="projekt">
   <div class="wrap intro rv">
@@ -1582,6 +1637,10 @@ function openCat(ci,doFit=true){
 }
 catsEl.addEventListener("click",e=>{const pb=e.target.closest("li button");if(pb){select(+pb.dataset.c,+pb.dataset.p);return}
  const cb=e.target.closest(".ovc>button");if(cb)openCat(+cb.parentNode.dataset.c)});
+
+(function(){const h=document.querySelector("header.hd5"),hero=document.querySelector(".heroA");if(!h||!hero)return;
+const io2=new IntersectionObserver(e=>h.classList.toggle("scrolled",!e[0].isIntersecting),{rootMargin:"-70px 0px 0px 0px",threshold:0});
+io2.observe(hero)})();
 watch();
 document.getElementById("form").addEventListener("submit",e=>{e.preventDefault();document.getElementById("thanks").style.display="block"});
 
