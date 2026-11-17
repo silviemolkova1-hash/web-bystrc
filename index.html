@@ -521,6 +521,65 @@ header.hd5 .burger{display:none;position:absolute;right:14px;top:50%;transform:t
 .hero5 .pcta{margin-left:10px;font-size:12px;letter-spacing:.18em;text-transform:uppercase;background:#161616;color:#fff;padding:14px 22px;border-radius:14px;transition:background .25s}
 .hero5 .pcta:hover{background:#1E2A1D}
 @media(max-width:1000px){header.hd5 .burger{display:flex}.hero5 .pill{display:none}}
+
+/* ===== lokalita: občanská vybavenost ===== */
+.ov{display:grid;grid-template-columns:minmax(320px,420px) 1fr;gap:20px;align-items:stretch}
+.ov-panel{background:#fff;border-radius:20px;padding:34px 30px 22px}
+.ov-panel h3{font-size:26px;font-weight:300;margin-bottom:18px}
+.ovc{border-bottom:1px solid var(--line)}
+.ovc:last-child{border-bottom:0}
+.ovc>button{width:100%;display:flex;align-items:center;gap:14px;padding:18px 0;min-height:56px;background:none;border:0;font:inherit;font-size:16px;color:var(--ink);cursor:pointer;text-align:left;transition:color .25s}
+.ovc>button .ci{width:22px;height:22px;flex:none}
+.ovc>button .chev{margin-left:auto;width:16px;height:16px;transition:transform .3s}
+.ovc.open>button{color:#4E7A45}
+.ovc.open>button .chev{transform:rotate(180deg)}
+.ovc ul{list-style:none;margin:0;padding:0 0 14px;display:none}
+.ovc.open ul{display:block}
+.ovc li button{width:100%;display:flex;justify-content:space-between;gap:12px;align-items:baseline;text-align:left;background:none;border:2px solid transparent;border-radius:10px;padding:11px 12px 11px 36px;min-height:44px;font:inherit;font-size:15px;color:var(--text);cursor:pointer;transition:background .2s,border-color .2s,color .2s}
+.ovc li button small{font-size:13px;color:var(--muted);white-space:nowrap}
+.ovc li button:hover{background:#F5F5F2}
+.ovc li button.sel{border-color:#4E7A45;color:#4E7A45}
+.ov-mapwrap{position:relative;border-radius:20px;overflow:hidden;min-height:640px;background:#EFEEEA}
+.ov-map{position:absolute;inset:0;z-index:1}
+.ov-map.flat .leaflet-tile-pane{filter:grayscale(.55) brightness(1.04) contrast(.94)}
+.ov-map .leaflet-div-icon{background:none;border:0}
+.ov-map .leaflet-control-zoom{border:0;box-shadow:0 6px 24px rgba(20,22,15,.12);border-radius:10px;overflow:hidden}
+.ov-map .leaflet-control-zoom a{width:40px;height:40px;line-height:40px;color:var(--ink)}
+.ov-map .leaflet-control-attribution{font-size:10px}
+.ov-type{position:absolute;top:16px;left:16px;z-index:5;display:flex;background:#fff;border-radius:10px;box-shadow:0 6px 24px rgba(20,22,15,.12);overflow:hidden}
+.ov-type button{border:0;background:#fff;padding:0 20px;min-height:44px;font:inherit;font-size:15px;color:var(--muted);cursor:pointer}
+.ov-type button.on{color:var(--ink);font-weight:600}
+.mp{position:absolute;left:0;top:0;transform:translate(-50%,calc(-100% - 8px));cursor:pointer}
+.mpb{width:38px;height:38px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);background:#1E2016;display:grid;place-items:center;box-shadow:0 4px 10px rgba(0,0,0,.28);transition:background .25s}
+.mpb svg{transform:rotate(45deg);width:18px;height:18px;color:#fff}
+.mp.sel .mpb,.mp.home .mpb{background:#4E7A45}
+.mp.home .mpb{width:44px;height:44px}
+.mp.home .mpb svg{width:20px;height:20px}
+.leaflet-tooltip.olbl{background:#4E7A45;color:#fff;border:0;border-radius:6px;padding:10px 16px;font-family:var(--font);font-size:14px;font-weight:500;box-shadow:0 6px 18px rgba(0,0,0,.18);white-space:nowrap}
+.leaflet-tooltip.olbl::before{display:none}
+.ov-addr{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-top:22px;padding:22px 26px;background:#fff;border-radius:20px}
+.ov-addr p{font-size:16px;color:var(--ink)}
+@media(max-width:900px){.ov{grid-template-columns:1fr}.ov-mapwrap{order:-1;min-height:420px}.ov-panel{padding:26px 20px 14px}}
+/* ===== standard + dotazy (styl Marby) ===== */
+.qa-sec{padding:110px 0}
+.qa-h{font-size:clamp(34px,4.4vw,60px);font-weight:300;margin-bottom:56px}
+.qa-h-r{text-align:right}
+.qa-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+.qa-img{border-radius:20px;overflow:hidden;aspect-ratio:4/3}
+.qa-img img{width:100%;height:100%;object-fit:cover;display:block}
+.qa-list details.qa{border:0;border-bottom:1px solid var(--line);padding:0}
+.qa-list details.qa:first-of-type{border-top:0}
+.qa summary{display:grid;grid-template-columns:52px 1fr 44px;gap:14px;align-items:center;padding:26px 0;font-size:22px;font-weight:300;color:var(--ink)}
+.qa summary::after{display:none}
+.qa .qn{font-size:22px;font-weight:300;color:var(--muted)}
+.qa .qb{width:44px;height:44px;border-radius:10px;background:#ECECE8;position:relative;transition:background .25s}
+.qa .qb::before,.qa .qb::after{content:"";position:absolute;left:50%;top:50%;width:14px;height:1.5px;background:var(--ink);transform:translate(-50%,-50%);transition:transform .3s}
+.qa .qb::after{transform:translate(-50%,-50%) rotate(90deg)}
+.qa[open] .qb::before{transform:translate(-50%,-50%) rotate(45deg)}
+.qa[open] .qb::after{transform:translate(-50%,-50%) rotate(135deg)}
+.qa summary:hover .qb{background:#E0E0DA}
+.qa p{margin:-8px 58px 26px 66px;font-size:15px;color:var(--text);max-width:none}
+@media(max-width:900px){.qa-grid{grid-template-columns:1fr;gap:36px}.qa-rev .qa-img{order:2}.qa-h-r{text-align:left}.qa summary{grid-template-columns:38px 1fr 44px;font-size:18px}.qa .qn{font-size:18px}.qa p{margin:-8px 0 22px 52px}}
 </style>
 <style>/* Leaflet 1.9.4 */
 /* required styles */
@@ -1243,8 +1302,8 @@ svg.leaflet-image-layer.leaflet-interactive path {
   <div class="wrap">
     <div class="head-row rv">
       <div>
-        <h2>Vyberte si svůj byt</h2>
-        <p class="lead">Aktuální nabídka a ceny. Ke každému bytu si stáhnete půdorys.</p>
+        <h2>Vyberte si své vysněné bydlení</h2>
+        <p class="lead">Aktuální nabídka bytů a ceny. Ke každému bytu si stáhnete půdorys.</p>
       </div>
       <div class="filters" id="filters">
         <button class="chip on" data-f="all">Všechny</button>
@@ -1262,35 +1321,28 @@ svg.leaflet-image-layer.leaflet-interactive path {
   </div>
 </section>
 
-<section class="sand" id="lokalita">
+<section class="s-white" id="lokalita">
   <div class="wrap">
     <div class="loc-head rv">
       <div>
-        <h2>Přehrada za domem, Brno za 20&nbsp;minut</h2>
+        <h2>Lokalita projektu</h2>
       </div>
-      <p class="lead">Bystrc Obora vzniká v klidné Oboře na západním konci Bystrce, obklopená lesem a kousek od Brněnské přehrady. K vodě dojdete pěšky, do centra Brna jste autem za dvacet minut.</p>
+      <p class="lead">Projekt vzniká v klidné městské části Brno-Bystrc, obklopené lesy a v blízkosti Brněnské přehrady. Přírodu máte za okny, přehradu na dosah. Do centra Brna se autem dostanete do 20 minut.</p>
     </div>
-    <div class="places" id="places"></div>
-    <div class="lmap rv" id="mapa">
-      <div class="lmap-c" id="lmapc" aria-label="Mapa okolí Bystrc Obora"></div>
-      <div class="mfilter" id="mfilter" role="group" aria-label="Filtr míst v mapě">
-        <span>Filtr</span>
-        <button class="mf on" data-c="all" type="button">Vše</button>
-        <button class="mf" data-c="priroda" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M12 3l6 9H6z"/><path d="M12 8l7 10H5z"/><path d="M12 18v3"/></svg>Příroda a sport</button>
-        <button class="mf" data-c="doprava" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><rect x="5" y="3" width="14" height="15" rx="2"/><path d="M5 11h14M8 21v-3M16 21v-3"/></svg>Doprava</button>
-        <button class="mf" data-c="deti" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M3 9l9-5 9 5-9 5z"/><path d="M7 11v5c3 2 7 2 10 0v-5"/></svg>Děti a škola</button>
-        <button class="mf" data-c="sluzby" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M5 8h14l-1 12H6z"/><path d="M9 8a3 3 0 016 0"/></svg>Obchody a služby</button>
+    <div class="ov rv">
+      <div class="ov-panel">
+        <h3>Občanská vybavenost v okolí</h3>
+        <div id="ovcats"></div>
       </div>
-      
-      
-      <div class="edge" data-c="doprava">Centrum Brna 20 min <svg width="18" height="10" viewBox="0 0 18 10" fill="none" stroke="currentColor" aria-hidden="true"><path d="M0 5h17M13 1l4 4-4 4"/></svg></div>
-      <div class="addrcard">
-        <h3>Kde nás najdete</h3>
-        <p>Rakovecká 229/73, 635 00 Brno Bystrc</p>
-        <a class="btn btn-dark" href="https://www.google.com/maps/search/?api=1&amp;query=Rakovecká+229%2F73%2C+635+00+Brno-Bystrc" target="_blank" rel="noopener">Otevřít v Google Maps</a>
+      <div class="ov-mapwrap" id="mapa">
+        <div class="ov-map" id="lmapc" aria-label="Mapa okolí Bystrc Obora"></div>
+        <div class="ov-type" role="group" aria-label="Typ mapy"><button class="on" type="button" data-t="map">Mapa</button><button type="button" data-t="sat">Satelitní</button></div>
       </div>
     </div>
-    
+    <div class="ov-addr rv">
+      <p>Rakovecká 229/73, 635 00 Brno Bystrc</p>
+      <a class="btn btn-dark" href="https://www.google.com/maps/search/?api=1&amp;query=Rakovecká+229%2F73%2C+635+00+Brno-Bystrc" target="_blank" rel="noopener">Otevřít v Google Maps</a>
+    </div>
   </div>
 </section>
 
@@ -1321,21 +1373,31 @@ svg.leaflet-image-layer.leaflet-interactive path {
   </div>
 </section>
 
-<section class="s-white">
-  <div class="wrap two">
-    <div class="rv">
-      <h2>Kvalitní standard v ceně bytu</h2>
-      <details><summary>Konstrukce a izolace</summary><p>[materiál zdiva, izolace]</p></details>
-      <details><summary>Okna a stínění</summary><p>[typ oken, trojsklo, žaluzie]</p></details>
-      <details><summary>Vytápění</summary><p>[tepelné čerpadlo, podlahové topení]</p></details>
-      <details><summary>Podlahy a koupelny</summary><p>[materiály, sanita]</p></details>
+<section class="qa-sec" id="standard">
+  <div class="wrap">
+    <h2 class="qa-h rv">Kvalitní standard v ceně bytu</h2>
+    <div class="qa-grid rv">
+      <div class="qa-list">
+        <details class="qa" name="std" open><summary><span class="qn">01</span><span class="qt">Konstrukce a izolace</span><span class="qb" aria-hidden="true"></span></summary><p>[materiál zdiva, izolace]</p></details>
+        <details class="qa" name="std"><summary><span class="qn">02</span><span class="qt">Okna a stínění</span><span class="qb" aria-hidden="true"></span></summary><p>[typ oken, trojsklo, žaluzie]</p></details>
+        <details class="qa" name="std"><summary><span class="qn">03</span><span class="qt">Vytápění</span><span class="qb" aria-hidden="true"></span></summary><p>[tepelné čerpadlo, podlahové topení]</p></details>
+        <details class="qa" name="std"><summary><span class="qn">04</span><span class="qt">Podlahy a koupelny</span><span class="qb" aria-hidden="true"></span></summary><p>[materiály, sanita]</p></details>
+      </div>
+      <div class="qa-img"><img loading="lazy" decoding="async" src="img/detail.webp" alt="Detail fasády a oken bytového domu Bystrc Obora"></div>
     </div>
-    <div class="rv">
-      <h2>Na co se lidé ptají</h2>
-      <details><summary>Kdy budou byty hotové?</summary><p>Předběžné dokončení je v roce 2027.</p></details>
-      <details><summary>Je součástí bytu parkování?</summary><p>[ano, dokoupení, cena]</p></details>
-      <details><summary>Můžu si byt upravit podle sebe?</summary><p>[klientské změny, do kdy]</p></details>
-      <details><summary>Pomůžete s hypotékou?</summary><p>[ano, spolupráce s poradcem]</p></details>
+  </div>
+</section>
+<section class="qa-sec s-white" id="dotazy">
+  <div class="wrap">
+    <h2 class="qa-h qa-h-r rv">Na co se lidé ptají</h2>
+    <div class="qa-grid qa-rev rv">
+      <div class="qa-img"><img loading="lazy" decoding="async" src="img/balkony.webp" alt="Balkony bytového domu Bystrc Obora v zeleni"></div>
+      <div class="qa-list">
+        <details class="qa" name="faq" open><summary><span class="qn">01</span><span class="qt">Kdy budou byty hotové?</span><span class="qb" aria-hidden="true"></span></summary><p>Předběžné dokončení je v roce 2027.</p></details>
+        <details class="qa" name="faq"><summary><span class="qn">02</span><span class="qt">Je součástí bytu parkování?</span><span class="qb" aria-hidden="true"></span></summary><p>[ano, dokoupení, cena]</p></details>
+        <details class="qa" name="faq"><summary><span class="qn">03</span><span class="qt">Můžu si byt upravit podle sebe?</span><span class="qb" aria-hidden="true"></span></summary><p>[klientské změny, do kdy]</p></details>
+        <details class="qa" name="faq"><summary><span class="qn">04</span><span class="qt">Pomůžete s hypotékou?</span><span class="qb" aria-hidden="true"></span></summary><p>[ano, spolupráce s poradcem]</p></details>
+      </div>
     </div>
   </div>
 </section>
@@ -1456,47 +1518,70 @@ const ic={
  mesto:'<path d="M3 21h18M5 21V10l4-3v14M9 21V4h6v17M15 21V9h4v12"/>',
  posta:'<rect x="3" y="6" width="18" height="13" rx="1"/><path d="M3 7l9 7 9-7"/>'
 };
-const cards=[
- {i:"voda",img:"img/lok-prehrada.webp",t:"Brněnská přehrada",v:"13 min",d:"pěšky"},
- {i:"mesto",img:"img/lok-centrum.webp",t:"Centrum Brna",v:"20 min",d:"autem"},
- {i:"auto",img:"img/lok-dalnice.webp",t:"Dálnice D1",v:"10 min",d:"autem, sjezd Ostrovačice"},
- {i:"bus",img:"img/lok-mhd.webp",t:"Zastávka MHD",v:"u domu",d:"pěšky za 1 min na lince 303"}
-];
-document.getElementById("places").innerHTML=cards.map(p=>`
- <div class="pl rv"><div class="ph">${p.img?`<img loading="lazy" decoding="async" src="${p.img}" alt="${p.t}"><span class="ov"></span>`:``}<svg class="${p.img?"on-img":""}" width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ic[p.i]}</svg></div>
- <div class="tx"><h3>${p.t}</h3><div class="t">${p.v}</div><p>${p.d}</p></div></div>`).join("");
-// místa v mapě: skutečné souřadnice (OpenStreetMap)
+ic.dum='<path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/>';
 const HOME=[49.25495,16.47672];
-const places=[
- {c:"priroda",i:"voda",t:"Brněnská přehrada",d:"13 min pěšky",ll:[49.2520,16.4846]},
- {c:"priroda",i:"les",t:"Les a cyklostezky",d:"za domem",ll:[49.2522,16.4700]},
- {c:"priroda",i:"hrad",t:"Hrad Veveří",d:"6 min autem",ll:[49.25640,16.45896]},
- {c:"priroda",i:"lod",t:"Přístaviště Bystrc",d:"8 min autem",ll:[49.22834,16.52204]},
- {c:"doprava",i:"bus",t:"Autobus 303, zastávka u domu",d:"1 min pěšky",ll:[49.25536,16.47616]},
- {c:"doprava",i:"auto",t:"Dálnice D1, sjezd Ostrovačice",d:"10 min autem",ll:[49.2050,16.4110]},
- {c:"doprava",i:"tram",t:"Tramvaj Ečerova",d:"přestup z linky 303",ll:[49.21819,16.50923]},
- {c:"deti",i:"zoo",t:"ZOO Brno",d:"9 min autem",ll:[49.23366,16.53268]},
- {c:"deti",i:"skola",t:"MŠ Laštůvkova",d:"8 min autem",ll:[49.21977,16.52333]},
- {c:"deti",i:"skola",t:"ZŠ Vejrostova",d:"8 min autem",ll:[49.21829,16.51521]},
- {c:"sluzby",i:"obchod",t:"Albert Ečerova",d:"9 min autem",ll:[49.21881,16.51031]},
- {c:"sluzby",i:"posta",t:"Centrum Bystrce (pošta, lékaři, úřad)",d:"9 min autem",ll:[49.22680,16.53086]}
+const CATS=[
+ {k:"doprava",n:"Dopravní dostupnost",i:"bus",items:[
+  {t:"Autobus 303, zastávka Obora u domu",d:"1 min pěšky",ll:[49.25536,16.47616]},
+  {t:"Tramvaj Ečerova",d:"přestup z linky 303",ll:[49.21819,16.50923]},
+  {t:"Dálnice D1, sjezd Ostrovačice",d:"10 min autem",ll:[49.2050,16.4110]},
+  {t:"Centrum Brna",d:"20 min autem",ll:[49.19510,16.60800],far:1}]},
+ {k:"priroda",n:"Relax v přírodě",i:"les",items:[
+  {t:"Les a cyklostezky",d:"za domem",ll:[49.2522,16.4700]},
+  {t:"Brněnská přehrada",d:"13 min pěšky",ll:[49.2520,16.4846]},
+  {t:"Přístaviště Bystrc",d:"8 min autem",ll:[49.22834,16.52204]},
+  {t:"Hrad Veveří",d:"6 min autem",ll:[49.25640,16.45896]}]},
+ {k:"deti",n:"Vzdělávání a děti",i:"skola",items:[
+  {t:"MŠ Laštůvkova",d:"8 min autem",ll:[49.21977,16.52333]},
+  {t:"ZŠ Vejrostova",d:"8 min autem",ll:[49.21829,16.51521]},
+  {t:"ZOO Brno",d:"9 min autem",ll:[49.23366,16.53268]}]},
+ {k:"sluzby",n:"Služby a obchody",i:"obchod",items:[
+  {t:"Albert Ečerova",d:"9 min autem",ll:[49.21881,16.51031]},
+  {t:"Centrum Bystrce (pošta, lékaři, úřad)",d:"9 min autem",ll:[49.22680,16.53086]}]}
 ];
-const map=L.map("lmapc",{scrollWheelZoom:false,zoomControl:false,attributionControl:true,dragging:!L.Browser.mobile,tap:false});
-map.attributionControl.setPrefix('<a href="https://leafletjs.com" target="_blank" rel="noopener">Leaflet</a>');L.control.zoom({position:"bottomleft"}).addTo(map);
-L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png",{maxZoom:18,attribution:'&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>'}).addTo(map);
-const mk=(html)=>L.divIcon({className:"",html,iconSize:[0,0],iconAnchor:[0,0]});
-const ttx=(t,d)=>`<b>${t}</b><span>${d}</span>`;
-const home=L.marker(HOME,{icon:mk(`<span class="pin home"><span class="b">OBORA</span></span>`),zIndexOffset:1000,keyboard:true,title:"Bystrc Obora"}).addTo(map).bindTooltip(ttx("Bystrc Obora","Rakovecká 229/73"),{className:"otip",direction:"top",offset:[0,-54]});
-const markers=places.map(p=>{const m=L.marker(p.ll,{icon:mk(`<span class="pin"><span class="b"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ic[p.i]}</svg></span></span>`),title:p.t+", "+p.d,keyboard:true}).bindTooltip(ttx(p.t,p.d),{className:"otip",direction:"top",offset:[0,-52]});m.c=p.c;m.addTo(map);return m});
+const svg=(k,c)=>`<svg class="${c||""}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ic[k]}</svg>`;
+const chev='<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>';
+const catsEl=document.getElementById("ovcats");
+catsEl.innerHTML=CATS.map((c,ci)=>`<div class="ovc" data-c="${ci}"><button type="button" aria-expanded="false">${svg(c.i,"ci")}<span>${c.n}</span>${chev}</button><ul>${c.items.map((p,pi)=>`<li><button type="button" data-c="${ci}" data-p="${pi}">${p.t}<small>${p.d}</small></button></li>`).join("")}</ul></div>`).join("");
+const mapEl=document.getElementById("lmapc");mapEl.classList.add("flat");
+const map=L.map(mapEl,{scrollWheelZoom:false,zoomControl:false,dragging:!L.Browser.mobile,tap:false});
+map.attributionControl.setPrefix('<a href="https://leafletjs.com" target="_blank" rel="noopener">Leaflet</a>');
+L.control.zoom({position:"bottomright"}).addTo(map);
+const layers={
+ map:L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png",{maxZoom:19,attribution:'&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>'}),
+ sat:L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",{maxZoom:19,attribution:'Snímky &copy; Esri'})};
+layers.map.addTo(map);
+document.querySelector(".ov-type").onclick=e=>{const b=e.target.closest("button");if(!b)return;
+ document.querySelectorAll(".ov-type button").forEach(x=>x.classList.toggle("on",x===b));
+ const t=b.dataset.t;Object.entries(layers).forEach(([k,l])=>k===t?l.addTo(map):map.removeLayer(l));mapEl.classList.toggle("flat",t==="map")};
+const icon=(k,cls)=>L.divIcon({className:"",html:`<span class="mp ${cls||""}"><span class="mpb">${svg(k)}</span></span>`,iconSize:[0,0],iconAnchor:[0,0]});
+L.circle(HOME,{radius:260,stroke:false,fillColor:"#4E7A45",fillOpacity:.16}).addTo(map);
+L.circle(HOME,{radius:110,stroke:false,fillColor:"#4E7A45",fillOpacity:.2}).addTo(map);
+L.marker(HOME,{icon:icon("dum","home"),zIndexOffset:1000,title:"Bystrc Obora, Rakovecká 229/73"}).addTo(map)
+ .bindTooltip("Bystrc Obora",{className:"olbl",direction:"top",offset:[0,-58]});
+CATS.forEach((c,ci)=>c.items.forEach((p,pi)=>{
+ p.m=L.marker(p.ll,{icon:icon(c.i),title:p.t+", "+p.d}).addTo(map).bindTooltip(p.t,{className:"olbl",direction:"top",offset:[0,-56]});
+ p.m.on("click",()=>{openCat(ci,false);select(ci,pi)});
+}));
 const wide=()=>innerWidth>900;
-function fit(list){const b=L.latLngBounds([HOME,...list.map(m=>m.getLatLng())]);map.fitBounds(b,wide()?{paddingTopLeft:[60,110],paddingBottomRight:[380,60],maxZoom:15}:{paddingTopLeft:[30,140],paddingBottomRight:[30,190],maxZoom:15})}
-fit(markers);
-document.getElementById("mfilter").onclick=e=>{const b=e.target.closest(".mf");if(!b)return;
-  document.querySelectorAll("#mfilter .mf").forEach(x=>x.classList.remove("on"));b.classList.add("on");
-  const c=b.dataset.c;const vis=markers.filter(m=>c==="all"||m.c===c);
-  markers.forEach(m=>vis.includes(m)?m.addTo(map):m.remove());fit(vis);
-  document.querySelector("#mapa .edge").style.display=(c==="all"||c==="doprava")?"flex":"none";
-};
+function fit(list){map.fitBounds(L.latLngBounds([HOME,...list]),{padding:wide()?[70,70]:[40,40],maxZoom:15})}
+const near=CATS.flatMap(c=>c.items.filter(p=>!p.far).map(p=>p.ll));
+fit(near);
+let selP=null;
+function select(ci,pi){
+ if(selP){selP.m.closeTooltip();const el=selP.m.getElement();el&&el.querySelector(".mp").classList.remove("sel")}
+ document.querySelectorAll(".ovc li button").forEach(b=>b.classList.toggle("sel",+b.dataset.c===ci&&+b.dataset.p===pi));
+ const p=CATS[ci].items[pi];selP=p;const el=p.m.getElement();el&&el.querySelector(".mp").classList.add("sel");
+ p.m.setZIndexOffset(900);p.m.openTooltip();
+ if(!map.getBounds().pad(-.15).contains(p.ll))map.panTo(p.ll);
+}
+function openCat(ci,doFit=true){
+ document.querySelectorAll(".ovc").forEach(x=>{const on=+x.dataset.c===ci&&(!x.classList.contains("open")||!doFit);x.classList.toggle("open",on);x.querySelector("button").setAttribute("aria-expanded",on)});
+ const open=document.querySelector(".ovc.open");
+ if(doFit)fit(open?CATS[ci].items.map(p=>p.ll):near);
+}
+catsEl.addEventListener("click",e=>{const pb=e.target.closest("li button");if(pb){select(+pb.dataset.c,+pb.dataset.p);return}
+ const cb=e.target.closest(".ovc>button");if(cb)openCat(+cb.parentNode.dataset.c)});
 watch();
 document.getElementById("form").addEventListener("submit",e=>{e.preventDefault();document.getElementById("thanks").style.display="block"});
 
