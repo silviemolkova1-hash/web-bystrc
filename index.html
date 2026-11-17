@@ -1778,6 +1778,41 @@ section.pr .pr-panel h2{color:#fff;margin:0 0 40px;font-size:clamp(30px,2.6vw,42
 .pr-step p{margin:0;font-size:14px;line-height:1.5;color:rgba(255,255,255,.72)}
 @media(max-width:1000px){.pr-grid{grid-template-columns:1fr}.pr-photos{height:420px}.pr-panel{padding:56px 24px}}
 @media(max-width:560px){.pr-photos{height:300px}.pr-step{grid-template-columns:52px 1fr;column-gap:16px}.pr-ic{width:52px;height:52px}.pr-step:not(:last-child)::after{left:25.5px;top:56px}}
+
+/* úvod: tlačítko jako součást tmavého panelu */
+@media(min-width:1001px){
+.heroB .hb-cta{background:#1E2A1D!important;justify-content:flex-end;padding:0 24px 28px}
+.heroB .hb-cta:hover{background:#1E2A1D!important}
+.heroB .hb-cta-b{color:#fff;font-size:11px;letter-spacing:.14em;gap:10px}
+.heroB .hb-cta:hover .hb-cta-b{opacity:.8}
+}
+@media(max-width:1000px){.heroB .hb-cta{background:#1E2A1D}}
+/* koupě bytu: dva stejné sloupce, prolínání fotek, světlý panel */
+.pr-grid{grid-template-columns:1fr 1fr}
+.pr-slides{display:block;position:relative;overflow:hidden;background:#F2F0EB}
+.pr-slides .pr-s{position:absolute;inset:0;margin:0;opacity:0;animation:prFade 28s infinite}
+.pr-slides .pr-s img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;animation:prZoom 28s infinite;transform-origin:50% 50%}
+.pr-slides .pr-s1,.pr-slides .pr-s1 img{animation-delay:0s}
+.pr-slides .pr-s2,.pr-slides .pr-s2 img{animation-delay:7s}
+.pr-slides .pr-s3,.pr-slides .pr-s3 img{animation-delay:14s}
+.pr-slides .pr-s4,.pr-slides .pr-s4 img{animation-delay:21s}
+@keyframes prFade{0%{opacity:0}6%{opacity:1}25%{opacity:1}31%{opacity:0}100%{opacity:0}}
+@keyframes prZoom{0%{transform:scale(1)}31%{transform:scale(1.06)}100%{transform:scale(1.06)}}
+.pr-slides .pr-s1{opacity:1}
+.pr-panel{background:#F2F0EB;color:#23261F}
+.pr-panel .eyebrow{color:#6E6A60}
+section.pr .pr-panel h2{color:#23261F}
+.pr-step h3{color:#23261F}
+.pr-step p{color:#6E6A60}
+.pr-ic{color:#1E2A1D;box-shadow:inset 0 0 0 1px rgba(30,42,29,.35)}
+.pr-step:hover .pr-ic{background:rgba(30,42,29,.06)}
+.pr-step:not(:last-child)::after{background:rgba(30,42,29,.2)}
+@media(max-width:1000px){.pr-grid{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){.pr-slides .pr-s,.pr-slides .pr-s img{animation:none}.pr-slides .pr-s2,.pr-slides .pr-s3,.pr-slides .pr-s4{opacity:0}}
+/* stavy bytů */
+section#byty .st.free{background:#D7EF5B!important;color:#1E2A1D!important}
+section#byty .st.res{background:#FFFFFF!important;color:#1E2A1D!important;box-shadow:none!important}
+section#byty .st.sold{background:#F2B8C6!important;color:#1E2A1D!important;box-shadow:none!important}
 </style>
 </head>
 <body>
@@ -1906,12 +1941,7 @@ section.pr .pr-panel h2{color:#fff;margin:0 0 40px;font-size:clamp(30px,2.6vw,42
 
 <section class="steps-sec pr" id="koupe" aria-label="Koupě bytu">
   <div class="pr-grid">
-    <div class="pr-photos" aria-hidden="true">
-      <figure class="pr-p1"><img loading="lazy" decoding="async" src="img/hero.webp" alt=""></figure>
-      <figure class="pr-p2"><img loading="lazy" decoding="async" src="img/detail.webp" alt=""></figure>
-      <figure class="pr-p3"><img loading="lazy" decoding="async" src="img/parkovani.webp" alt=""></figure>
-      <figure class="pr-p4"><img loading="lazy" decoding="async" src="img/balkony.webp" alt=""></figure>
-    </div>
+    <div class="pr-photos pr-slides" aria-hidden="true"><figure class="pr-s pr-s1"><img loading="lazy" decoding="async" src="img/hero.webp" alt=""></figure><figure class="pr-s pr-s2"><img loading="lazy" decoding="async" src="img/detail.webp" alt=""></figure><figure class="pr-s pr-s3"><img loading="lazy" decoding="async" src="img/parkovani.webp" alt=""></figure><figure class="pr-s pr-s4"><img loading="lazy" decoding="async" src="img/balkony.webp" alt=""></figure></div>
     <div class="pr-panel">
       <p class="eyebrow">Koupě bytu</p>
       <h2>Od prvního výběru až po předání klíčů</h2>
@@ -2010,7 +2040,7 @@ section.pr .pr-panel h2{color:#fff;margin:0 0 40px;font-size:clamp(30px,2.6vw,42
 (function(){const sl=[...document.querySelectorAll(".hero .slides img")];if(sl.length<2||matchMedia("(prefers-reduced-motion: reduce)").matches)return;let i=0;setInterval(()=>{sl[i].classList.remove("on");i=(i+1)%sl.length;sl[i].classList.add("on")},7500)})();
 const hd=document.querySelector("header");
 function onS(){
-  const hb=document.querySelector(".heroB"),hbt=document.querySelector(".hb-top"),thr=hb?(innerWidth>1000?Math.max(40,hb.offsetHeight-140):Math.max(40,hbt.offsetHeight-70)):40;hd.classList.toggle("scrolled",scrollY>thr||document.body.classList.contains("menu-open"));
+  const hb=document.querySelector(".heroB"),hbt=document.querySelector(".hb-top"),lk=document.querySelector('.hb-nav a[href="#lokalita"]'),thr=hb?(innerWidth>1000&&lk?Math.max(40,lk.getBoundingClientRect().top+scrollY):Math.max(40,hbt.offsetHeight-70)):40;hd.classList.toggle("scrolled",scrollY>thr||document.body.classList.contains("menu-open"));
 }
 addEventListener("scroll",onS,{passive:true});onS();
 (function(){const q=document.querySelector(".quote"),bgq=q&&q.querySelector(".bg");if(!bgq||matchMedia("(prefers-reduced-motion: reduce)").matches)return;let t=false;
