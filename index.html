@@ -633,6 +633,21 @@ header.hd5.scrolled .burger{color:#161616}
   .ha-note{margin-bottom:16px;padding:7px 13px;font-size:11px}
   .mnav{top:72px}
 }
+
+.vband{background:#fff}
+.vbox{position:relative;border-radius:18px;overflow:hidden;height:clamp(420px,46vw,620px);background:#2A2E26 url(img/obora-video-poster.webp) center/cover no-repeat}
+.vbox video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.vbox::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(10,12,8,.72) 0%,rgba(10,12,8,.3) 48%,rgba(10,12,8,0) 78%);pointer-events:none}
+.vcap{position:absolute;left:56px;right:56px;bottom:52px;z-index:2;color:#fff;display:flex;flex-direction:column;align-items:flex-start;gap:6px}
+.vcap .veb{font-size:12px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.88);margin:0}
+.vband .vcap h2{color:#fff;margin:0 0 18px;max-width:640px}
+.vbtn{display:inline-flex;align-items:center;gap:14px;height:48px;padding:0 8px 0 22px;background:#fff;color:#161616;border-radius:12px;font-size:12px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;text-decoration:none;transition:background .25s}
+.vbtn i{width:32px;height:32px;border-radius:50%;background:#161616;color:#fff;display:grid;place-items:center;font-style:normal}
+.vbtn:hover{background:#EEEEEA}
+.vbtn:focus-visible,.vplay:focus-visible{outline:2px solid #fff;outline-offset:3px}
+.vplay{position:absolute;right:20px;bottom:20px;z-index:3;width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,.6);background:rgba(0,0,0,.25);color:#fff;display:grid;place-items:center;cursor:pointer}
+.vplay .ip{display:none}.vplay.paused .ip{display:block}.vplay.paused .is{display:none}
+@media (max-width:700px){.vbox::after{background:linear-gradient(0deg,rgba(10,12,8,.8) 0%,rgba(10,12,8,.45) 55%,rgba(10,12,8,0) 85%)}.vcap{left:24px;right:24px;bottom:28px}.vbox{height:460px}.vplay{right:14px;top:14px;bottom:auto}}
 </style>
 <style>/* Leaflet 1.9.4 */
 /* required styles */
@@ -1415,6 +1430,20 @@ svg.leaflet-image-layer.leaflet-interactive path {
   </div>
 </section>
 
+<section class="vband" aria-label="Video projektu">
+  <div class="wrap">
+    <div class="vbox rv">
+      <video id="oborav" muted loop playsinline preload="none" poster="img/obora-video-poster.webp" aria-hidden="true"><source src="img/obora-video.mp4" type="video/mp4"></video>
+      <div class="vcap">
+        <p class="veb">Bystrc Obora · dokončení 2027</p>
+        <h2>Bydlení obklopené přírodou</h2>
+        <a class="vbtn" href="#byty">Prohlédnout byty <i aria-hidden="true"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 7h10M8 3l4 4-4 4"/></svg></i></a>
+      </div>
+      <button class="vplay" type="button" id="oborap" aria-label="Pozastavit video"><svg class="is" width="14" height="14" viewBox="0 0 14 14" fill="currentColor" aria-hidden="true"><rect x="3" y="2" width="3" height="10"/><rect x="8" y="2" width="3" height="10"/></svg><svg class="ip" width="14" height="14" viewBox="0 0 14 14" fill="currentColor" aria-hidden="true"><path d="M4 2l8 5-8 5z"/></svg></button>
+    </div>
+  </div>
+</section>
+
 <section class="steps-sec">
   <div class="wrap">
     <h2 class="rv">Od výběru bytu po předání klíčů</h2>
@@ -1656,6 +1685,15 @@ c.querySelector(".more").onclick=()=>c.classList.toggle("open");
 ico.onclick=open;const o=document.getElementById("cookieOpen");if(o)o.onclick=e=>{e.preventDefault();open()};
 if(v)ico.classList.add("show");else setTimeout(open,900)})();
 (function(){const im=[...document.querySelectorAll(".hero5 .slides img")];if(im.length<2||matchMedia("(prefers-reduced-motion: reduce)").matches)return;let i=0;setInterval(()=>{im[i].classList.remove("on");i=(i+1)%im.length;im[i].classList.add("on")},6000)})();
+</script>
+<script>
+(()=>{const v=document.getElementById("oborav"),b=document.getElementById("oborap");if(!v)return;
+let user=false;const rm=matchMedia("(prefers-reduced-motion: reduce)").matches;
+const set=()=>{b.classList.toggle("paused",v.paused);b.setAttribute("aria-label",v.paused?"Přehrát video":"Pozastavit video")};
+v.addEventListener("play",set);v.addEventListener("pause",set);
+b.onclick=()=>{user=true;v.paused?v.play():v.pause()};
+if(rm){user=true;set();return}
+new IntersectionObserver(e=>{if(user)return;e[0].isIntersecting?v.play().catch(()=>{}):v.pause()},{threshold:.25}).observe(v);set()})();
 </script>
 </body>
 </html>
