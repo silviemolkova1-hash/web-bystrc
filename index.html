@@ -1710,6 +1710,38 @@ section#byty .row.is-sold,section#byty .row.is-sold .id,section#byty .row.is-sol
 section#byty .u-cta{background:#5E6B55;color:#fff}
 section#byty .u-cta:hover{background:#6B7862}
 @media(min-width:1001px){.about .intro,section#projekt .intro{max-width:1100px}.manifest{max-width:1000px;text-wrap:balance}}
+
+/* nižší skleněné sloupečky: ikona před textem, jemná animace */
+@media(min-width:1001px){
+.heroB .hb-bot{height:120px}
+.heroB .hb-media{clip-path:inset(0 0 -120px 0)}
+.heroB .hb-media img{height:calc(100% + 120px)}
+.heroB .hb-shade{bottom:-120px}
+.heroB .hb-st,.heroB .hb-st:first-child,.heroB .hb-st:nth-child(odd),.heroB .hb-st:nth-child(even),.heroB .hb-st:nth-child(3){display:grid;grid-template-columns:44px 1fr;grid-template-rows:auto auto;column-gap:16px;row-gap:2px;align-content:center;align-items:center;padding:0 28px;transition:background .45s ease}
+.heroB .hb-st .hb-ic{grid-row:1/3;width:44px;height:44px;margin:0;transition:transform .45s cubic-bezier(.2,.7,.2,1),background .45s}
+.heroB .hb-st .hb-ic svg{width:20px;height:20px}
+.heroB .hb-st b{font-size:22px;line-height:1.15;margin:0;align-self:end}
+.heroB .hb-st .hb-l{font-size:13px;line-height:1.35;align-self:start}
+.heroB .hb-st:hover{background:rgba(255,255,255,.24)!important}
+.heroB .hb-st:hover .hb-ic{transform:scale(1.08);background:rgba(255,255,255,.26)}
+.heroB .hb-cta{padding:0 28px;justify-content:center}
+.heroB .hb-cta-b{flex-direction:row;align-items:center;gap:14px}
+}
+@media(min-width:1001px) and (max-width:1180px){.heroB .hb-st,.heroB .hb-st:first-child,.heroB .hb-st:nth-child(odd),.heroB .hb-st:nth-child(even),.heroB .hb-st:nth-child(3){padding:0 16px;grid-template-columns:38px 1fr;column-gap:12px}.heroB .hb-st .hb-ic{width:38px;height:38px}.heroB .hb-st b{font-size:18px}.heroB .hb-st .hb-l{font-size:12px}}
+@media(prefers-reduced-motion:reduce){.heroB .hb-st:hover .hb-ic{transform:none}}
+@media(min-width:1001px){.heroB .hb-top{height:clamp(520px,calc(100svh - 120px),880px)}}
+
+/* užší boční panel (cca polovina) */
+@media(min-width:1001px){
+.heroB .hb-top{grid-template-columns:minmax(0,1fr) 160px}
+.heroB .hb-bot,.heroB .hb-bot{grid-template-columns:repeat(4,minmax(0,1fr)) 160px}
+.heroB .hb-panel{padding:36px 24px;gap:26px}
+.heroB .hb-logo{width:76px;height:76px}
+.heroB .hb-logo svg{width:42px;height:25px}
+.heroB .hb-nav a{font-size:15px}
+.heroB .hb-cta{padding:0 24px}
+.heroB .hb-cta-b{flex-direction:column;align-items:flex-start;gap:10px;font-size:11px;letter-spacing:.14em}
+}
 </style>
 </head>
 <body>
