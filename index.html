@@ -1875,6 +1875,29 @@ section#projekt .pp{display:grid;grid-template-columns:5fr 6fr;gap:clamp(48px,7v
 .about .grid{grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:clamp(40px,6vw,110px)}
 @media(min-width:1001px) and (max-width:1100px){header.hd5,header.hd5.scrolled{justify-content:flex-end}}
 @media(min-width:1001px) and (max-width:1180px){.about .grid{grid-template-columns:1fr}.about .photo{aspect-ratio:16/10}}
+
+/* === Zadání 18. 11.: bez horní lišty na desktopu, širší odstup od panelu, FAQ === */
+@media(min-width:1001px){
+header.hd5,header.hd5.scrolled{display:none!important}
+section,footer{scroll-margin-top:0}
+.wrap{padding-left:clamp(48px,5vw,88px);padding-right:clamp(48px,5vw,88px)}
+.heroB .hb-txt{left:calc(max(0px,(100vw - 160px - var(--max))/2) + clamp(48px,5vw,88px))}
+.heroB .hb-panel{gap:22px}
+.heroB .hb-nav{gap:10px}
+}
+@media(min-width:1001px) and (max-height:700px){.heroB .hb-panel{padding-top:24px;gap:16px}.heroB .hb-logo{width:64px;height:64px}.heroB .hb-nav{gap:6px}}
+/* nabídka bytů: tabulka s odstupem od panelu, bez změny vzhledu */
+@media(min-width:1001px){section#byty .wrap{padding-right:clamp(64px,6.5vw,120px)}}
+@media(min-width:1001px) and (max-width:1240px){section#byty .table{overflow-x:auto}}
+/* FAQ: podnadpis a jemné rozbalení */
+#dotazy .qa-lead{margin:-28px 0 40px;font-size:18px;color:#6E6A60}
+.qa summary{cursor:pointer;transition:color .3s}
+.qa summary:hover .qt{color:#1E2A1D}
+details.qa[open] p{animation:qaOpen .45s ease both}
+@keyframes qaOpen{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+.qa .qb{transition:transform .35s ease,background .3s}
+@media(max-width:700px){.qa summary{grid-template-columns:36px 1fr 40px;font-size:18px;padding:20px 0}.qa p{margin:-4px 0 22px 50px}}
+@media(prefers-reduced-motion:reduce){details.qa[open] p{animation:none}}
 </style>
 </head>
 <body>
@@ -1883,12 +1906,12 @@ section#projekt .pp{display:grid;grid-template-columns:5fr 6fr;gap:clamp(48px,7v
 
 <header class="hd5">
   <a href="#" class="logo" aria-label="Bystrc Obora"><svg class="lm" width="68" height="41" viewBox="0 0 328 196" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="7" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"><polyline points="10,190 10,110 60,60 110,110 110,190"/><polyline points="125,190 125,110 175,60 225,110 225,190"/><polygon points="248,190 263,112 278,190"/><polygon points="285,190 302,92 319,190"/><line x1="0" y1="190" x2="328" y2="190"/></g></svg><span class="lt"><b>Bystrc</b> <span>Obora</span></span></a>
-  <nav class="hnav"><a href="#projekt">O projektu</a><a href="#byty">Nabídka bytů</a><a href="#lokalita">Lokalita</a><a href="#galerie">Galerie</a><a href="#kontakt">Kontakt</a></nav>
+  <nav class="hnav"><a href="#projekt">O projektu</a><a href="#byty">Nabídka bytů</a><a href="#lokalita">Lokalita</a><a href="#galerie">Galerie</a><a href="#standard">Standardy</a><a href="#dotazy">Časté otázky</a><a href="#kontakt">Kontakt</a></nav>
   <a class="hcta" href="#kontakt"><span>Mám zájem</span><i class="ar" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11L11 3M5 3h6v6"/></svg></i></a>
   <button class="burger" aria-label="Otevřít menu" aria-expanded="false"><span></span></button>
 </header>
 <nav class="mnav" aria-label="Mobilní menu">
-  <a href="#projekt">O projektu</a><a href="#byty">Nabídka bytů</a><a href="#lokalita">Lokalita</a><a href="#galerie">Galerie</a><a href="#kontakt">Kontakt</a>
+  <a href="#projekt">O projektu</a><a href="#byty">Nabídka bytů</a><a href="#lokalita">Lokalita</a><a href="#galerie">Galerie</a><a href="#standard">Standardy</a><a href="#dotazy">Časté otázky</a><a href="#kontakt">Kontakt</a>
   <a href="#kontakt" class="btn btn-dark"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2z"/></svg>Mám zájem o byt</a>
 </nav>
 <a href="#" class="totop" aria-label="Zpět nahoru"><svg width="16" height="18" viewBox="0 0 16 18" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M8 17V1M1 8l7-7 7 7"/></svg></a>
@@ -1906,7 +1929,7 @@ section#projekt .pp{display:grid;grid-template-columns:5fr 6fr;gap:clamp(48px,7v
     </div>
     <aside class="hb-panel">
       <a href="#" class="hb-logo" aria-label="Bystrc Obora, zpět nahoru"><svg width="58" height="35" viewBox="0 0 328 196" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="7" stroke-linejoin="miter" stroke-miterlimit="10"><polyline points="10,190 10,110 60,60 110,110 110,190"/><polyline points="125,190 125,110 175,60 225,110 225,190"/><polygon points="248,190 263,112 278,190"/><polygon points="285,190 302,92 319,190"/><line x1="0" y1="190" x2="328" y2="190"/></g></svg></a>
-      <nav class="hb-nav" aria-label="Hlavní menu"><a href="#projekt">O projektu</a><a href="#byty">Nabídka bytů</a><a href="#lokalita">Lokalita</a><a href="#galerie">Galerie</a><a href="#kontakt">Kontakt</a></nav>
+      <nav class="hb-nav" aria-label="Hlavní menu"><a href="#projekt">O projektu</a><a href="#byty">Nabídka bytů</a><a href="#lokalita">Lokalita</a><a href="#galerie">Galerie</a><a href="#standard">Standardy</a><a href="#dotazy">Časté otázky</a><a href="#kontakt">Kontakt</a></nav>
       <a class="hb-pbtn2" href="#byty">Volné byty</a>
     </aside>
   </div>
@@ -2035,6 +2058,7 @@ section#projekt .pp{display:grid;grid-template-columns:5fr 6fr;gap:clamp(48px,7v
 <section class="qa-sec s-white" id="dotazy">
   <div class="wrap">
     <h2 class="qa-h qa-h-r rv">Na co se lidé nejčastěji ptají?</h2>
+    <p class="sec-lead qa-lead rv">Často se nás ptáte</p>
     <div class="qa-grid qa-rev rv">
       <div class="qa-img"><img loading="lazy" decoding="async" src="img/balkony.webp" alt="Balkony bytového domu Bystrc Obora v zeleni"></div>
       <div class="qa-list">
@@ -2246,7 +2270,7 @@ if(v)ico.classList.add("show");else setTimeout(open,900)})();
 (function(){const im=[...document.querySelectorAll(".hero5 .slides img")];if(im.length<2||matchMedia("(prefers-reduced-motion: reduce)").matches)return;let i=0;setInterval(()=>{im[i].classList.remove("on");i=(i+1)%im.length;im[i].classList.add("on")},6000)})();
 </script>
 <script>
-(()=>{const ids=["projekt","byty","lokalita","galerie","koupe","standard","dotazy","kontakt"],map={projekt:"projekt",byty:"byty",lokalita:"lokalita",galerie:"galerie",kontakt:"kontakt"};
+(()=>{const ids=["projekt","byty","lokalita","galerie","koupe","standard","dotazy","kontakt"],map={projekt:"projekt",byty:"byty",lokalita:"lokalita",galerie:"galerie",standard:"standard",dotazy:"dotazy",kontakt:"kontakt"};
 const navs=[...document.querySelectorAll(".hb-nav,header.hd5 .hnav")];
 const set=id=>{navs.forEach(n=>{n.classList.toggle("has-on",!!id);n.querySelectorAll("a").forEach(a=>a.classList.toggle("on",!!id&&a.getAttribute("href")==="#"+id))})};
 const vis=new Map();
