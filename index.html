@@ -1405,6 +1405,39 @@ footer.ft4 a,footer.ft4 .ft-col span{color:rgba(255,255,255,.8)}
 /* méně zaoblení */
 .benefit,figure.photo,.photo img,.ov-panel,.ov-mapwrap,.ov-map,.ov-addr,.ov-type,.ov-type button,.gal figure,.gal img,.step,.qa-img,.qa-img img,#kontakt form,.btn,.cookie,.cookie button,.st,.leaflet-control-zoom,.leaflet-bar a,.u-cta,.qb,#kontakt input,#kontakt select,#kontakt textarea,.vbox{border-radius:2px!important}
 section#projekt .benefit:nth-child(1),section#projekt .benefit:nth-child(2),section#projekt .benefit:nth-child(3){background:#fff;box-shadow:none}
+
+/* === Úvod B: úzký boční panel, vyladěný spodní pás === */
+.heroB .hb-top{grid-template-columns:minmax(0,1fr) 248px;height:clamp(500px,calc(100svh - 230px),760px)}
+.heroB .hb-top>*{min-height:0}
+.heroB .hb-panel{padding:40px 36px;gap:28px;overflow:hidden}
+.heroB .hb-logo{width:92px;height:92px}
+.heroB .hb-logo svg{width:50px;height:30px}
+.heroB .hb-nav{gap:12px}
+.heroB .hb-nav a{font-size:16px;padding:2px 0}
+.heroB .hb-bot{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));min-height:0}
+.heroB .hb-stats{display:contents}
+.heroB .hb-st,.heroB .hb-st:first-child,.heroB .hb-st:nth-child(odd){display:flex;flex-direction:column;align-items:flex-start;gap:0;padding:36px 36px 40px;border:0;border-left:1px solid #DDD7CB;background:#F4F1EA}
+.heroB .hb-st:first-child{border-left:0}
+.heroB .hb-ic{width:48px;height:48px;margin:0 0 22px}
+.heroB .hb-ic svg{width:22px;height:22px}
+.heroB .hb-st b{font-size:28px;line-height:1.1;font-weight:500;letter-spacing:-.015em;margin:0 0 6px}
+.heroB .hb-st .hb-l{font-size:15px;line-height:1.4;color:#2A2A2A;font-weight:500;padding:0;margin:0}
+.heroB .hb-st .hb-d{font-size:14px;line-height:1.55;color:#5E5D57;margin-top:12px;max-width:300px;padding:0}
+.heroB .hb-cta{padding:36px 36px 40px;justify-content:space-between;gap:24px}
+.heroB .hb-cta-p{font-size:15px}
+.heroB .hb-cta-b{font-size:18px;gap:14px;white-space:nowrap}
+.heroB .hb-cta-b svg{width:28px;flex:none}
+@media(max-width:1180px){.heroB .hb-bot{grid-template-columns:repeat(2,minmax(0,1fr))}.heroB .hb-st:nth-child(3){border-left:0;border-top:1px solid #DDD7CB}.heroB .hb-st:nth-child(1),.heroB .hb-st:nth-child(2){border-bottom:0}.heroB .hb-cta{border-top:0}.heroB .hb-cta-b{white-space:normal}}
+@media(max-width:1000px){
+.heroB .hb-top{grid-template-columns:1fr;height:78svh;min-height:520px}
+.heroB .hb-panel{display:none}
+.heroB .hb-bot{grid-template-columns:1fr}
+.heroB .hb-st,.heroB .hb-st:first-child,.heroB .hb-st:nth-child(odd),.heroB .hb-st:nth-child(3){display:grid;grid-template-columns:48px 1fr;column-gap:16px;padding:22px 24px;border-left:0;border-top:1px solid #DDD7CB}
+.heroB .hb-st:first-child{border-top:0}
+.heroB .hb-ic{grid-row:span 3;margin:0}
+.heroB .hb-st b{font-size:22px;margin:0}
+.heroB .hb-st .hb-d{margin-top:6px}
+.heroB .hb-cta{padding:28px 24px}}
 </style>
 </head>
 <body>
@@ -1442,9 +1475,9 @@ section#projekt .benefit:nth-child(1),section#projekt .benefit:nth-child(2),sect
   </div>
   <div class="hb-bot">
     <div class="hb-stats">
-      <div class="hb-st"><span class="hb-ic" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20V10l5-5 5 5v10M13 20V10l4-4 4 4v10M2 20h20"/></svg></span><b>[počet] bytů</b><span>Dispozice 2+kk až 4+kk</span></div>
-      <div class="hb-st"><span class="hb-ic" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="13" cy="4" r="1.6"/><path d="M10 21l2-6 3 3v3M9 12l2-4 3 1 2 3 3 1M12 15l-1-4"/></svg></span><b>13 minut</b><span>Pěšky k Brněnské přehradě</span></div>
-      <div class="hb-st"><span class="hb-ic" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M9 3v4M15 3v4"/></svg></span><b>2027</b><span>Plánované dokončení</span></div>
+      <div class="hb-st"><span class="hb-ic" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20V10l5-5 5 5v10M13 20V10l4-4 4 4v10M2 20h20"/></svg></span><b>[počet] bytů</b><span class="hb-l">Dispozice 2+kk až 4+kk</span><span class="hb-d">Jen dva domy a&nbsp;pár sousedů. Komorní bydlení bez sídlištní anonymity.</span></div>
+      <div class="hb-st"><span class="hb-ic" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="13" cy="4" r="1.6"/><path d="M10 21l2-6 3 3v3M9 12l2-4 3 1 2 3 3 1M12 15l-1-4"/></svg></span><b>13 minut</b><span class="hb-l">Pěšky k Brněnské přehradě</span><span class="hb-d">Lesní cesty a&nbsp;cyklostezky začínají hned za domem.</span></div>
+      <div class="hb-st"><span class="hb-ic" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M9 3v4M15 3v4"/></svg></span><b>2027</b><span class="hb-l">Plánované dokončení</span><span class="hb-d">Kdo si vybere teď, má na výběr celou nabídku bytů.</span></div>
     </div>
     <a class="hb-cta" href="#byty"><span class="hb-cta-p">Objevte to pravé místo, kde si můžete užívat klid přírody a&nbsp;přitom zůstat na dosah všeho, co Brno nabízí.</span><span class="hb-cta-b"><svg width="34" height="18" viewBox="0 0 34 18" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M0 9h32M24 1l8 8-8 8"/></svg>Prohlédnout nabídku bytů</span></a>
   </div>
