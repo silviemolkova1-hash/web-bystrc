@@ -1836,6 +1836,45 @@ section#byty .st.free{background:#D1EAD2!important;color:#1E2A1D!important}
 .hb-pbtn2:hover,.heroB .hb-pbtn2:hover{background:#D1EAD2!important}
 section#byty .st.free{background:#A5D6A7!important;color:#1E2A1D!important}
 @media(max-width:1000px){.heroB .hb-cta{background:#A5D6A7!important}.heroB .hb-cta:hover{background:#D1EAD2!important}.heroB .hb-cta-b{color:#1E2A1D}}
+
+/* === Fixní pravý panel, scroll-spy, představení projektu === */
+@media(min-width:1001px){
+body{padding-right:160px}
+.heroB .hb-panel{position:fixed;top:0;right:0;bottom:0;width:160px;height:100vh;z-index:45;overflow-y:auto;box-sizing:border-box}
+.heroB .hb-top{grid-template-columns:minmax(0,1fr)}
+.heroB .hb-bot,.heroB .hb-bot{grid-template-columns:repeat(4,minmax(0,1fr))}
+.heroB .hb-ctaw{display:none}
+.heroB .hb-txt{left:calc(max(0px,(100vw - 160px - var(--max))/2) + 40px)}
+header.hd5,header.hd5.scrolled{right:160px;left:0;width:auto;padding-left:calc(max(0px,(100% - var(--max))/2) + 40px);padding-right:calc(max(0px,(100% - var(--max))/2) + 40px);display:flex;justify-content:space-between;align-items:center}
+header.hd5 .logo{display:none}
+header.hd5 .hnav{margin:0;justify-self:auto}
+header.hd5 .hnav a:first-child{padding-left:0}
+.totop{right:184px!important}
+.note{right:184px!important}
+section,footer{scroll-margin-top:84px}
+}
+@media(max-width:1000px){section{scroll-margin-top:68px}}
+/* aktivní položka menu */
+.hb-nav a,header.hd5 .hnav a{transition:color .4s ease,opacity .4s ease,transform .3s}
+.hb-nav a{position:relative}
+.hb-nav.has-on a:not(.on){color:rgba(255,255,255,.55)}
+.hb-nav a.on{color:#fff}
+.hb-nav a::before{content:"";position:absolute;left:-13px;top:50%;width:5px;height:5px;border-radius:50%;background:#A5D6A7;transform:translateY(-50%) scale(0);transition:transform .4s ease}
+.hb-nav a.on::before{transform:translateY(-50%) scale(1)}
+header.hd5.scrolled .hnav.has-on a:not(.on){color:rgba(255,255,255,.55)}
+header.hd5.scrolled .hnav a.on{color:#fff}
+/* představení projektu */
+section#projekt .pp{display:grid;grid-template-columns:5fr 6fr;gap:clamp(48px,7vw,110px);align-items:center;margin-bottom:clamp(90px,10vw,150px)}
+.pp-h{font-size:clamp(40px,4.6vw,72px);line-height:1.02;letter-spacing:-.03em;font-weight:400;margin:0 0 28px;color:#23261F}
+.pp-lead{font-size:clamp(19px,1.5vw,22px);line-height:1.5;color:#23261F;margin:0 0 18px;max-width:520px}
+.pp-p{font-size:16px;line-height:1.7;color:#6E6A60;margin:0;max-width:480px}
+.pp-img{margin:0;aspect-ratio:4/3;overflow:hidden;border-radius:2px}
+.pp-img img{width:100%;height:100%;object-fit:cover;display:block}
+@media(max-width:900px){section#projekt .pp{grid-template-columns:1fr;gap:36px}}
+@media(min-width:1001px){section,footer{scroll-margin-top:76px}}
+.about .grid{grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:clamp(40px,6vw,110px)}
+@media(min-width:1001px) and (max-width:1100px){header.hd5,header.hd5.scrolled{justify-content:flex-end}}
+@media(min-width:1001px) and (max-width:1180px){.about .grid{grid-template-columns:1fr}.about .photo{aspect-ratio:16/10}}
 </style>
 </head>
 <body>
@@ -1882,9 +1921,13 @@ section#byty .st.free{background:#A5D6A7!important;color:#1E2A1D!important}
   </div>
 </section>
 <section class="about sand" id="projekt">
-  <div class="wrap intro rv">
-    <p class="manifest">Objevte to pravé místo, kde si můžete užívat klid přírody a&nbsp;přitom zůstat na dosah všeho, co Brno nabízí.</p>
-    <div class="sig"><svg width="46" height="28" viewBox="0 0 328 196" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="11"><polyline points="10,190 10,110 60,60 110,110 110,190"/><polyline points="125,190 125,110 175,60 225,110 225,190"/><polygon points="248,190 263,112 278,190"/><polygon points="285,190 302,92 319,190"/><line x1="0" y1="190" x2="328" y2="190"/></g></svg></div>
+  <div class="wrap pp">
+    <div class="pp-txt rv">
+      <h2 class="pp-h">Místo, kde se dobře žije.</h2>
+      <p class="pp-lead">Moderní architektura, promyšlené dispozice a&nbsp;zeleň, která se stává přirozenou součástí každého dne.</p>
+      <p class="pp-p">Jen 16 bytů v&nbsp;klidné části Brna-Bystrce. Blízko přírodě, přehradě i&nbsp;všemu, co potřebujete pro pohodlný život.</p>
+    </div>
+    <figure class="pp-img rv"><img loading="lazy" decoding="async" src="img/letecky.webp" alt="Pohled shora na dva bytové domy Bystrc Obora mezi stromy"></figure>
   </div>
   <div class="wrap grid">
     <figure class="photo rv"><img loading="lazy" decoding="async" src="img/balkony.webp" alt="Prosklené balkony obrácené do zeleně"><figcaption>Prosklené balkony do zeleně</figcaption></figure>
@@ -1892,8 +1935,8 @@ section#byty .st.free{background:#A5D6A7!important;color:#1E2A1D!important}
       <div><h2>Klid, který začíná za vašimi okny</h2>
       <p class="lead">Velká okna a prosklené balkony propojují interiér s okolní zelení a přivádějí do bytů dostatek přirozeného světla. Vlastní vjezd a kryté parkování pod pergolou přispívají k pohodlí a soukromí každodenního bydlení.</p></div>
       <div class="benefits">
-        <div class="benefit"><svg class="ic" width="44" height="30" viewBox="0 0 44 30" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="miter" stroke-linecap="square" aria-hidden="true"><polygon points="9,28 15,6 21,28"/><polygon points="20,28 27,2 34,28"/><line x1="0" y1="28.5" x2="44" y2="28.5"/></svg><div><h3>Příroda na dosah</h3><p>Lesy v bezprostředním okolí, zeleň na každém kroku a Brněnská přehrada jen pár minut pěšky.</p></div></div>
-        <div class="benefit"><svg class="ic" width="44" height="30" viewBox="0 0 44 30" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="miter" stroke-linecap="square" aria-hidden="true"><polyline points="4,28.5 4,4 40,4 40,28.5"/><line x1="15" y1="4" x2="15" y2="20"/><line x1="29" y1="4" x2="29" y2="20"/><line x1="12" y1="20" x2="18" y2="20"/><line x1="26" y1="20" x2="32" y2="20"/><line x1="0" y1="28.5" x2="44" y2="28.5"/></svg><div><h3>Zázemí pro rodinný život</h3><p>Klidné prostředí, dostatek soukromí a příroda v okolí vytvářejí příjemné místo pro život jednotlivců i rodin.</p></div></div>
+        <div class="benefit"><svg class="ic" width="44" height="30" viewBox="0 0 44 30" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="miter" stroke-linecap="square" aria-hidden="true"><polygon points="9,28 15,6 21,28"/><polygon points="20,28 27,2 34,28"/><line x1="0" y1="28.5" x2="44" y2="28.5"/></svg><div><h3>Příroda na dosah</h3><p>Lesní cesty a cyklostezky začínají hned za domem.</p></div></div>
+        <div class="benefit"><svg class="ic" width="44" height="30" viewBox="0 0 44 30" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="miter" stroke-linecap="square" aria-hidden="true"><polyline points="4,28.5 4,4 40,4 40,28.5"/><line x1="15" y1="4" x2="15" y2="20"/><line x1="29" y1="4" x2="29" y2="20"/><line x1="12" y1="20" x2="18" y2="20"/><line x1="26" y1="20" x2="32" y2="20"/><line x1="0" y1="28.5" x2="44" y2="28.5"/></svg><div><h3>Zázemí pro rodinný život</h3><p>Dostatek soukromí a&nbsp;prostoru pro děti, páry i&nbsp;jednotlivce.</p></div></div>
         <div class="benefit"><svg class="ic" width="44" height="30" viewBox="0 0 44 30" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="miter" stroke-linecap="square" aria-hidden="true"><polyline points="2,10 22,3 42,10"/><line x1="6" y1="8.6" x2="6" y2="28.5"/><line x1="38" y1="8.6" x2="38" y2="28.5"/><polyline points="12,25 12,19 15,15 29,15 32,19 32,25 12,25"/><line x1="0" y1="28.5" x2="44" y2="28.5"/></svg><div><h3>Pohodlné parkování</h3><p>Kryté parkovací stání pod pergolou přímo u domu vám usnadní každodenní příjezdy i odjezdy.</p></div></div>
         <div class="benefit"><svg class="ic" width="44" height="30" viewBox="0 0 44 30" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="miter" stroke-linecap="square" aria-hidden="true"><rect x="8" y="3" width="28" height="22"/><line x1="22" y1="3" x2="22" y2="25"/><line x1="8" y1="14" x2="36" y2="14"/><line x1="0" y1="28.5" x2="44" y2="28.5"/></svg><div><h3>Světlo a výhledy</h3><p>Velká a rohová okna vpouštějí do interiéru dostatek denního světla. Prosklené balkony navíc otevírají výhledy do okolní zeleně.</p></div></div>
       </div>
@@ -2064,7 +2107,7 @@ section#byty .st.free{background:#A5D6A7!important;color:#1E2A1D!important}
 (function(){const sl=[...document.querySelectorAll(".hero .slides img")];if(sl.length<2||matchMedia("(prefers-reduced-motion: reduce)").matches)return;let i=0;setInterval(()=>{sl[i].classList.remove("on");i=(i+1)%sl.length;sl[i].classList.add("on")},7500)})();
 const hd=document.querySelector("header");
 function onS(){
-  const hb=document.querySelector(".heroB"),hbt=document.querySelector(".hb-top"),lk=document.querySelector('.hb-nav a[href="#lokalita"]'),thr=hb?(innerWidth>1000&&lk?Math.max(40,lk.getBoundingClientRect().top+scrollY):8):8;hd.classList.toggle("scrolled",scrollY>thr||document.body.classList.contains("menu-open"));
+  const hb=document.querySelector(".heroB"),hbt=document.querySelector(".hb-top"),lk=document.querySelector('.hb-nav a[href="#lokalita"]'),thr=hb?(innerWidth>1000?240:8):8;hd.classList.toggle("scrolled",scrollY>thr||document.body.classList.contains("menu-open"));
 }
 addEventListener("scroll",onS,{passive:true});onS();
 (function(){const q=document.querySelector(".quote"),bgq=q&&q.querySelector(".bg");if(!bgq||matchMedia("(prefers-reduced-motion: reduce)").matches)return;let t=false;
@@ -2201,6 +2244,14 @@ c.querySelector(".more").onclick=()=>c.classList.toggle("open");
 ico.onclick=open;const o=document.getElementById("cookieOpen");if(o)o.onclick=e=>{e.preventDefault();open()};
 if(v)ico.classList.add("show");else setTimeout(open,900)})();
 (function(){const im=[...document.querySelectorAll(".hero5 .slides img")];if(im.length<2||matchMedia("(prefers-reduced-motion: reduce)").matches)return;let i=0;setInterval(()=>{im[i].classList.remove("on");i=(i+1)%im.length;im[i].classList.add("on")},6000)})();
+</script>
+<script>
+(()=>{const ids=["projekt","byty","lokalita","galerie","koupe","standard","dotazy","kontakt"],map={projekt:"projekt",byty:"byty",lokalita:"lokalita",galerie:"galerie",kontakt:"kontakt"};
+const navs=[...document.querySelectorAll(".hb-nav,header.hd5 .hnav")];
+const set=id=>{navs.forEach(n=>{n.classList.toggle("has-on",!!id);n.querySelectorAll("a").forEach(a=>a.classList.toggle("on",!!id&&a.getAttribute("href")==="#"+id))})};
+const vis=new Map();
+const io=new IntersectionObserver(es=>{es.forEach(e=>vis.set(e.target.id,e.isIntersecting));let cur=null;for(const id of ids){if(vis.get(id)){cur=map[id]||null;break}}set(cur)},{rootMargin:"-45% 0px -50% 0px"});
+ids.forEach(id=>{const el=document.getElementById(id);if(el)io.observe(el)})})();
 </script>
 </body>
 </html>
