@@ -1662,6 +1662,54 @@ section.steps-sec .step.on,section.steps-sec .step:hover{box-shadow:0 14px 34px 
 .ov-type,.ov-type button{background:#F2F0EB}
 .ov-gmap{background:rgba(242,240,235,.9)}
 .totop,.cookie-ico{background:#F2F0EB!important;color:#23261F}
+
+/* skleněné sloupečky v úvodu */
+@media(min-width:1001px){
+.heroB .hb-st,.heroB .hb-st:first-child,.heroB .hb-st:nth-child(odd),.heroB .hb-st:nth-child(even),.heroB .hb-st:nth-child(3){background:rgba(255,255,255,.14)!important;backdrop-filter:blur(18px) saturate(1.2);-webkit-backdrop-filter:blur(18px) saturate(1.2);box-shadow:inset 1px 0 0 rgba(255,255,255,.18)}
+.heroB .hb-st:first-child{box-shadow:none}
+.heroB .hb-st b{color:#fff}
+.heroB .hb-st .hb-l{color:rgba(255,255,255,.78)}
+.heroB .hb-ic{background:rgba(255,255,255,.16);color:#fff;box-shadow:inset 0 0 0 1px rgba(255,255,255,.28)}
+.heroB .hb-shade{background:linear-gradient(0deg,rgba(18,22,14,.7) 0%,rgba(18,22,14,.32) 36%,rgba(18,22,14,0) 60%),linear-gradient(90deg,rgba(18,22,14,.38) 0%,rgba(18,22,14,0) 60%)}
+}
+/* tlačítko v hlavičce stejné jako blok v úvodu */
+header.hd5 .hcta,header.hd5.scrolled .hcta{background:#5E6B55;color:#fff}
+header.hd5 .hcta:hover,header.hd5.scrolled .hcta:hover{background:#6B7862;color:#fff}
+/* manifest na dva řádky */
+@media(min-width:1001px){.manifest{max-width:1040px;text-wrap:balance}}
+/* lokalita: nadpis vlevo, text vpravo zarovnané nahoru */
+section#lokalita .loc-head{display:grid;grid-template-columns:5fr 6fr;gap:80px;align-items:start;margin-bottom:56px}
+section#lokalita .loc-head h2{margin:0}
+section#lokalita .loc-head .lead{padding-top:34px;max-width:620px;font-size:17px;line-height:1.65;color:#6E6A60}
+section#lokalita .loc-head .lead p{margin:0}
+section#lokalita .loc-head .lead p+p{margin-top:16px}
+@media(max-width:900px){section#lokalita .loc-head{grid-template-columns:1fr;gap:20px}section#lokalita .loc-head .lead{padding-top:0}}
+/* pozadí sekcí: bílá místo světle zelené, standardy zůstávají světle zelené */
+section#galerie{background:#FFFFFF}
+section#standard{background:#E3E6DD}
+/* nabídka bytů: tmavě zelená */
+section#byty{background:#1E2A1D;color:#fff}
+section#byty h2{color:#fff}
+section#byty .eyebrow{color:rgba(255,255,255,.6)}
+section#byty .lead,section#byty p.foot,section#byty .foot{color:rgba(255,255,255,.75)}
+section#byty .chip{color:rgba(255,255,255,.65)}
+section#byty .chip:hover,section#byty .chip.on{color:#fff;border-color:#fff}
+section#byty .table{border-top-color:rgba(255,255,255,.25)}
+section#byty .row{border-color:rgba(255,255,255,.1);color:rgba(255,255,255,.9)}
+section#byty .row.h{color:rgba(255,255,255,.6)}
+section#byty .row:not(.h):hover{background:rgba(255,255,255,.05)}
+section#byty .row .id,section#byty .row .price{color:#fff}
+section#byty .link{color:#fff}
+section#byty .link:hover{color:#F2F0EB;opacity:.75}
+section#byty .st.free{background:#F2F0EB!important;color:#1E2A1D!important}
+section#byty .st.res{background:rgba(255,255,255,.14)!important;color:#fff!important;box-shadow:none!important}
+section#byty .st.sold{background:transparent!important;color:rgba(255,255,255,.5)!important;box-shadow:none!important}
+section#byty .row.is-res{background:rgba(255,255,255,.04)}
+section#byty .row.is-res,section#byty .row.is-res span{color:#fff}
+section#byty .row.is-sold,section#byty .row.is-sold .id,section#byty .row.is-sold .price{color:rgba(255,255,255,.35)}
+section#byty .u-cta{background:#5E6B55;color:#fff}
+section#byty .u-cta:hover{background:#6B7862}
+@media(min-width:1001px){.about .intro,section#projekt .intro{max-width:1100px}.manifest{max-width:1000px;text-wrap:balance}}
 </style>
 </head>
 <body>
@@ -1753,7 +1801,7 @@ section.steps-sec .step.on,section.steps-sec .step:hover{box-shadow:0 14px 34px 
   <div class="wrap">
     <div class="loc-head rv">
       <div>
-        <p class="eyebrow">Lokalita</p><h2>Brno na dosah. Příroda za rohem.</h2>
+        <p class="eyebrow">Lokalita</p><h2>Brno na dosah.<br>Příroda za rohem.</h2>
       </div>
       <div class="lead"><p>Bystrc patří k&nbsp;nejzelenějším částem Brna. Projekt vzniká v&nbsp;klidném prostředí obklopeném lesy, jen kousek od Brněnské přehrady. Na procházku do přírody můžete vyrazit přímo od domu, zatímco do centra Brna se autem dostanete přibližně za 20&nbsp;minut.</p><p>Každodenní pohodlí doplňuje občanská vybavenost v&nbsp;okolí, dobrá dostupnost služeb i&nbsp;možnosti aktivního odpočinku.</p></div>
     </div>
