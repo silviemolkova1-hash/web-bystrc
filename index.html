@@ -1636,6 +1636,27 @@ section#kontakt .person span{color:rgba(255,255,255,.72)}
 #kontakt form .btn,#kontakt form button.btn.btn-dark{background:#F2F0EB;color:#1E2A1D}
 #kontakt form .btn:hover,#kontakt form button.btn.btn-dark:hover{background:#fff;color:#1E2A1D}
 footer.ft4{background:#162015}
+
+/* hlavička: stejná interakce jako boční panel */
+header.hd5 .hnav a{transition:opacity .3s,transform .3s,color .3s}
+header.hd5 .hnav a:hover,header.hd5.scrolled .hnav a:hover{transform:translateX(4px);opacity:.75;background:none}
+.mnav a:not(.btn){transition:opacity .3s,transform .3s}
+.mnav a:not(.btn):hover,.mnav a:not(.btn):active{transform:translateX(6px);opacity:.75}
+/* patička na mobilu */
+@media(max-width:860px){
+footer.ft4 .ft-top{grid-template-columns:1fr 1fr;gap:36px 20px;padding:52px 24px 40px}
+footer.ft4 .ft-brand{grid-column:1/-1;order:0}
+footer.ft4 .ft-col:last-child{grid-column:1/-1;order:1;padding:22px 0;gap:8px}
+footer.ft4 nav.ft-col{order:2}
+footer.ft4 h3{font-size:11px;letter-spacing:.16em;margin-bottom:4px}
+footer.ft4 .ft-col a,footer.ft4 .ft-col span{font-size:15px}
+footer.ft4 .ft-col:last-child a{font-size:17px;color:#fff}
+footer.ft4 .ft-logo{flex-direction:row;align-items:center;gap:14px}
+footer.ft4 .ft-bar{background:transparent;color:rgba(255,255,255,.55)}
+footer.ft4 .ft-bar-in{padding:18px 24px 120px;gap:10px}
+footer.ft4 .ft-bar a{color:rgba(255,255,255,.75)}
+footer.ft4 .ft-links{flex-direction:column;gap:8px}
+}
 </style>
 </head>
 <body>
