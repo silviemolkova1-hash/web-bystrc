@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
+<script>document.documentElement.classList.add("anim")</script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Bystrc Obora: náhled úvodní stránky</title>
@@ -1460,6 +1461,63 @@ header.hd5 .hcta .ar svg{width:12px;height:12px}
 .u-cta{padding:5px 5px 5px 18px}.u-cta i{width:30px;height:30px}
 @media(max-width:860px){header.hd5,header.hd5.scrolled{padding-left:16px;padding-right:16px}}
 @media(max-width:1000px){.heroB .hb-st .hb-l{flex-basis:auto;padding-left:0;margin-top:0}.heroB .hb-st b{flex:none;margin:0 0 4px}.heroB .hb-ic{grid-row:auto}}
+
+/* === 17. 11. večer: animace, jemnější prvky === */
+/* úvod: text dole u sloupečků, fotka pod průsvitnými sloupečky, pomalý zoom */
+@media(min-width:1001px){
+.heroB .hb-media{overflow:visible;z-index:1}
+.heroB .hb-media img{top:0;left:0;right:auto;bottom:auto;width:100%;height:calc(100% + 200px)}
+.heroB .hb-shade{top:0;left:0;right:0;bottom:-200px;background:linear-gradient(0deg,rgba(18,22,14,.62) 0%,rgba(18,22,14,.25) 34%,rgba(18,22,14,0) 58%),linear-gradient(90deg,rgba(18,22,14,.38) 0%,rgba(18,22,14,0) 60%)}
+.heroB .hb-txt{top:auto;bottom:44px}
+.heroB .hb-bot{position:relative;z-index:2;height:200px}
+.heroB .hb-st,.heroB .hb-st:first-child,.heroB .hb-st:nth-child(odd),.heroB .hb-st:nth-child(3){background:rgba(244,241,234,.8);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-left-color:rgba(30,42,29,.12);justify-content:flex-end}
+.heroB .hb-st:first-child{border-left:0}
+.heroB .hb-ic{background:rgba(30,42,29,.88)}
+}
+.heroB .hb-media{overflow:hidden}
+@media(min-width:1001px){.heroB .hb-media{overflow:visible}}
+.heroB .hb-media img{transform-origin:50% 45%;animation:obZoom 40s ease-in-out infinite alternate;will-change:transform}
+@keyframes obZoom{from{transform:scale(1)}to{transform:scale(1.12)}}
+@keyframes obUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+@keyframes obFade{from{opacity:0}to{opacity:1}}
+.heroB .hb-txt>*{animation:obUp 1.1s cubic-bezier(.2,.7,.2,1) both}
+.heroB .hb-txt>*:nth-child(2){animation-delay:.15s}.heroB .hb-txt>*:nth-child(3){animation-delay:.3s}.heroB .hb-txt>*:nth-child(4){animation-delay:.45s}
+.heroB .hb-st,.heroB .hb-cta{animation:obUp 1s cubic-bezier(.2,.7,.2,1) both}
+.heroB .hb-st:nth-child(1){animation-delay:.35s}.heroB .hb-st:nth-child(2){animation-delay:.45s}.heroB .hb-st:nth-child(3){animation-delay:.55s}.heroB .hb-st:nth-child(4){animation-delay:.65s}.heroB .hb-cta{animation-delay:.75s}
+.heroB .hb-panel>*{animation:obFade 1.2s ease both;animation-delay:.2s}
+.heroB .hb-cta-b svg{transition:transform .4s}.heroB .hb-cta:hover .hb-cta-b svg{transform:translateX(6px)}
+.hb-nav a{transition:opacity .3s,transform .3s}.hb-nav a:hover{transform:translateX(4px)}
+/* jemné odhalování sekcí při scrollu */
+html.anim .rv{opacity:0;transform:translateY(24px);transition:opacity 1s ease,transform 1s cubic-bezier(.2,.7,.2,1)}
+html.anim .rv.in{opacity:1;transform:none}
+/* O projektu: jemnější karty s animací po najetí */
+section#projekt .benefit,section#projekt .benefit:nth-child(1),section#projekt .benefit:nth-child(2),section#projekt .benefit:nth-child(3),section#projekt .benefit:nth-child(4){background:rgba(255,255,255,.55);color:#161616;box-shadow:inset 0 0 0 1px rgba(30,42,29,.08);transition:transform .45s cubic-bezier(.2,.7,.2,1),background .45s,box-shadow .45s}
+section#projekt .benefit:nth-child(4) h3{color:#161616}
+section#projekt .benefit:nth-child(4) p{color:var(--muted)}
+section#projekt .benefit .ic{transition:transform .45s cubic-bezier(.2,.7,.2,1),color .45s}
+section#projekt .benefit:hover{transform:translateY(-6px);background:#fff;box-shadow:inset 0 0 0 1px rgba(30,42,29,.06),0 18px 40px rgba(30,42,29,.08)}
+section#projekt .benefit:hover .ic{transform:translateY(-3px);color:#3B4734}
+/* Kroky koupě: jemné podbarvení místo tmavě zelené */
+section.steps-sec .step{background:#F4F1EA;transition:background .45s,transform .45s cubic-bezier(.2,.7,.2,1),box-shadow .45s}
+section.steps-sec .step.on,section.steps-sec .step:hover{background:#EAE4D7;color:#161616;transform:translateY(-4px);box-shadow:0 14px 34px rgba(30,42,29,.07)}
+section.steps-sec .step.on h3,section.steps-sec .step:hover h3{color:#1E2A1D}
+section.steps-sec .step.on p,section.steps-sec .step:hover p{color:#55554F}
+/* poptávkový formulář: méně výrazný na zeleném pozadí */
+#kontakt form{background:rgba(255,255,255,.05);color:#fff;box-shadow:inset 0 0 0 1px rgba(255,255,255,.14)}
+#kontakt form label{color:rgba(255,255,255,.62)}
+#kontakt form input,#kontakt form select,#kontakt form textarea{color:#fff;border-bottom-color:rgba(255,255,255,.28)}
+#kontakt form input:focus,#kontakt form select:focus,#kontakt form textarea:focus{outline:0;border-bottom-color:#fff}
+#kontakt form select option{color:#161616}
+#kontakt form .check{color:rgba(255,255,255,.72)}
+#kontakt form .check a{color:#fff}
+#kontakt form .check input{accent-color:#F4F1EA}
+#kontakt form .btn,#kontakt form button.btn.btn-dark{background:#F4F1EA;color:#1E2A1D}
+#kontakt form .btn:hover,#kontakt form button.btn.btn-dark:hover{background:#fff}
+#kontakt form .thanks{color:#fff}
+/* hlavička: tlačítko bez šipky */
+header.hd5 .hcta .ar{display:none}
+header.hd5 .hcta,header.hd5.scrolled .hcta{padding:0 18px}
+@media(prefers-reduced-motion:reduce){.heroB .hb-media img,.heroB .hb-txt>*,.heroB .hb-st,.heroB .hb-cta,.heroB .hb-panel>*{animation:none}html.anim .rv{opacity:1;transform:none;transition:none}section#projekt .benefit:hover,section.steps-sec .step:hover,section.steps-sec .step.on{transform:none}}
 </style>
 </head>
 <body>
