@@ -2225,25 +2225,57 @@ section#kontakt .person a:hover{text-decoration:underline;text-underline-offset:
 .ov-type button{color:#23261F!important}
 .ov-type button:hover{background:rgba(255,255,255,.35)!important}
 .ov-type button.on{background:#F2F0EB!important;color:#23261F!important}
+/* ===== Připomínky 9 až 12 ===== */
+:root{--btn-h:50px}
+/* 10) stejná výška tlačítek, šířka podle textu */
+.zhero-cta,.zh-tel,.u-cta,section#byty .u-cta,#kontakt form .btn,#kontakt form button.btn.btn-dark,.mnav.zm a.zm-free,.mnav.zm a.zm-tel,.cookie .cb button{width:auto!important;height:var(--btn-h)!important;min-height:var(--btn-h)!important;padding:0 28px!important;line-height:1!important;display:inline-flex!important;align-items:center;justify-content:center;box-sizing:border-box!important}
+.btn.sticky{height:56px!important}
+@media(max-width:700px){.zhero-cta,.u-cta,section#byty .u-cta,#kontakt form .btn,#kontakt form button.btn.btn-dark,.mnav.zm a.zm-free,.mnav.zm a.zm-tel{width:100%!important}}
+/* 11) Kontakt v hlavičce */
+.zh-tel{padding:0 24px!important}
+/* 9) šipka nahoru pryč */
+.totop{display:none!important}
+/* plovoucí ceník vpravo */
+.zcen{position:fixed;right:20px;top:50%;z-index:45;display:flex;align-items:center;height:56px;border-radius:28px;background:var(--zfree);color:#23261F;text-decoration:none;box-shadow:0 6px 18px rgba(35,38,31,.16);overflow:hidden;transform:translateY(-50%);transition:box-shadow .3s,background-color .3s}
+.zcen-t{max-width:0;opacity:0;white-space:nowrap;font-size:16px;transition:max-width .45s cubic-bezier(.2,.7,.2,1),opacity .3s,padding .45s;padding-left:0}
+.zcen-i{width:56px;height:56px;display:grid;place-items:center;flex:none}
+.zcen:hover,.zcen:focus-visible,.zcen.open{background:var(--zfreeh)}
+.zcen:hover .zcen-t,.zcen:focus-visible .zcen-t,.zcen.open .zcen-t{max-width:120px;opacity:1;padding-left:24px}
+.menu-open .zcen{display:none}
+@media(max-width:1000px){.zcen{right:12px;top:auto;bottom:72px;transform:none;height:48px}.zcen-i{width:48px;height:48px}}
+/* cookies vpravo, béžové */
+.cookie{left:auto!important;right:24px!important;bottom:24px!important;width:380px!important;background:#E8E2D4!important;color:#23261F!important;box-shadow:0 14px 40px rgba(35,38,31,.16)!important}
+.cookie .cb button{background:transparent!important;box-shadow:inset 0 0 0 1px rgba(35,38,31,.35)!important;color:#23261F!important}
+.cookie .cb button[data-c="all"],.cookie .cb button.save{background:#23261F!important;color:#F2F0EB!important;box-shadow:none!important}
+.cookie-ico{left:auto!important;right:28px!important;bottom:24px!important;background:#E8E2D4!important;color:#23261F!important;width:40px!important;height:40px!important;box-shadow:0 4px 14px rgba(35,38,31,.14)!important}
+.cookie-ico:hover{background:#DDD5C4!important}
+@media(max-width:1000px){.cookie{right:12px!important;left:12px!important;width:auto!important;bottom:68px!important}.cookie-ico{right:auto!important;left:12px!important;bottom:72px!important;width:44px!important;height:44px!important}}
+/* 12) čtyři údaje: širší, ikona před textem */
+.zf-list{max-width:1120px!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:32px!important;justify-items:center}
+.zf-list li{flex-direction:row!important;align-items:center!important;text-align:left!important;gap:16px!important}
+@media(max-width:1000px){.zf-list{grid-template-columns:repeat(2,minmax(0,1fr))!important;max-width:620px!important;row-gap:32px!important;justify-items:start}}
+@media(max-width:480px){.zf-list{grid-template-columns:1fr!important;max-width:300px!important}}
+.zl{align-items:baseline!important;min-height:0!important;padding:7px 0}
 </style>
 </head>
 <body>
 
 
 
+<a href="#byty" class="zcen" aria-label="Ceník bytů"><span class="zcen-t">Ceník</span><span class="zcen-i"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true"><path d="M3 12.2V4h8.2L21 13.8 13.8 21z"/><circle cx="7.6" cy="8.4" r="1.5"/></svg></span></a>
 <a class="skip" href="#obsah">Přeskočit na obsah</a>
 <header class="zh">
   <div class="zh-in">
     <a href="#" class="zl" aria-label="Bystrc Obora, úvod"><svg class="zl-ic" width="52" height="31" viewBox="0 0 328 196" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="9" stroke-linejoin="miter" stroke-miterlimit="10"><polyline points="10,190 10,110 60,60 110,110 110,190"/><polyline points="125,190 125,110 175,60 225,110 225,190"/><polygon points="248,190 263,112 278,190"/><polygon points="285,190 302,92 319,190"/><line x1="0" y1="190" x2="328" y2="190"/></g></svg><span class="zl-t"><b>Bystrc</b> Obora</span></a>
     <nav class="zh-nav" aria-label="Hlavní menu"><a href="#projekt">O projektu</a><a href="#byty">Nabídka bytů</a><a href="#lokalita">Lokalita</a><a href="#galerie">Galerie</a><a href="#standard">Standardy</a><a href="#dotazy">FAQ</a></nav>
-    <a class="zh-tel" href="tel:+420777123456">Zavolejte nám</a>
+    <a class="zh-tel" href="#kontakt">Kontakt</a>
     <button class="burger zb" aria-label="Otevřít menu" aria-expanded="false"><span></span></button>
   </div>
 </header>
 <nav class="mnav zm" aria-label="Mobilní menu">
   <a href="#projekt">O projektu</a><a href="#byty">Nabídka bytů</a><a href="#lokalita">Lokalita</a><a href="#galerie">Galerie</a><a href="#standard">Standardy</a><a href="#dotazy">FAQ</a>
   <a href="#byty" class="zm-free">Volné byty</a>
-  <a href="tel:+420777123456" class="zm-tel">Zavolejte nám</a>
+  <a href="#kontakt" class="zm-tel">Kontakt</a>
 </nav>
 
 <a href="#" class="totop" aria-label="Zpět nahoru"><svg width="16" height="18" viewBox="0 0 16 18" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M8 17V1M1 8l7-7 7 7"/></svg></a>
@@ -2627,5 +2659,6 @@ const b=document.querySelector(".zb");addEventListener("keydown",e=>{if(e.key===
 const m=document.querySelector(".zm");if(!m)return;const upd=()=>{const o=document.body.classList.contains("menu-open");m.toggleAttribute("inert",!o);m.setAttribute("aria-hidden",o?"false":"true")};new MutationObserver(upd).observe(document.body,{attributes:true,attributeFilter:["class"]});upd();
 })();
 </script>
+<script>(function(){const c=document.querySelector(".zcen");if(!c)return;const f=()=>c.classList.toggle("open",scrollY<innerHeight*.5);addEventListener("scroll",f,{passive:true});f()})();</script>
 </body>
 </html>
