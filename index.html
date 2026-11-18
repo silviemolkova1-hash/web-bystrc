@@ -2318,6 +2318,45 @@ section#galerie .gal figure{background:#2A3828!important}
 section#galerie :focus-visible,section#kontakt :focus-visible{outline-color:#F2F0EB!important}
 #kontakt form :focus-visible{outline-color:#23261F!important}
 .btn.sticky{box-shadow:0 -1px 0 rgba(242,240,235,.18)!important}
+/* ===== Zúžená paleta: béžová, zelenošedá, tmavě zelená, text, zelený akcent (+ bílá jen ve spodní liště a cookies) ===== */
+:root{--c-bg:#F2F0EB;--c-alt:#E3E6DD;--c-dark:#1E2A1D;--c-ink:#23261F;--c-acc:#A5D6A7}
+/* sekce bez bílé */
+section#projekt,section#lokalita,section.steps-sec,section#dotazy,.zhero,.zfacts{background:var(--c-bg)!important}
+section#byty,section#standard{background:var(--c-alt)!important}
+section#galerie,section#galerie.s-white,section#kontakt{background:var(--c-dark)!important}
+.pr-slides{background:var(--c-alt)!important}
+section#galerie .gal figure{background:rgba(242,240,235,.06)!important}
+#kontakt form{background:var(--c-bg)!important}
+section#standard .qa .qb{background:var(--c-bg)!important}
+section#byty .row:not(.h):hover{background:rgba(242,240,235,.7)!important}
+section#byty .row.is-res{background:rgba(242,240,235,.45)!important}
+section#byty .st.res{background:var(--c-bg)!important}
+/* text a ikony jednou barvou */
+.zm-free,.zhero-cta,.zh-tel,.zcen,section#byty .st,.mnav.zm a.zm-free{color:var(--c-ink)!important}
+.ic,.benefit .ic,section#projekt .benefit .ic,section#projekt .benefit:hover .ic,.zf-ic .ic,.pr-ic,.ovc.open>button svg,.ovc button svg,.ov-panel svg{color:var(--c-ink)!important}
+.pr-ic{box-shadow:inset 0 0 0 1px rgba(35,38,31,.35)!important}
+.zhero-meta{color:#fff!important}
+/* linky jen z textové barvy */
+.qa,.ovc{border-color:rgba(35,38,31,.12)!important}
+/* hover bez dalších barev */
+.zhero-cta:hover,.zh-tel:hover,.zm-free:hover,.zcen:hover,.zcen:focus-visible{background:var(--c-acc)!important;filter:brightness(.94)}
+.btn:hover,.btn-dark:hover,.u-cta:hover,#kontakt form .btn:hover,#kontakt form button.btn.btn-dark:hover{background:var(--c-dark)!important;filter:brightness(1.35)}
+section#projekt .benefit:hover{background:var(--c-alt)!important;filter:brightness(.97)}
+.ov-type{background:var(--c-acc)!important}
+.ov-type button.on{background:var(--c-bg)!important}
+/* patička jako sekce s formulářem, bílá jen spodní lišta */
+footer.ft4{background:var(--c-dark)!important;color:var(--c-bg)!important}
+footer.ft4 .ft-top,footer.ft4 h3,footer.ft4 .ft-col a,footer.ft4 .ft-col span,footer.ft4 .ft-logo,footer.ft4 .ft-logo.zl{color:var(--c-bg)!important}
+footer.ft4 a:hover{color:var(--c-bg)!important;opacity:.75}
+footer.ft4 .ft-bar{background:#fff!important;border-top:0!important}
+footer.ft4 .ft-bar,footer.ft4 .ft-bar a,footer.ft4 .ft-bar span{color:var(--c-ink)!important}
+footer.ft4 .ft-bar a:hover{color:var(--c-ink)!important}
+footer.ft4 :focus-visible{outline-color:var(--c-bg)!important}
+footer.ft4 .ft-bar :focus-visible{outline-color:var(--c-ink)!important}
+section#kontakt + footer.ft4 .ft-top,footer.ft4 .ft-top{border-top:1px solid rgba(242,240,235,.14)}
+section#byty .st.free,section#byty .st.sold,section#byty .st.res{color:var(--c-ink)!important}
+html body footer.ft4 .ft-top .ft-col a,html body footer.ft4 .ft-top .ft-col:last-child a,html body footer.ft4 .ft-top .ft-col span{color:var(--c-bg)!important}
+footer.ft4 .ft-top{border-top:0!important}
 </style>
 </head>
 <body>
@@ -2514,7 +2553,7 @@ section#galerie :focus-visible,section#kontakt :focus-visible{outline-color:#F2F
 <footer class="ft4">
   <div class="wrap ft-top">
     <div class="ft-col ft-brand"><a href="#" class="ft-logo zl" aria-label="Bystrc Obora, zpět nahoru"><svg class="zl-ic" width="52" height="31" viewBox="0 0 328 196" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="9" stroke-linejoin="miter" stroke-miterlimit="10"><polyline points="10,190 10,110 60,60 110,110 110,190"/><polyline points="125,190 125,110 175,60 225,110 225,190"/><polygon points="248,190 263,112 278,190"/><polygon points="285,190 302,92 319,190"/><line x1="0" y1="190" x2="328" y2="190"/></g></svg><span class="zl-t"><b>Bystrc</b> Obora</span></a></div>
-    <nav class="ft-col" aria-label="O projektu"><h3>O projektu</h3><a href="#projekt">O projektu</a><a href="#byty">Nabídka bytů</a><a href="#lokalita">Lokalita</a><a href="#standard">Standardy</a></nav>
+    <nav class="ft-col" aria-label="O projektu"><h3>O projektu</h3><a href="#projekt">O projektu</a><a href="#byty">Ceník</a><a href="#lokalita">Lokalita</a><a href="#standard">Standardy</a></nav>
     <nav class="ft-col" aria-label="Další informace"><h3>Další informace</h3><a href="#galerie">Galerie</a><a href="#dotazy">FAQ</a><a href="#kontakt">Kontakt</a></nav>
     <div class="ft-col"><h3>Kontakt</h3><span>ABC Development s.r.o.</span><span>Rakovecká 229/73, Brno-Bystrc</span><a href="tel:+420777123456">+420 777 123 456</a><a href="mailto:prodej@abc-development.cz">prodej@abc-development.cz</a></div>
   </div>
