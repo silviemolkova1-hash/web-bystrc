@@ -1872,7 +1872,7 @@ section#projekt .pp{display:grid;grid-template-columns:5fr 6fr;gap:clamp(48px,7v
 .pp-img img{width:100%;height:100%;object-fit:cover;display:block}
 @media(max-width:900px){section#projekt .pp{grid-template-columns:1fr;gap:36px}}
 @media(min-width:1001px){section,footer{scroll-margin-top:76px}}
-.about .grid{grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:clamp(40px,6vw,110px)}
+@media(min-width:1181px){.about .grid{grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:clamp(40px,6vw,110px)}}
 @media(min-width:1001px) and (max-width:1100px){header.hd5,header.hd5.scrolled{justify-content:flex-end}}
 @media(min-width:1001px) and (max-width:1180px){.about .grid{grid-template-columns:1fr}.about .photo{aspect-ratio:16/10}}
 
@@ -1905,6 +1905,41 @@ details.qa[open] p{animation:qaOpen .45s ease both}
 #dotazy .qa-list details.qa:first-of-type summary{padding-top:14px}
 @media(min-width:1001px) and (max-width:1180px){#dotazy .qa-al{grid-template-columns:1fr}#dotazy .qa-al .qa-img{aspect-ratio:16/10;height:auto;min-height:0}}
 @media(max-width:900px){#dotazy .qa-al{grid-template-columns:1fr;gap:28px}#dotazy .qa-al .qa-img{order:2;aspect-ratio:4/3;height:auto;min-height:0}}
+
+/* === Opravy 18. 11. večer === */
+/* Klid: responzivita */
+@media(max-width:1180px){.about .grid{grid-template-columns:1fr;gap:40px}.about .photo{aspect-ratio:16/10;width:100%}.about .txt{max-width:none}}
+@media(max-width:700px){.about .grid{gap:28px}.about .photo{aspect-ratio:4/3}.about .txt h2{font-size:clamp(26px,7vw,32px)}}
+@media(max-width:520px){.benefits{grid-template-columns:1fr}}
+/* Mapa: pevná výška */
+.ov{align-items:start}
+.ov-mapwrap{height:640px;min-height:0}
+@media(max-width:900px){.ov-mapwrap{height:420px}}
+/* Galerie: plynulé načtení */
+.gal figure{background:#E3E6DD}
+.gal img{opacity:0;transition:opacity .9s ease,transform 1.4s ease}
+.gal img.ld{opacity:1}
+/* Akordeony: animace výšky */
+details.qa{overflow:hidden}
+details.qa.closing .qb::before{transform:translate(-50%,-50%)}
+details.qa.closing .qb::after{transform:translate(-50%,-50%) rotate(90deg)}
+details.qa[open] p{animation:none}
+details.qa p{transition:opacity .35s ease}
+details.qa.closing p{opacity:0}
+#dotazy .qa-al{align-items:start}
+#dotazy .qa-al .qa-img{height:auto;min-height:0;aspect-ratio:1/1}
+/* Patička: černé písmo */
+footer.ft4,footer.ft4 h3,footer.ft4 a,footer.ft4 .ft-col span,footer.ft4 .ft-bar,footer.ft4 .ft-bar a,footer.ft4 .ft-col:last-child a{color:#23261F!important}
+footer.ft4 a:hover{color:#000!important}
+/* Logo: text na spodní lince obrázku */
+.logo,header.hd5 .logo{align-items:baseline!important}
+.logo .lt{margin-bottom:0}
+footer.ft4 .ft-logo{flex-direction:row!important;align-items:baseline!important;gap:12px;color:#23261F!important}
+footer.ft4 .ft-logo svg{width:52px;height:31px;flex:none;display:block}
+footer.ft4 .ft-logo .lt{font-size:11px;letter-spacing:2px;text-transform:uppercase;line-height:1;white-space:nowrap}
+footer.ft4 .ft-logo .lt b{font-weight:700}
+footer.ft4 .ft-logo .lt span{font-size:inherit;letter-spacing:inherit;font-weight:400}
+@media(min-width:1181px){.about .photo{width:100%;aspect-ratio:auto;min-height:480px}.about .photo img{width:100%;height:100%;object-fit:cover;display:block}}
 </style>
 </head>
 <body>
@@ -2025,7 +2060,7 @@ details.qa[open] p{animation:qaOpen .45s ease both}
   <div class="wrap">
     <h2 class="rv">Podívejte se blíže na své budoucí bydlení</h2>
     <p class="sec-lead rv">Prohlédněte si architektonické vizualizace projektu a&nbsp;objevte podobu nových bytových domů, jejich okolí i&nbsp;detaily, které budou utvářet každodenní bydlení.</p>
-    <div class="gal">
+    <div class="gal" id="gal">
       <figure class="g1 rv"><img loading="lazy" decoding="async" src="img/hero.webp" alt="Domy zepředu"></figure>
       <figure class="g2 rv"><img loading="lazy" decoding="async" src="img/detail.webp" alt="Detail rohových oken"></figure>
       <figure class="g3 rv"><img loading="lazy" decoding="async" src="img/parkovani.webp" alt="Kryté parkování pod pergolou"></figure>
@@ -2099,7 +2134,7 @@ details.qa[open] p{animation:qaOpen .45s ease both}
 
 <footer class="ft4">
   <div class="wrap ft-top">
-    <div class="ft-col ft-brand"><a href="#" class="ft-logo" aria-label="Bystrc Obora, zpět nahoru"><svg width="58" height="35" viewBox="0 0 328 196" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="7" stroke-linejoin="miter" stroke-miterlimit="10"><polyline points="10,190 10,110 60,60 110,110 110,190"/><polyline points="125,190 125,110 175,60 225,110 225,190"/><polygon points="248,190 263,112 278,190"/><polygon points="285,190 302,92 319,190"/><line x1="0" y1="190" x2="328" y2="190"/></g></svg><span>Bystrc Obora</span></a></div>
+    <div class="ft-col ft-brand"><a href="#" class="ft-logo" aria-label="Bystrc Obora, zpět nahoru"><svg width="58" height="35" viewBox="0 0 328 196" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="7" stroke-linejoin="miter" stroke-miterlimit="10"><polyline points="10,190 10,110 60,60 110,110 110,190"/><polyline points="125,190 125,110 175,60 225,110 225,190"/><polygon points="248,190 263,112 278,190"/><polygon points="285,190 302,92 319,190"/><line x1="0" y1="190" x2="328" y2="190"/></g></svg><span class="lt"><b>Bystrc</b> <span>Obora</span></span></a></div>
     <nav class="ft-col" aria-label="O projektu"><h3>O projektu</h3><a href="#projekt">O projektu</a><a href="#byty">Nabídka bytů</a><a href="#lokalita">Lokalita</a><a href="#standard">Standardy</a></nav>
     <nav class="ft-col" aria-label="Další informace"><h3>Další informace</h3><a href="#galerie">Galerie</a><a href="#dotazy">FAQ</a><a href="#kontakt">Kontakt</a></nav>
     <div class="ft-col"><h3>Kontakt</h3><span>Brno-Bystrc</span><a href="tel:+420000000000">Telefon: [doplnit]</a><a href="mailto:info@example.cz">E-mail: [doplnit]</a></div>
@@ -2237,7 +2272,7 @@ CATS.forEach((c,ci)=>c.items.forEach((p,pi)=>{
  p.m.on("click",()=>{openCat(ci,false);select(ci,pi)});
 }));
 const wide=()=>innerWidth>900;
-function fit(list){map.fitBounds(L.latLngBounds([HOME,...list]),{padding:wide()?[70,70]:[40,40],maxZoom:15})}
+let fitN=0;function fit(list){const b=L.latLngBounds([HOME,...list]),o={padding:wide()?[70,70]:[40,40],maxZoom:15};if(fitN++===0){map.fitBounds(b,o);return}map.flyToBounds(b,Object.assign(o,{duration:.9,easeLinearity:.25}))}
 const near=CATS.flatMap(c=>c.items.filter(p=>!p.far).map(p=>p.ll));
 fit(near);
 let selP=null;
@@ -2246,7 +2281,7 @@ function select(ci,pi){
  document.querySelectorAll(".ovc li button").forEach(b=>b.classList.toggle("sel",+b.dataset.c===ci&&+b.dataset.p===pi));
  const p=CATS[ci].items[pi];selP=p;const el=p.m.getElement();el&&el.querySelector(".mp").classList.add("sel");
  p.m.setZIndexOffset(900);p.m.openTooltip();
- if(!map.getBounds().pad(-.15).contains(p.ll))map.panTo(p.ll);
+ if(!map.getBounds().pad(-.15).contains(p.ll))map.panTo(p.ll,{animate:true,duration:.7,easeLinearity:.25});
 }
 function openCat(ci,doFit=true){
  document.querySelectorAll(".ovc").forEach(x=>{const on=+x.dataset.c===ci&&(!x.classList.contains("open")||!doFit);x.classList.toggle("open",on);x.querySelector("button").setAttribute("aria-expanded",on)});
@@ -2282,6 +2317,22 @@ const set=id=>{navs.forEach(n=>{n.classList.toggle("has-on",!!id);n.querySelecto
 const vis=new Map();
 const io=new IntersectionObserver(es=>{es.forEach(e=>vis.set(e.target.id,e.isIntersecting));let cur=null;for(const id of ids){if(vis.get(id)){cur=map[id]||null;break}}set(cur)},{rootMargin:"-45% 0px -50% 0px"});
 ids.forEach(id=>{const el=document.getElementById(id);if(el)io.observe(el)})})();
+</script>
+<script>
+(function(){
+/* galerie: fade-in a dřívější načtení */
+const g=document.getElementById("gal");if(g){const im=[...g.querySelectorAll("img")];
+im.forEach(i=>{const ok=()=>i.classList.add("ld");if(i.complete&&i.naturalWidth)ok();else i.addEventListener("load",ok,{once:true})});
+if("IntersectionObserver"in window){const o=new IntersectionObserver(e=>{if(e[0].isIntersecting){im.forEach(i=>{i.loading="eager"});o.disconnect()}},{rootMargin:"1600px 0px"});o.observe(g)}}
+/* akordeony: plynulé otevření a zavření */
+const R=matchMedia("(prefers-reduced-motion:reduce)").matches,E="cubic-bezier(.4,0,.2,1)",D=420;
+const ds=[...document.querySelectorAll("details.qa")];
+ds.forEach(d=>{const n=d.getAttribute("name");if(n){d.dataset.g=n;d.removeAttribute("name")}});
+function anim(d,from,to,done){d.style.height=from+"px";if(d._a)d._a.cancel();const a=d.animate({height:[from+"px",to+"px"]},{duration:R?0:D,easing:E});d._a=a;a.onfinish=()=>{d.style.height="";d._a=null;done&&done()};a.oncancel=()=>{d.style.height=""}}
+function close(d){if(!d.open||d.classList.contains("closing"))return;const s=d.querySelector("summary");d.classList.add("closing");anim(d,d.offsetHeight,s.offsetHeight,()=>{d.open=false;d.classList.remove("closing")})}
+function open(d){if(d.dataset.g)ds.forEach(o=>o!==d&&o.dataset.g===d.dataset.g&&close(o));const s=d.querySelector("summary");const st=d.offsetHeight;d.classList.remove("closing");d.open=true;const en=d.scrollHeight;anim(d,st,en)}
+ds.forEach(d=>d.querySelector("summary").addEventListener("click",e=>{e.preventDefault();(d.open&&!d.classList.contains("closing"))?close(d):open(d)}));
+})();
 </script>
 </body>
 </html>
