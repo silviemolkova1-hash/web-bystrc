@@ -2406,6 +2406,13 @@ html body section#byty .chip.on,html body section#byty .chip:hover{color:var(--c
 html body section#byty .row.is-res,html body section#byty .row.is-res span:not(.st),html body section#byty .row.is-res .id,html body section#byty .row.is-res .price,html body section#byty .row.is-res .link{color:var(--c-bg)!important}
 html body .zcen,html body .zcen:hover,html body .zcen:focus-visible,html body .zcen.open{background:var(--c-dark)!important;color:var(--c-bg)!important;filter:none!important;box-shadow:inset 0 0 0 1px rgba(242,240,235,.35)!important}
 html body .zcen .zcen-t{color:var(--c-bg)!important}
+
+/* Hlavní logo podle sady loga: znak + text 13 px jako menu */
+html body .zl .zl-ic,html body footer.ft4 .ft-logo.zl .zl-ic{width:76px!important;height:45px!important}
+html body .zl{gap:16px!important}
+html body .zl .zl-t,html body footer.ft4 .ft-logo.zl .zl-t{font-size:13px!important;letter-spacing:.18em!important;padding-bottom:1px}
+html body .zl .zl-t b{font-weight:600}
+@media(max-width:700px){html body .zl .zl-ic,html body footer.ft4 .ft-logo.zl .zl-ic{width:64px!important;height:38px!important}html body .zl{gap:12px!important}}
 </style>
 </head>
 <body>
@@ -2416,7 +2423,7 @@ html body .zcen .zcen-t{color:var(--c-bg)!important}
 <a class="skip" href="#obsah">Přeskočit na obsah</a>
 <header class="zh">
   <div class="zh-in">
-    <a href="#" class="zl" aria-label="Bystrc Obora, úvod"><svg class="zl-ic" width="52" height="31" viewBox="0 0 328 196" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="9" stroke-linejoin="miter" stroke-miterlimit="10"><polyline points="10,190 10,110 60,60 110,110 110,190"/><polyline points="125,190 125,110 175,60 225,110 225,190"/><polygon points="248,190 263,112 278,190"/><polygon points="285,190 302,92 319,190"/><line x1="0" y1="190" x2="328" y2="190"/></g></svg><span class="zl-t"><b>Bystrc</b> Obora</span></a>
+    <a href="#" class="zl" aria-label="Bystrc Obora, úvod"><svg class="zl-ic" width="76" height="45" viewBox="0 0 328 196" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="7" stroke-linejoin="miter" stroke-miterlimit="10"><polyline points="10,190 10,110 60,60 110,110 110,190"/><polyline points="125,190 125,110 175,60 225,110 225,190"/><polygon points="248,190 263,112 278,190"/><polygon points="285,190 302,92 319,190"/><line x1="0" y1="190" x2="328" y2="190"/></g></svg><span class="zl-t"><b>Bystrc</b> Obora</span></a>
     <nav class="zh-nav" aria-label="Hlavní menu"><a href="#projekt">O projektu</a><a href="#byty">Ceník</a><a href="#lokalita">Lokalita</a><a href="#galerie">Galerie</a><a href="#standard">Standardy</a><a href="#dotazy">FAQ</a></nav>
     <a class="zh-tel" href="#kontakt">Chci bydlet</a>
     <button class="burger zb" aria-label="Otevřít menu" aria-expanded="false"><span></span></button>
@@ -2601,7 +2608,7 @@ html body .zcen .zcen-t{color:var(--c-bg)!important}
 
 <footer class="ft4">
   <div class="wrap ft-top">
-    <div class="ft-col ft-brand"><a href="#" class="ft-logo zl" aria-label="Bystrc Obora, zpět nahoru"><svg class="zl-ic" width="52" height="31" viewBox="0 0 328 196" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="9" stroke-linejoin="miter" stroke-miterlimit="10"><polyline points="10,190 10,110 60,60 110,110 110,190"/><polyline points="125,190 125,110 175,60 225,110 225,190"/><polygon points="248,190 263,112 278,190"/><polygon points="285,190 302,92 319,190"/><line x1="0" y1="190" x2="328" y2="190"/></g></svg><span class="zl-t"><b>Bystrc</b> Obora</span></a></div>
+    <div class="ft-col ft-brand"><a href="#" class="ft-logo zl" aria-label="Bystrc Obora, zpět nahoru"><svg class="zl-ic" width="76" height="45" viewBox="0 0 328 196" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="7" stroke-linejoin="miter" stroke-miterlimit="10"><polyline points="10,190 10,110 60,60 110,110 110,190"/><polyline points="125,190 125,110 175,60 225,110 225,190"/><polygon points="248,190 263,112 278,190"/><polygon points="285,190 302,92 319,190"/><line x1="0" y1="190" x2="328" y2="190"/></g></svg><span class="zl-t"><b>Bystrc</b> Obora</span></a></div>
     <nav class="ft-col" aria-label="O projektu"><h3>O projektu</h3><a href="#projekt">O projektu</a><a href="#byty">Ceník</a><a href="#lokalita">Lokalita</a><a href="#standard">Standardy</a></nav>
     <nav class="ft-col" aria-label="Další informace"><h3>Další informace</h3><a href="#galerie">Galerie</a><a href="#dotazy">FAQ</a><a href="#kontakt">Kontakt</a></nav>
     <div class="ft-col"><h3>Kontakt</h3><span>ABC Development s.r.o.</span><span>Rakovecká 229/73, Brno-Bystrc</span><a href="tel:+420777123456">+420 777 123 456</a><a href="mailto:prodej@abc-development.cz">prodej@abc-development.cz</a></div>
