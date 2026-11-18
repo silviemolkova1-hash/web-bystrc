@@ -2164,25 +2164,86 @@ footer.ft4 .ft-logo{min-height:44px}
 }
 #kontakt form input:not([type=checkbox]){min-height:48px}
 footer.ft4 .ft-col a,footer.ft4 .ft-col span{font-size:15px!important}
+/* ===== Jednotná mřížka, tlačítka, úvod, mapa (připomínky 1 až 8) ===== */
+:root{--cpad:clamp(48px,5vw,88px);--btn-w:248px}
+@media(max-width:1000px){:root{--cpad:22px}}
+/* 1) jeden společný container */
+.wrap,.zh-in,.zf-in,footer.ft4 .ft-top,footer.ft4 .ft-bar-in,.zhero-c,.pr-grid{max-width:var(--max)!important;margin-left:auto!important;margin-right:auto!important;padding-left:var(--cpad)!important;padding-right:var(--cpad)!important;box-sizing:border-box!important}
+section#byty .wrap{padding-right:var(--cpad)!important}
+header.zh,header.zh.scrolled{box-shadow:none!important;border:0!important}
+/* tlačítka: jednotná šířka, šipka */
+.zhero-cta,.zh-tel,.u-cta,section#byty .u-cta,#kontakt form .btn,#kontakt form button.btn.btn-dark,.mnav.zm a.zm-free,.mnav.zm a.zm-tel{width:var(--btn-w)!important;min-width:0!important;max-width:100%;box-sizing:border-box!important;display:inline-flex!important;align-items:center;justify-content:center;gap:14px;text-align:center}
+.zh-tel{padding:12px 0!important}
+.u-cta,#kontakt form .btn{padding:15px 0!important}
+.bar{flex:none;transition:transform .3s ease}
+a:hover>.bar,button:hover>.bar{transform:translateX(4px)}
+@media(max-width:1000px){.btn.sticky{display:inline-flex!important;align-items:center;justify-content:center;gap:14px}}
+@media(min-width:1001px){.btn.sticky{display:none!important}}
+@media(max-width:700px){.zhero-cta,.u-cta,section#byty .u-cta,#kontakt form .btn,#kontakt form button.btn.btn-dark,.mnav.zm a.zm-free,.mnav.zm a.zm-tel{width:100%!important}}
+/* 2) úvod: obsah v containeru */
+.zhero-in{position:absolute;top:0;bottom:0;left:-20px;right:-20px;pointer-events:none}
+.zhero-c{position:relative;height:100%}
+.zhero-c>*{pointer-events:auto}
+.zhero-h{left:var(--cpad)!important;right:auto}
+.zhero-side{right:var(--cpad)!important;align-items:flex-end}
+.zhero-meta{justify-content:flex-end}
+@media(max-width:700px){.zhero-in{left:-12px;right:-12px}.zhero-h{right:var(--cpad)!important}.zhero-side{left:var(--cpad)!important;right:var(--cpad)!important;align-items:stretch}.zhero-meta{justify-content:flex-start}}
+/* čtyři údaje jako kompaktní vycentrovaný blok */
+.zf-list{max-width:960px;margin:0 auto!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:40px!important;justify-content:center}
+.zf-list li{flex-direction:column;align-items:center!important;text-align:center;gap:16px!important}
+@media(max-width:860px){.zf-list{grid-template-columns:repeat(2,minmax(0,1fr))!important;max-width:520px;row-gap:36px!important}}
+@media(max-width:420px){.zf-list{gap:28px 16px!important}}
+/* 3) Příroda na dosah: jemný hover */
+section#projekt .benefit:hover{background:#D9DFD1!important;box-shadow:none!important;transform:none!important}
+section#projekt .benefit:hover,section#projekt .benefit:hover *{color:#23261F!important}
+section#projekt .benefit:hover .ic{color:#5E6B55!important}
+section#projekt .benefit{transition:background-color .35s ease!important}
+/* mapa v zelené jako tlačítka */
+.mpb{background:var(--zfree)!important;box-shadow:0 3px 8px rgba(35,38,31,.22)!important}
+.mpb svg{color:#23261F!important}
+.mp.sel .mpb,.mp.home .mpb{background:#23261F!important}
+.mp.sel .mpb svg,.mp.home .mpb svg{color:var(--zfree)!important}
+.leaflet-tooltip.olbl{background:var(--zfree)!important;color:#23261F!important;border-radius:2px!important}
+.ovc.open>button{color:#23261F!important}
+.ovc.open>button svg{color:#5E6B55}
+.ovc li button.sel{border-color:var(--zfree)!important;color:#23261F!important;background:rgba(165,214,167,.25)!important}
+/* 4) logo v hlavičce a patičce stejné */
+footer.ft4 .ft-logo.zl{gap:12px!important;color:#23261F!important}
+footer.ft4 .ft-logo.zl .zl-ic{width:52px!important;height:31px!important}
+footer.ft4 .ft-logo.zl .zl-t{font-size:11px!important;letter-spacing:2px!important}
+/* 5) koupě: fotka vlevo v containeru */
+section.steps-sec.pr{padding:clamp(72px,9vw,150px) 0!important}
+.pr-grid{display:grid!important;grid-template-columns:minmax(0,5fr) minmax(0,6fr)!important;gap:clamp(40px,6vw,110px)!important;align-items:center}
+.pr-slides{height:clamp(420px,46vw,600px)!important;border-radius:2px;width:100%}
+.pr-panel{padding:0!important;background:transparent!important}
+@media(max-width:1000px){.pr-grid{grid-template-columns:1fr!important}.pr-slides{height:clamp(280px,60vw,440px)!important}}
+/* kontakt osoba */
+section#kontakt .person a{color:#23261F;text-decoration:none}
+section#kontakt .person a:hover{text-decoration:underline;text-underline-offset:3px}
+@media(max-width:1180px){header.zh .zh-tel{display:none!important}}
+.ov-type{background:var(--zfree)!important}
+.ov-type button{color:#23261F!important}
+.ov-type button:hover{background:rgba(255,255,255,.35)!important}
+.ov-type button.on{background:#F2F0EB!important;color:#23261F!important}
 </style>
 </head>
 <body>
 
-<div class="note"><b>Náhled</b>: hranaté závorky a ukázkové byty jsou zástupná data.</div>
+
 
 <a class="skip" href="#obsah">Přeskočit na obsah</a>
 <header class="zh">
   <div class="zh-in">
     <a href="#" class="zl" aria-label="Bystrc Obora, úvod"><svg class="zl-ic" width="52" height="31" viewBox="0 0 328 196" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="9" stroke-linejoin="miter" stroke-miterlimit="10"><polyline points="10,190 10,110 60,60 110,110 110,190"/><polyline points="125,190 125,110 175,60 225,110 225,190"/><polygon points="248,190 263,112 278,190"/><polygon points="285,190 302,92 319,190"/><line x1="0" y1="190" x2="328" y2="190"/></g></svg><span class="zl-t"><b>Bystrc</b> Obora</span></a>
-    <nav class="zh-nav" aria-label="Hlavní menu"><a href="#projekt">O projektu</a><a href="#byty">Nabídka bytů</a><a href="#lokalita">Lokalita</a><a href="#galerie">Galerie</a><a href="#standard">Standardy</a><a href="#dotazy">FAQ</a><a href="#kontakt">Kontakt</a></nav>
-    <a class="zh-tel" href="tel:+420777777777">Zavolejte nám</a>
+    <nav class="zh-nav" aria-label="Hlavní menu"><a href="#projekt">O projektu</a><a href="#byty">Nabídka bytů</a><a href="#lokalita">Lokalita</a><a href="#galerie">Galerie</a><a href="#standard">Standardy</a><a href="#dotazy">FAQ</a></nav>
+    <a class="zh-tel" href="tel:+420777123456">Zavolejte nám</a>
     <button class="burger zb" aria-label="Otevřít menu" aria-expanded="false"><span></span></button>
   </div>
 </header>
 <nav class="mnav zm" aria-label="Mobilní menu">
-  <a href="#projekt">O projektu</a><a href="#byty">Nabídka bytů</a><a href="#lokalita">Lokalita</a><a href="#galerie">Galerie</a><a href="#standard">Standardy</a><a href="#dotazy">FAQ</a><a href="#kontakt">Kontakt</a>
+  <a href="#projekt">O projektu</a><a href="#byty">Nabídka bytů</a><a href="#lokalita">Lokalita</a><a href="#galerie">Galerie</a><a href="#standard">Standardy</a><a href="#dotazy">FAQ</a>
   <a href="#byty" class="zm-free">Volné byty</a>
-  <a href="tel:+420777777777" class="zm-tel">Zavolejte nám</a>
+  <a href="tel:+420777123456" class="zm-tel">Zavolejte nám</a>
 </nav>
 
 <a href="#" class="totop" aria-label="Zpět nahoru"><svg width="16" height="18" viewBox="0 0 16 18" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M8 17V1M1 8l7-7 7 7"/></svg></a>
@@ -2191,11 +2252,13 @@ footer.ft4 .ft-col a,footer.ft4 .ft-col span{font-size:15px!important}
   <div class="zhero-media">
     <img src="img/uvod-fasada.jpg" alt="Fasáda domu Bystrc Obora s rohovými okny a borovicí" fetchpriority="high">
     <span class="zhero-shade" aria-hidden="true"></span>
+    <div class="zhero-in"><div class="zhero-c">
     <h1 class="zhero-h"><span class="sr">Bystrc Obora: </span><span class="zl1">Moderní bydlení</span><span class="zl2">v&nbsp;srdci přírody.</span></h1>
     <div class="zhero-side">
       <a class="zhero-cta" href="#byty">Zobrazit volné byty</a>
       <p class="zhero-meta"><span>16 bytů 4+kk</span><i aria-hidden="true"></i><span>Dokončení 2027</span></p>
     </div>
+    </div></div>
   </div>
 </section>
 <section class="zfacts" aria-label="Projekt v číslech">
@@ -2252,7 +2315,7 @@ footer.ft4 .ft-col a,footer.ft4 .ft-col span{font-size:15px!important}
       <div class="row h"><span>Byt</span><span>Dispozice</span><span>Plocha</span><span>Venkovní plocha</span><span>Podlaží</span><span>Cena vč. DPH</span><span>Stav</span><span></span></div>
       <div id="rows"></div>
     </div>
-    <div class="u-foot"><p class="foot">Všechny uvedené ceny jsou včetně DPH. Ke každému bytu je k&nbsp;dispozici půdorys. Pokud vás některý zaujal, rádi vám poskytneme bližší informace.</p><a class="u-cta" href="#kontakt">Mám zájem o byt</a></div>
+    <div class="u-foot"><p class="foot">Všechny uvedené ceny jsou včetně DPH. Ke každému bytu je k&nbsp;dispozici půdorys. Pokud vás některý zaujal, rádi vám poskytneme bližší informace.</p><a class="u-cta" href="#kontakt"><span>Mám zájem o byt</span><svg class="bar" width="22" height="12" viewBox="0 0 22 12" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M0 6h20M15 1l5 5-5 5"/></svg></a></div>
   </div>
 </section>
 
@@ -2310,10 +2373,10 @@ footer.ft4 .ft-col a,footer.ft4 .ft-col span{font-size:15px!important}
     <p class="sec-lead qa-lead rv">Na komfort bydlení mají vliv především detaily. Proto se zaměřujeme na kvalitní materiály, promyšlené konstrukční řešení a&nbsp;vybavení, které vám zpříjemní každodenní život.</p>
     <div class="qa-grid rv">
       <div class="qa-list">
-        <details class="qa" name="std" open><summary><span class="qn">01</span><span class="qt">Konstrukce a izolace</span><span class="qb" aria-hidden="true"></span></summary><p>[Konkrétní informace o materiálu zdiva, zateplení a tepelněizolačních vlastnostech.]</p></details>
-        <details class="qa" name="std"><summary><span class="qn">02</span><span class="qt">Okna a stínění</span><span class="qb" aria-hidden="true"></span></summary><p>[Konkrétní informace o typu oken, zasklení a venkovním stínění.]</p></details>
-        <details class="qa" name="std"><summary><span class="qn">03</span><span class="qt">Vytápění</span><span class="qb" aria-hidden="true"></span></summary><p>[Konkrétní informace o způsobu vytápění, tepelném čerpadle a podlahovém topení.]</p></details>
-        <details class="qa" name="std"><summary><span class="qn">04</span><span class="qt">Podlahy a koupelny</span><span class="qb" aria-hidden="true"></span></summary><p>[Konkrétní informace o podlahových krytinách, sanitě, obkladech a vybavení koupelen.]</p></details>
+        <details class="qa" name="std" open><summary><span class="qn">01</span><span class="qt">Konstrukce a izolace</span><span class="qb" aria-hidden="true"></span></summary><p>Nosné zdivo z keramických tvárnic, kontaktní zateplení fasády minerální vatou tloušťky 200 mm a akusticky oddělené stropy mezi byty. Domy splňují energetickou třídu B.</p></details>
+        <details class="qa" name="std"><summary><span class="qn">02</span><span class="qt">Okna a stínění</span><span class="qb" aria-hidden="true"></span></summary><p>Hliníková okna s izolačním trojsklem, rohová okna v obývacích pokojích a venkovní žaluzie s elektrickým ovládáním ve všech obytných místnostech.</p></details>
+        <details class="qa" name="std"><summary><span class="qn">03</span><span class="qt">Vytápění</span><span class="qb" aria-hidden="true"></span></summary><p>Tepelné čerpadlo vzduch voda a podlahové topení ve všech místnostech. V koupelnách je navíc elektrický otopný žebřík.</p></details>
+        <details class="qa" name="std"><summary><span class="qn">04</span><span class="qt">Podlahy a koupelny</span><span class="qb" aria-hidden="true"></span></summary><p>Třívrstvé dřevěné podlahy v pokojích, velkoformátová dlažba v předsíni a koupelnách, závěsná WC a sprchové kouty bez vaničky.</p></details>
       </div>
       <div class="qa-img"><img loading="lazy" decoding="async" src="img/detail.webp" alt="Detail fasády a oken bytového domu Bystrc Obora"></div>
     </div>
@@ -2326,8 +2389,8 @@ footer.ft4 .ft-col a,footer.ft4 .ft-col span{font-size:15px!important}
       <div class="qa-list">
         <h2 class="qa-h qa-h2">Často vás zajímá</h2>
         <details class="qa" name="faq" open><summary><span class="qn">01</span><span class="qt">Kdy budou byty dokončené?</span><span class="qb" aria-hidden="true"></span></summary><p>Předpokládaný termín dokončení projektu je v roce 2027.</p></details>
-        <details class="qa" name="faq"><summary><span class="qn">02</span><span class="qt">Je součástí bytu parkovací stání?</span><span class="qb" aria-hidden="true"></span></summary><p>[Upřesnit, zda je parkovací stání součástí ceny, případně zda je možné jej dokoupit a za jakých podmínek.]</p></details>
-        <details class="qa" name="faq"><summary><span class="qn">03</span><span class="qt">Je možné provádět klientské změny?</span><span class="qb" aria-hidden="true"></span></summary><p>[Upřesnit možnosti individuálních úprav bytu a termín, do kterého je možné změny zadat.]</p></details>
+        <details class="qa" name="faq"><summary><span class="qn">02</span><span class="qt">Je součástí bytu parkovací stání?</span><span class="qb" aria-hidden="true"></span></summary><p>Ano. Ke každému bytu patří kryté parkovací stání pod pergolou přímo u domu a je zahrnuté v ceně. Druhé stání si můžete dokoupit za 390 000 Kč.</p></details>
+        <details class="qa" name="faq"><summary><span class="qn">03</span><span class="qt">Je možné provádět klientské změny?</span><span class="qb" aria-hidden="true"></span></summary><p>Ano. Změny dispozic, rozvodů i vybavení koupelen můžete zadat do 31. 3. 2027. Rozsah a cenu změn s vámi projdeme na osobní schůzce.</p></details>
         <details class="qa" name="faq"><summary><span class="qn">04</span><span class="qt">Pomůžete mi s financováním bytu?</span><span class="qb" aria-hidden="true"></span></summary><p>Ano, v případě zájmu vám pomůžeme zorientovat se v možnostech financování a doporučíme odborníka, který vám poradí s vyřízením hypotéky.</p></details>
       </div>
     </div>
@@ -2339,7 +2402,7 @@ footer.ft4 .ft-col a,footer.ft4 .ft-col span{font-size:15px!important}
     <div class="rv">
       <h2>Najděte svůj nový domov v Bystrci</h2>
       <p class="lead">Zaujala vás nabídka bytů v&nbsp;Bystrci? Ozvěte se nám. Rádi vám představíme projekt, zašleme podrobnosti k&nbsp;jednotlivým bytům nebo domluvíme osobní schůzku.</p>
-      <div class="person"><b>[Jméno]</b><span>[telefon]</span><span>[e-mail]</span></div>
+      <div class="person"><b>Jana Nováková</b><span>Prodej bytů, ABC Development</span><span><a href="tel:+420777123456">+420 777 123 456</a></span><span><a href="mailto:prodej@abc-development.cz">prodej@abc-development.cz</a></span></div>
     </div>
     <form id="form" class="rv">
       <div><label for="f1">Jméno a příjmení</label><input id="f1" required></div>
@@ -2348,7 +2411,7 @@ footer.ft4 .ft-col a,footer.ft4 .ft-col span{font-size:15px!important}
       <div class="full"><label for="sel">O který byt máte zájem?</label><select id="sel"><option>Zatím nevím</option></select></div>
       <div class="full"><label for="f5">Vaše zpráva</label><textarea id="f5"></textarea></div>
       <label class="check full"><input type="checkbox" required> Beru na vědomí <a href="ochrana-osobnich-udaju.html" style="text-decoration:underline">zásady ochrany osobních údajů</a>.</label>
-      <div class="full"><button class="btn btn-dark" type="submit">Odeslat poptávku</button></div>
+      <div class="full"><button class="btn btn-dark" type="submit"><span>Odeslat poptávku</span><svg class="bar" width="22" height="12" viewBox="0 0 22 12" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M0 6h20M15 1l5 5-5 5"/></svg></button></div>
       <div class="thanks" id="thanks">Náhled: formulář se zatím nikam neodesílá. Na webu se napojí na Web3Forms.</div>
     </form>
   </div>
@@ -2356,17 +2419,17 @@ footer.ft4 .ft-col a,footer.ft4 .ft-col span{font-size:15px!important}
 
 <footer class="ft4">
   <div class="wrap ft-top">
-    <div class="ft-col ft-brand"><a href="#" class="ft-logo" aria-label="Bystrc Obora, zpět nahoru"><svg width="58" height="35" viewBox="0 0 328 196" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="7" stroke-linejoin="miter" stroke-miterlimit="10"><polyline points="10,190 10,110 60,60 110,110 110,190"/><polyline points="125,190 125,110 175,60 225,110 225,190"/><polygon points="248,190 263,112 278,190"/><polygon points="285,190 302,92 319,190"/><line x1="0" y1="190" x2="328" y2="190"/></g></svg><span class="lt"><b>Bystrc</b> <span>Obora</span></span></a></div>
+    <div class="ft-col ft-brand"><a href="#" class="ft-logo zl" aria-label="Bystrc Obora, zpět nahoru"><svg class="zl-ic" width="52" height="31" viewBox="0 0 328 196" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="9" stroke-linejoin="miter" stroke-miterlimit="10"><polyline points="10,190 10,110 60,60 110,110 110,190"/><polyline points="125,190 125,110 175,60 225,110 225,190"/><polygon points="248,190 263,112 278,190"/><polygon points="285,190 302,92 319,190"/><line x1="0" y1="190" x2="328" y2="190"/></g></svg><span class="zl-t"><b>Bystrc</b> Obora</span></a></div>
     <nav class="ft-col" aria-label="O projektu"><h3>O projektu</h3><a href="#projekt">O projektu</a><a href="#byty">Nabídka bytů</a><a href="#lokalita">Lokalita</a><a href="#standard">Standardy</a></nav>
     <nav class="ft-col" aria-label="Další informace"><h3>Další informace</h3><a href="#galerie">Galerie</a><a href="#dotazy">FAQ</a><a href="#kontakt">Kontakt</a></nav>
-    <div class="ft-col"><h3>Kontakt</h3><span>Brno-Bystrc</span><a href="tel:+420000000000">Telefon: [doplnit]</a><a href="mailto:info@example.cz">E-mail: [doplnit]</a></div>
+    <div class="ft-col"><h3>Kontakt</h3><span>ABC Development s.r.o.</span><span>Rakovecká 229/73, Brno-Bystrc</span><a href="tel:+420777123456">+420 777 123 456</a><a href="mailto:prodej@abc-development.cz">prodej@abc-development.cz</a></div>
   </div>
   <div class="ft-bar">
     <div class="wrap ft-bar-in"><span>© 2026 Bystrc Obora</span><span class="ft-links"><a href="ochrana-osobnich-udaju.html">Zásady ochrany osobních údajů</a><a href="#" id="cookieOpen">Nastavení cookies</a></span></div>
   </div>
 </footer>
 
-<a href="#kontakt" class="btn btn-dark sticky">Mám zájem o byt</a>
+<a href="#kontakt" class="btn btn-dark sticky"><span>Mám zájem o byt</span><svg class="bar" width="22" height="12" viewBox="0 0 22 12" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M0 6h20M15 1l5 5-5 5"/></svg></a>
 
 <div class="cookie" id="cookie" role="dialog" aria-label="Souhlas s cookies">
   <button class="x" data-c="necessary" aria-label="Zavřít bez souhlasu">×</button>
@@ -2412,12 +2475,12 @@ const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.targ
 function watch(){document.querySelectorAll(".rv:not(.in)").forEach(el=>io.observe(el))}
 
 const units=[
- {id:"A1",d:2,m:"58 m²",o:"terasa 14 m²",p:"1. NP",c:"[cena]",s:"free"},
- {id:"A2",d:3,m:"76 m²",o:"balkon 8 m²",p:"2. NP",c:"[cena]",s:"free"},
- {id:"A3",d:4,m:"98 m²",o:"balkon 10 m²",p:"3. NP",c:"[cena]",s:"res"},
- {id:"B1",d:2,m:"55 m²",o:"terasa 12 m²",p:"1. NP",c:"[cena]",s:"free"},
- {id:"B2",d:3,m:"74 m²",o:"balkon 8 m²",p:"2. NP",c:"[cena]",s:"sold"},
- {id:"B3",d:4,m:"101 m²",o:"balkon 12 m²",p:"3. NP",c:"[cena]",s:"free"}
+ {id:"A1",d:2,m:"58 m²",o:"terasa 14 m²",p:"1. NP",c:"6 790 000 Kč",s:"free"},
+ {id:"A2",d:3,m:"76 m²",o:"balkon 8 m²",p:"2. NP",c:"8 690 000 Kč",s:"free"},
+ {id:"A3",d:4,m:"98 m²",o:"balkon 10 m²",p:"3. NP",c:"11 290 000 Kč",s:"res"},
+ {id:"B1",d:2,m:"55 m²",o:"terasa 12 m²",p:"1. NP",c:"6 450 000 Kč",s:"free"},
+ {id:"B2",d:3,m:"74 m²",o:"balkon 8 m²",p:"2. NP",c:"8 490 000 Kč",s:"sold"},
+ {id:"B3",d:4,m:"101 m²",o:"balkon 12 m²",p:"3. NP",c:"11 590 000 Kč",s:"free"}
 ];
 const lab={free:"Volný",res:"Rezervace",sold:"Prodáno"};
 function renderUnits(f){
@@ -2485,8 +2548,8 @@ document.querySelector(".ov-type").onclick=e=>{const b=e.target.closest("button"
  document.querySelectorAll(".ov-type button").forEach(x=>x.classList.toggle("on",x===b));
  const t=b.dataset.t;Object.entries(layers).forEach(([k,l])=>k===t?l.addTo(map):map.removeLayer(l));mapEl.classList.toggle("flat",t==="map")};
 const icon=(k,cls)=>L.divIcon({className:"",html:`<span class="mp ${cls||""}"><span class="mpb">${svg(k)}</span></span>`,iconSize:[0,0],iconAnchor:[0,0]});
-L.circle(HOME,{radius:260,stroke:false,fillColor:"#4E7A45",fillOpacity:.16}).addTo(map);
-L.circle(HOME,{radius:110,stroke:false,fillColor:"#4E7A45",fillOpacity:.2}).addTo(map);
+L.circle(HOME,{radius:260,stroke:false,fillColor:"#A5D6A7",fillOpacity:.35}).addTo(map);
+L.circle(HOME,{radius:110,stroke:false,fillColor:"#A5D6A7",fillOpacity:.45}).addTo(map);
 L.marker(HOME,{icon:icon("dum","home"),zIndexOffset:1000,title:"Bystrc Obora, Rakovecká 229/73"}).addTo(map)
  .bindTooltip("Bystrc Obora",{className:"olbl",direction:"top",offset:[0,-58]});
 CATS.forEach((c,ci)=>c.items.forEach((p,pi)=>{
