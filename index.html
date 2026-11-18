@@ -2288,6 +2288,36 @@ section#byty .row:not(.h):hover{background:#fff!important}
 section#byty .row.is-res{background:rgba(255,255,255,.55)!important}
 .pr-slides{background:var(--zbg)!important}
 section#lokalita .ov-panel{background:var(--zbg)!important}
+
+/* ===== Připomínky 18 až 22 ===== */
+/* 19) navigace verzálkami */
+.zh-nav a{text-transform:uppercase;letter-spacing:.08em;font-size:13px}
+.mnav.zm a:not(.zm-free):not(.zm-tel){text-transform:uppercase!important;letter-spacing:.08em!important;font-size:16px!important}
+/* 20) údaje stejně velké jako úvodní odstavec */
+.zf-list li{font-size:20px!important;line-height:1.45!important}
+.zf-list{max-width:1180px!important;gap:28px!important}
+@media(max-width:1180px){.zf-list li{font-size:18px!important}}
+/* 21) ceník vpravo: kolečko jako cookies, po najetí hranaté tlačítko */
+.zcen,.cookie-ico{width:44px!important;height:44px!important}
+.zcen{left:auto!important;right:24px!important;top:50%!important;bottom:auto!important;border-radius:22px!important;width:auto!important;min-width:44px;transform:translateY(-50%) translateX(12px)!important;transition:opacity .35s,visibility .35s,transform .35s,border-radius .3s,background-color .3s!important}
+.zcen.show{transform:translateY(-50%)!important}
+.zcen-i{width:44px!important;height:44px!important}
+.zcen-i svg{width:20px;height:20px}
+.zcen:hover,.zcen:focus-visible{border-radius:2px!important}
+.zcen:hover .zcen-t,.zcen:focus-visible .zcen-t,.zcen.open:hover .zcen-t{padding-left:20px!important;max-width:120px;opacity:1}
+.cookie-ico{right:24px!important;bottom:24px!important}
+@media(max-width:1000px){.zcen{right:12px!important;top:auto!important;bottom:128px!important;transform:translateY(8px)!important}.zcen.show{transform:none!important}.cookie-ico{right:12px!important;bottom:72px!important}}
+/* 22) tmavé sekce: Galerie a Kontakt */
+section#galerie,section#galerie.s-white,section#kontakt{background:#1E2A1D!important;color:#F2F0EB!important}
+section#galerie h2,section#galerie .sec-lead,section#galerie p,section#galerie .disclaimer,
+section#kontakt h2,section#kontakt .lead,section#kontakt .person b,section#kontakt .person span,section#kontakt .person a{color:#F2F0EB!important}
+section#kontakt .person span{opacity:.85}
+section#galerie .gal figure{background:#2A3828!important}
+#kontakt form{background:#fff!important;color:#23261F!important}
+#kontakt form label,#kontakt form .check,#kontakt form .check a{color:#23261F!important}
+section#galerie :focus-visible,section#kontakt :focus-visible{outline-color:#F2F0EB!important}
+#kontakt form :focus-visible{outline-color:#23261F!important}
+.btn.sticky{box-shadow:0 -1px 0 rgba(242,240,235,.18)!important}
 </style>
 </head>
 <body>
@@ -2317,7 +2347,7 @@ section#lokalita .ov-panel{background:var(--zbg)!important}
     <img src="img/uvod-fasada.jpg" alt="Fasáda domu Bystrc Obora s rohovými okny a borovicí" fetchpriority="high">
     <span class="zhero-shade" aria-hidden="true"></span>
     <div class="zhero-in"><div class="zhero-c">
-    <h1 class="zhero-h"><span class="zl0">Bystrc Obora:</span><span class="zl1">Moderní bydlení</span><span class="zl2">v&nbsp;srdci přírody</span></h1>
+    <h1 class="zhero-h"><span class="sr">Bystrc Obora: </span><span class="zl1">Moderní bydlení</span><span class="zl2">v&nbsp;srdci přírody</span></h1>
     <div class="zhero-side">
       <a class="zhero-cta" href="#byty">Zobrazit volné byty</a>
       <p class="zhero-meta"><span>16 bytů 4+kk</span><i aria-hidden="true"></i><span>Dokončení 2027</span></p>
