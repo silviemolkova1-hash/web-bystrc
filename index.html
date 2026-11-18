@@ -2417,8 +2417,13 @@ html body .zl .zl-t b{font-weight:600}
 /* Logo: znak oříznutý na viditelnou plochu, text přesně na spodní lince znaku */
 html body .zl{transform:none!important;align-items:baseline!important;padding:0!important}
 html body .zl .zl-ic,html body footer.ft4 .ft-logo.zl .zl-ic{width:76px!important;height:32.4px!important;display:block}
-html body .zl .zl-t,html body footer.ft4 .ft-logo.zl .zl-t{display:block;line-height:1!important;padding:0!important;margin:0!important;position:relative;top:-.5px}
+html body .zl .zl-t,html body footer.ft4 .ft-logo.zl .zl-t{display:block;line-height:1!important;padding:0!important;margin:0!important}
 @media(max-width:700px){html body .zl .zl-ic,html body footer.ft4 .ft-logo.zl .zl-ic{width:64px!important;height:27.3px!important}}
+
+/* Hlavička: text loga, menu i tlačítko na jedné účaří */
+html body .zh-in{align-items:baseline!important;flex-wrap:wrap;align-content:center}
+html body header.zh .zb{align-self:center}
+@media(max-width:1180px){html body .zh-in{flex-wrap:nowrap;align-items:center!important}html body .zl{align-self:center}}
 </style>
 </head>
 <body>
