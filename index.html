@@ -1940,6 +1940,34 @@ footer.ft4 .ft-logo .lt{font-size:11px;letter-spacing:2px;text-transform:upperca
 footer.ft4 .ft-logo .lt b{font-weight:700}
 footer.ft4 .ft-logo .lt span{font-size:inherit;letter-spacing:inherit;font-weight:400}
 @media(min-width:1181px){.about .photo{width:100%;aspect-ratio:auto;min-height:480px}.about .photo img{width:100%;height:100%;object-fit:cover;display:block}}
+
+/* === Lokalita podle viadukt.cz: centrovaný úvod, tabulka v mapě === */
+section#lokalita .loc-head{display:block;text-align:center;max-width:760px;margin:0 auto 56px}
+section#lokalita .loc-head .lead{padding-top:22px;max-width:640px;margin:0 auto}
+.ov{display:block;position:relative}
+.ov-mapwrap{width:100%;min-width:0;height:auto;aspect-ratio:1152/648;min-height:560px;border-radius:20px}
+.ov-panel{position:absolute;z-index:6;top:32px;left:32px;width:min(380px,42%);max-height:calc(100% - 64px);overflow:auto;background:#F2F0EB;border-radius:16px;padding:10px 22px;box-shadow:0 10px 34px rgba(20,22,15,.16);overscroll-behavior:contain}
+.ov-panel .ovc>button{min-height:54px;padding:16px 0}
+.ov-type{left:calc((100% + 32px + min(380px,42%)) / 2);transform:translateX(-50%);top:24px;background:#1E2A1D!important;border-radius:10px;padding:4px;gap:4px;box-shadow:0 6px 24px rgba(20,22,15,.18)}
+.ov-type button{background:transparent!important;color:rgba(255,255,255,.8);border-radius:7px;min-height:40px;padding:0 22px;transition:background .25s,color .25s}
+.ov-type button:hover{color:#fff}
+.ov-type button.on{background:#F2F0EB!important;color:#23261F;font-weight:500}
+.ov-gmap{top:auto;bottom:16px;left:auto;right:70px}
+@media(max-width:767px){
+.ov-mapwrap{aspect-ratio:327/432;min-height:380px;height:auto;max-height:620px}
+.ov-panel{position:static;width:auto;max-height:none;margin-top:12px;box-shadow:none;background:#E3E6DD;padding:6px 20px}
+.ov-type{left:50%}
+.ov-gmap{right:auto;left:14px;bottom:14px}}
+/* Logo: hlavička na mobilu a tabletu i patička stejně velké a zarovnané pod sebou */
+@media(max-width:1000px){
+header.hd5,header.hd5.scrolled{padding-left:22px!important;padding-right:22px!important}
+header.hd5 .lm,header.hd5 .logo svg{width:52px!important;height:31px!important}
+header.hd5 .logo{font-size:11px!important;letter-spacing:2px!important;gap:12px!important}
+footer.ft4 .ft-top,footer.ft4 .ft-bar-in{padding-left:22px!important;padding-right:22px!important}}
+.ov-panel,.ov-type{border-radius:2px!important}.ov-type button{border-radius:1px!important}
+@media(max-width:767px){.ov{display:flex;flex-direction:column}.ov-mapwrap{order:-1}}
+@media(max-width:767px){.ov>.ov-mapwrap,.ov>.ov-panel{width:100%;align-self:stretch}}
+@media(min-width:768px) and (max-width:900px){.ov-mapwrap{order:0;min-height:560px}.ov-panel{width:min(340px,46%)}.ov-type{left:calc((100% + 32px + min(340px,46%)) / 2)}}
 </style>
 </head>
 <body>
@@ -2042,8 +2070,6 @@ footer.ft4 .ft-logo .lt span{font-size:inherit;letter-spacing:inherit;font-weigh
     </div>
     <div class="ov rv">
       <div class="ov-panel">
-        <h3>Občanská vybavenost v okolí</h3>
-        <p class="ov-sub">Mapa a přehled důležitých míst v okolí projektu.</p>
         <div id="ovcats"></div>
       </div>
       <div class="ov-mapwrap" id="mapa">
@@ -2271,8 +2297,8 @@ CATS.forEach((c,ci)=>c.items.forEach((p,pi)=>{
  p.m=L.marker(p.ll,{icon:icon(c.i),title:p.t+", "+p.d}).addTo(map).bindTooltip(p.t,{className:"olbl",direction:"top",offset:[0,-56]});
  p.m.on("click",()=>{openCat(ci,false);select(ci,pi)});
 }));
-const wide=()=>innerWidth>900;
-let fitN=0;function fit(list){const b=L.latLngBounds([HOME,...list]),o={padding:wide()?[70,70]:[40,40],maxZoom:15};if(fitN++===0){map.fitBounds(b,o);return}map.flyToBounds(b,Object.assign(o,{duration:.9,easeLinearity:.25}))}
+const wide=()=>innerWidth>767;
+let fitN=0;function fit(list){const b=L.latLngBounds([HOME,...list]),pw=wide()?document.querySelector(".ov-panel").offsetWidth+32:0,o={paddingTopLeft:wide()?[pw+60,70]:[40,60],paddingBottomRight:wide()?[60,60]:[40,40],maxZoom:15};if(fitN++===0){map.fitBounds(b,o);return}map.flyToBounds(b,Object.assign(o,{duration:.9,easeLinearity:.25}))}
 const near=CATS.flatMap(c=>c.items.filter(p=>!p.far).map(p=>p.ll));
 fit(near);
 let selP=null;
@@ -2281,7 +2307,7 @@ function select(ci,pi){
  document.querySelectorAll(".ovc li button").forEach(b=>b.classList.toggle("sel",+b.dataset.c===ci&&+b.dataset.p===pi));
  const p=CATS[ci].items[pi];selP=p;const el=p.m.getElement();el&&el.querySelector(".mp").classList.add("sel");
  p.m.setZIndexOffset(900);p.m.openTooltip();
- if(!map.getBounds().pad(-.15).contains(p.ll))map.panTo(p.ll,{animate:true,duration:.7,easeLinearity:.25});
+ map.panInside(p.ll,{paddingTopLeft:wide()?[document.querySelector(".ov-panel").offsetWidth+90,90]:[50,90],paddingBottomRight:[60,60],animate:true,duration:.7});
 }
 function openCat(ci,doFit=true){
  document.querySelectorAll(".ovc").forEach(x=>{const on=+x.dataset.c===ci&&(!x.classList.contains("open")||!doFit);x.classList.toggle("open",on);x.querySelector("button").setAttribute("aria-expanded",on)});
