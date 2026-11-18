@@ -2357,6 +2357,55 @@ section#kontakt + footer.ft4 .ft-top,footer.ft4 .ft-top{border-top:1px solid rgb
 section#byty .st.free,section#byty .st.sold,section#byty .st.res{color:var(--c-ink)!important}
 html body footer.ft4 .ft-top .ft-col a,html body footer.ft4 .ft-top .ft-col:last-child a,html body footer.ft4 .ft-top .ft-col span{color:var(--c-bg)!important}
 footer.ft4 .ft-top{border-top:0!important}
+/* ===== Béžová + tmavě zelená, bez světle zelenošedé ===== */
+/* sekce */
+section#standard{background:var(--c-bg)!important}
+section#byty{background:var(--c-dark)!important;color:var(--c-bg)!important}
+section#byty h2,section#byty .lead,section#byty p.foot,section#byty .foot,section#byty .row,section#byty .row span,section#byty .row .id,section#byty .row .price,section#byty .row.h,section#byty .row.h span,section#byty .link,section#byty .chip{color:var(--c-bg)!important}
+section#byty .chip{border-color:rgba(242,240,235,.25)!important}
+section#byty .chip:hover,section#byty .chip.on{border-color:var(--c-bg)!important}
+section#byty .table{border-top-color:rgba(242,240,235,.25)!important}
+section#byty .row{border-color:rgba(242,240,235,.14)!important}
+section#byty .row:not(.h):hover{background:rgba(242,240,235,.06)!important}
+section#byty .row.is-res{background:rgba(242,240,235,.04)!important}
+section#byty .row.is-sold,section#byty .row.is-sold span,section#byty .row.is-sold .id,section#byty .row.is-sold .price{color:var(--c-bg)!important;opacity:.5}
+section#byty .row.is-sold .st{opacity:1}
+section#byty .st.free,section#byty .st.sold,section#byty .st.res{color:var(--c-ink)!important}
+section#byty .st.res{background:var(--c-bg)!important;box-shadow:none!important}
+section#byty .link{text-decoration-color:rgba(242,240,235,.4)!important}
+section#byty .link:hover{text-decoration-color:var(--c-bg)!important;color:var(--c-bg)!important}
+section#byty .u-cta,section#byty a.u-cta{background:var(--c-bg)!important;color:var(--c-ink)!important}
+section#byty .u-cta:hover{background:var(--c-bg)!important;filter:brightness(.94)}
+section#byty :focus-visible{outline-color:var(--c-bg)!important}
+/* karty a prvky bez zelenošedé */
+section#projekt .benefit{background:transparent!important;box-shadow:inset 0 0 0 1px rgba(35,38,31,.16)!important}
+section#projekt .benefit:hover{background:rgba(35,38,31,.04)!important;filter:none!important}
+.qa .qb,section#standard .qa .qb,.qb{background:transparent!important;box-shadow:inset 0 0 0 1px rgba(35,38,31,.2)!important}
+.qa summary:hover .qb{background:rgba(35,38,31,.05)!important}
+.pr-slides{background:rgba(35,38,31,.06)!important}
+@media(max-width:767px){.ov-panel{background:var(--c-bg)!important;box-shadow:inset 0 0 0 1px rgba(35,38,31,.14)!important}}
+/* žádné stíny u tlačítek */
+.btn,.btn:hover,.btn-dark,.u-cta,.u-cta:hover,.zhero-cta,.zhero-cta:hover,.zh-tel,.zh-tel:hover,.zm-free,.zm-free:hover,.zm-tel,#kontakt form .btn,#kontakt form .btn:hover,.zcen,.cookie-ico,.cookie button,.ov-type,.ov-type button,section#byty .chip{box-shadow:none!important}
+.btn:hover,.u-cta:hover,.zhero-cta:hover,.zh-tel:hover,.zm-free:hover,#kontakt form .btn:hover{transform:none!important}
+/* zelená tlačítka verzálkami */
+.zhero-cta,.zh-tel,.mnav.zm a.zm-free,.mnav.zm a.zm-tel{text-transform:uppercase!important;letter-spacing:.08em!important;font-size:13px!important}
+/* spodní lišta užší */
+footer.ft4 .ft-bar-in{padding-top:8px!important;padding-bottom:8px!important;flex-direction:row!important;align-items:center!important;flex-wrap:wrap;gap:4px 24px!important}
+footer.ft4 .ft-bar,footer.ft4 .ft-bar a{font-size:13px!important}
+footer.ft4 .ft-bar a{min-height:32px!important}
+@media(max-width:1000px){footer.ft4 .ft-bar-in{padding-bottom:64px!important}}
+/* sekce pod úvodem */
+.zfacts{padding:clamp(80px,9vw,128px) 0 clamp(72px,8vw,112px)!important}
+.zf-lead{max-width:760px!important;margin:0 auto clamp(48px,6vw,80px)!important;text-align:center;font-size:clamp(22px,2.1vw,30px)!important;line-height:1.45!important;letter-spacing:-.005em}
+.zf-list{max-width:1180px!important;display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:0!important;justify-items:stretch!important;border-top:1px solid rgba(35,38,31,.16);border-bottom:1px solid rgba(35,38,31,.16)}
+.zf-list li{justify-content:center;padding:30px 18px;font-size:18px!important}
+.zf-list li+li{border-left:1px solid rgba(35,38,31,.16)}
+@media(max-width:1000px){.zf-list{grid-template-columns:repeat(2,minmax(0,1fr))!important;max-width:640px!important;row-gap:0!important}.zf-list li:nth-child(3){border-left:0}.zf-list li:nth-child(n+3){border-top:1px solid rgba(35,38,31,.16)}}
+@media(max-width:560px){.zf-list{grid-template-columns:1fr!important;max-width:none!important}.zf-list li{justify-content:flex-start;padding:22px 4px}.zf-list li+li{border-left:0;border-top:1px solid rgba(35,38,31,.16)}.zf-lead{text-align:left}}
+html body section#byty .chip.on,html body section#byty .chip:hover{color:var(--c-bg)!important;background:transparent!important}
+html body section#byty .row.is-res,html body section#byty .row.is-res span:not(.st),html body section#byty .row.is-res .id,html body section#byty .row.is-res .price,html body section#byty .row.is-res .link{color:var(--c-bg)!important}
+html body .zcen,html body .zcen:hover,html body .zcen:focus-visible,html body .zcen.open{background:var(--c-dark)!important;color:var(--c-bg)!important;filter:none!important;box-shadow:inset 0 0 0 1px rgba(242,240,235,.35)!important}
+html body .zcen .zcen-t{color:var(--c-bg)!important}
 </style>
 </head>
 <body>
