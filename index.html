@@ -2129,12 +2129,48 @@ section#byty .link:hover{text-decoration-color:#23261F}
 .mnav.zm a.zm-tel:hover{background:rgba(35,38,31,.06)}
 .zh-nav.has-on a:not(.on){opacity:1}
 .cookie button,.cookie .cb button{text-transform:none!important;letter-spacing:0!important;font-size:15px!important}
+
+/* ===== Kontrola přístupnosti, ovládání a responzivity (UI/UX Pro Max) ===== */
+.skip{position:fixed;left:16px;top:-80px;z-index:100;background:#23261F;color:#F2F0EB;padding:12px 18px;border-radius:2px;text-decoration:none;font-size:15px;transition:top .2s}
+.skip:focus{top:12px}
+#obsah:focus{outline:none}
+html{scroll-padding-top:88px}
+@media(max-width:700px){html{scroll-padding-top:76px;scroll-padding-bottom:72px}}
+a,button,summary,input,select,textarea,label{touch-action:manipulation}
+:where(a,button,summary,select,input,textarea,[tabindex]):focus-visible{outline:2px solid #23261F!important;outline-offset:3px!important}
+.zhero :where(a,button):focus-visible,.cookie :where(a,button):focus-visible{outline-color:#fff!important}
+.zhero a.zhero-cta:focus-visible{outline-color:#fff!important}
+/* čitelnost malých textů */
+.ov-gmap{font-size:14px!important;min-height:44px;display:inline-flex!important;align-items:center;padding:0 14px!important;box-sizing:border-box}
+p.disclaimer{font-size:14px!important}
+footer.ft4 .ft-bar,footer.ft4 .ft-bar a{font-size:14px!important}
+/* checkbox a select */
+#kontakt form .check input{width:22px!important;height:22px!important}
+#kontakt form .check{min-height:44px;align-items:center}
+#kontakt form select{min-height:48px}
+#kontakt form input,#kontakt form select,#kontakt form textarea{font-size:16px!important}
+.ov-type button{min-height:44px!important}
+/* pozastavení střídání fotek při najetí */
+.pr-slides:hover .pr-s,.pr-slides:hover .pr-s img{animation-play-state:paused}
+@media(max-width:1180px){
+/* dotykové cíle min. 44 px */
+section#byty .chip{min-height:44px;min-width:44px;padding-left:10px!important;padding-right:10px!important;box-sizing:border-box}
+.leaflet-touch .leaflet-control-zoom a,.leaflet-control-zoom a{width:44px!important;height:44px!important;line-height:44px!important}
+.zl{min-height:44px;align-items:center}
+footer.ft4 .ft-col a{display:inline-flex;align-items:center;min-height:44px;padding:0}
+footer.ft4 .ft-col{row-gap:0!important}
+footer.ft4 .ft-bar a{display:inline-flex;align-items:center;min-height:44px}
+footer.ft4 .ft-logo{min-height:44px}
+}
+#kontakt form input:not([type=checkbox]){min-height:48px}
+footer.ft4 .ft-col a,footer.ft4 .ft-col span{font-size:15px!important}
 </style>
 </head>
 <body>
 
 <div class="note"><b>Náhled</b>: hranaté závorky a ukázkové byty jsou zástupná data.</div>
 
+<a class="skip" href="#obsah">Přeskočit na obsah</a>
 <header class="zh">
   <div class="zh-in">
     <a href="#" class="zl" aria-label="Bystrc Obora, úvod"><svg class="zl-ic" width="52" height="31" viewBox="0 0 328 196" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="9" stroke-linejoin="miter" stroke-miterlimit="10"><polyline points="10,190 10,110 60,60 110,110 110,190"/><polyline points="125,190 125,110 175,60 225,110 225,190"/><polygon points="248,190 263,112 278,190"/><polygon points="285,190 302,92 319,190"/><line x1="0" y1="190" x2="328" y2="190"/></g></svg><span class="zl-t"><b>Bystrc</b> Obora</span></a>
@@ -2151,7 +2187,7 @@ section#byty .link:hover{text-decoration-color:#23261F}
 
 <a href="#" class="totop" aria-label="Zpět nahoru"><svg width="16" height="18" viewBox="0 0 16 18" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M8 17V1M1 8l7-7 7 7"/></svg></a>
 
-<section class="zhero" aria-label="Úvod">
+<section class="zhero" id="obsah" tabindex="-1" aria-label="Úvod">
   <div class="zhero-media">
     <img src="img/uvod-fasada.jpg" alt="Fasáda domu Bystrc Obora s rohovými okny a borovicí" fetchpriority="high">
     <span class="zhero-shade" aria-hidden="true"></span>
@@ -2521,5 +2557,12 @@ ds.forEach(d=>d.querySelector("summary").addEventListener("click",e=>{e.preventD
 })();
 </script>
 <script>(function(){const f=()=>document.body.classList.toggle("past-hero",scrollY>innerHeight*.75);addEventListener("scroll",f,{passive:true});f()})();</script>
+<script>
+(function(){/* Esc zavře mobilní menu a vrátí fokus na tlačítko */
+const b=document.querySelector(".zb");addEventListener("keydown",e=>{if(e.key==="Escape"&&document.body.classList.contains("menu-open")){b.click();b.focus()}});
+/* zabránit tabování za zavřeným menu */
+const m=document.querySelector(".zm");if(!m)return;const upd=()=>{const o=document.body.classList.contains("menu-open");m.toggleAttribute("inert",!o);m.setAttribute("aria-hidden",o?"false":"true")};new MutationObserver(upd).observe(document.body,{attributes:true,attributeFilter:["class"]});upd();
+})();
+</script>
 </body>
 </html>
