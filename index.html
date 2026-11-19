@@ -2559,6 +2559,12 @@ html body .faq3 .faq3-h{margin:0 0 20px!important;font-size:clamp(32px,3.4vw,48p
 html body .zhero-cta,html body .zh-tel,html body .zm-free,html body .zm-tel,html body a.faq3-btn,html body section#byty a.u-cta,html body #kontakt form button.btn.btn-dark[type=submit],html body .btn.sticky{background:#A5D6A7!important;color:#23261F!important;filter:none!important;transform:none!important;box-shadow:none!important;transition:background-color .3s ease!important}
 html body .zhero-cta:hover,html body .zh-tel:hover,html body .zm-free:hover,html body .zm-tel:hover,html body a.faq3-btn:hover,html body section#byty a.u-cta:hover,html body #kontakt form button.btn.btn-dark[type=submit]:hover,html body .btn.sticky:hover{background:#8FC992!important;filter:none!important;transform:none!important}
 html body a.faq3-btn{font-size:13px!important;text-transform:uppercase!important;letter-spacing:.08em!important;font-weight:400!important;height:var(--btn-h,50px)!important;padding:0 28px!important;border-radius:2px!important;border:0!important;display:inline-flex!important;align-items:center!important;line-height:1!important}
+
+html body a.btn.faq3-btn:hover,html body a.btn.faq3-btn:focus-visible{background:#8FC992!important;color:#23261F!important}
+/* sticky „Mám zájem o byt“: jen mobil, až za sekcí Klid za okny */
+@media(min-width:768px){html body a.btn.sticky,html body .btn.sticky{display:none!important}}
+html body .btn.sticky{transform:translateY(110%)!important;transition:transform .4s ease,background-color .3s ease!important}
+html body.past-klid .btn.sticky{transform:none!important}
 </style>
 </head>
 <body>
@@ -2982,5 +2988,6 @@ const m=document.querySelector(".zm");if(!m)return;const upd=()=>{const o=docume
 })();
 </script>
 <script>(function(){const c=document.querySelector(".zcen"),h=document.querySelector(".zhero");if(!c||!h)return;const f=()=>{const past=h.getBoundingClientRect().bottom<70;c.classList.toggle("show",past);c.tabIndex=past?0:-1};addEventListener("scroll",f,{passive:true});addEventListener("resize",f);f()})();</script>
+<script>(function(){const t=document.getElementById("projekt");const f=()=>{if(!t)return;document.body.classList.toggle("past-klid",t.getBoundingClientRect().bottom<=innerHeight)};addEventListener("scroll",f,{passive:true});addEventListener("resize",f);f()})();</script>
 </body>
 </html>
