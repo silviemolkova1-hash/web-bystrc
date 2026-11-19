@@ -2693,6 +2693,35 @@ html body section .faq2-list details.qa[open]:not(.closing) .qb{background:#A5D6
 .faq3-img img{transition:transform 1.2s ease}
 .faq3-img:hover img{transform:scale(1.04)}
 @media(prefers-reduced-motion:reduce){html body .faq2-list details.qa summary .qt,.faq3-img img{transition:none}}
+
+html body section#standard .faq2-list details.qa summary:hover .qb,html body section#dotazy .faq2-list details.qa summary:hover .qb{background:rgba(165,214,167,.45)!important}
+html body section#standard .faq2-list details.qa[open]:not(.closing) .qb,html body section#dotazy .faq2-list details.qa[open]:not(.closing) .qb{background:#A5D6A7!important}
+
+/* ===== Pod úvodem: výrazná věta + trasa vzdáleností ===== */
+html body section.zfacts.zf3{padding:var(--sec) 0!important;background:var(--zbg)!important}
+.zf3-top{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:clamp(24px,5vw,96px);align-items:end}
+.zf3-big{margin:0;font-size:clamp(26px,2.9vw,42px);font-weight:500;line-height:1.22;letter-spacing:-.02em;max-width:920px;color:var(--c-ink)}
+.zf3-tags{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px;align-items:flex-end}
+.zf3-tags li{display:inline-flex;align-items:center;height:40px;padding:0 18px;background:var(--c-dark);color:var(--c-bg);font-size:13px;letter-spacing:.08em;text-transform:uppercase;border-radius:2px;white-space:nowrap}
+.zf3-route{position:relative;margin-top:clamp(56px,6vw,96px)}
+.zf3-line{position:absolute;top:24px;left:12.5%;right:12.5%;height:2px;background:rgba(30,42,29,.14)}
+.zf3-line i{position:absolute;inset:0;background:var(--c-dark);transform:scaleX(0);transform-origin:left;transition:transform 1.6s cubic-bezier(.4,0,.2,1)}
+.zf3-route.go .zf3-line i{transform:scaleX(1)}
+.zf3-stops{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;position:relative}
+.zf3-stop{display:flex;flex-direction:column;align-items:center;text-align:center;opacity:.35;transform:translateY(8px);transition:opacity .5s ease,transform .5s ease;transition-delay:calc(var(--d)*.4s)}
+.zf3-route.go .zf3-stop{opacity:1;transform:none}
+.zf3-dot{display:flex;align-items:center;justify-content:center;width:20px;height:20px;margin:14px 0 22px;border-radius:50%;background:var(--zbg);border:2px solid var(--c-dark);transition:background-color .4s ease;transition-delay:calc(var(--d)*.4s)}
+.zf3-route.go .zf3-dot{background:#A5D6A7}
+.zf3-home .zf3-dot{width:48px;height:48px;margin:0 0 16px;background:var(--c-dark)!important;color:#A5D6A7;border:0}
+.zf3-stop em{font-style:normal;font-size:clamp(20px,1.8vw,26px);font-weight:500;letter-spacing:-.01em;line-height:1.2;color:var(--c-ink)}
+.zf3-pl{margin-top:6px;font-size:15px;line-height:1.45;opacity:.75}
+@media(max-width:900px){.zf3-top{grid-template-columns:1fr;align-items:start}.zf3-tags{flex-direction:row;flex-wrap:wrap;align-items:flex-start}
+.zf3-stops{grid-template-columns:1fr;gap:26px}.zf3-stop{display:grid;grid-template-columns:48px 1fr;column-gap:20px;align-items:center;text-align:left}
+.zf3-stop .zf3-dot{grid-row:1/3;justify-self:center;margin:0}.zf3-stop em{align-self:end}.zf3-pl{margin-top:2px;align-self:start}
+.zf3-line{top:24px;bottom:24px;left:23px;right:auto;width:2px;height:auto}.zf3-line i{transform:scaleY(0);transform-origin:top}.zf3-route.go .zf3-line i{transform:scaleY(1)}}
+@media(prefers-reduced-motion:reduce){.zf3-line i,.zf3-stop,.zf3-dot{transition:none}}
+
+@media(min-width:901px){.zf3-dot{margin:14px 0 30px}.zf3-tags{align-items:stretch}.zf3-tags li{justify-content:center}}
 </style>
 </head>
 <body>
@@ -2730,15 +2759,21 @@ html body section .faq2-list details.qa[open]:not(.closing) .qb{background:#A5D6
     </div></div>
   </div>
 </section>
-<section class="zfacts" aria-label="Projekt v číslech">
-  <div class="zf-in">
-    <p class="zf-lead">Dva moderní domy v&nbsp;klidné části Bystrce, obklopené zelení a jen 13&nbsp;minut pěšky od Brněnské přehrady. Do centra Brna jste za 20&nbsp;minut.</p>
-    <ul class="zf-list zf-num">
-      <li><b><span class="zc" data-to="16">16</span></b><span class="zc-l">bytů 4+kk</span></li>
-      <li><b><span class="zc" data-to="13">13</span> min</b><span class="zc-l">pěšky k Brněnské přehradě</span></li>
-      <li><b><span class="zc" data-to="20">20</span> min</b><span class="zc-l">autem do centra Brna</span></li>
-      <li><b><span class="zc" data-to="2027">2027</span></b><span class="zc-l">plánované dokončení</span></li>
-    </ul>
+<section class="zfacts zf3" aria-label="Projekt a okolí">
+  <div class="wrap">
+    <div class="zf3-top rv">
+      <p class="zf3-big">Dva moderní domy v&nbsp;klidné části Bystrce. Les začíná hned za domem, přehrada je na dosah a&nbsp;do centra Brna to máte 20&nbsp;minut.</p>
+      <ul class="zf3-tags"><li>16 bytů 4+kk</li><li>Dokončení 2027</li></ul>
+    </div>
+    <div class="zf3-route">
+      <span class="zf3-line" aria-hidden="true"><i></i></span>
+      <ol class="zf3-stops" aria-label="Vzdálenosti od domu">
+        <li class="zf3-stop zf3-home" style="--d:0"><span class="zf3-dot" aria-hidden="true"><svg width="22" height="15" viewBox="541 231 278 189" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="16"><path d="M664.5 302V414H547V300L614 245L733 343"/><path d="M664.5 302L740 239L812.5 300V414H756"/><path d="M733 307V418.5"/></g></svg></span><em>Váš domov</em><span class="zf3-pl">Rakovecká 229/73, Bystrc</span></li>
+        <li class="zf3-stop" style="--d:1"><span class="zf3-dot" aria-hidden="true"></span><em>Hned za domem</em><span class="zf3-pl">les a cyklostezky</span></li>
+        <li class="zf3-stop" style="--d:2"><span class="zf3-dot" aria-hidden="true"></span><em>13 min pěšky</em><span class="zf3-pl">Brněnská přehrada</span></li>
+        <li class="zf3-stop" style="--d:3"><span class="zf3-dot" aria-hidden="true"></span><em>20 min autem</em><span class="zf3-pl">centrum Brna</span></li>
+      </ol>
+    </div>
   </div>
 </section>
 <section class="about sand" id="projekt">
@@ -3149,8 +3184,6 @@ function u(){const r=tr.getBoundingClientRect(),m=innerHeight*.6;const pr=Math.m
 addEventListener("scroll",u,{passive:true});addEventListener("resize",u);u()}
 })();</script>
 <script>(function(){const g=document.querySelector(".tl3");if(!g)return;const f=()=>{const r=g.getBoundingClientRect(),m=innerHeight/2;document.body.classList.toggle("on-green",r.top<m&&r.bottom>m)};addEventListener("scroll",f,{passive:true});f()})();</script>
-<script>(function(){const els=[...document.querySelectorAll(".zc")];if(!els.length)return;if(matchMedia("(prefers-reduced-motion:reduce)").matches)return;
-const run=e=>{const to=+e.dataset.to,from=to>1000?to-12:0,t0=performance.now(),d=1400;const f=n=>{const p=Math.min(1,(n-t0)/d),q=1-Math.pow(1-p,3);e.textContent=Math.round(from+(to-from)*q);if(p<1)requestAnimationFrame(f)};f(t0)};
-const io=new IntersectionObserver(x=>x.forEach(y=>{if(y.isIntersecting){run(y.target);io.unobserve(y.target)}}),{threshold:.6});els.forEach(e=>io.observe(e))})();</script>
+<script>(function(){const r=document.querySelector(".zf3-route");if(!r)return;if(!("IntersectionObserver" in window)){r.classList.add("go");return}const io=new IntersectionObserver(e=>{if(e[0].isIntersecting){r.classList.add("go");io.disconnect()}},{threshold:.5});io.observe(r)})();</script>
 </body>
 </html>
