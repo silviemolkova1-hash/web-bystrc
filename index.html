@@ -546,7 +546,7 @@ header.hd5 .burger{display:none;position:absolute;right:14px;top:50%;transform:t
 .ovc li button.sel{border-color:#4E7A45;color:#4E7A45}
 .ov-mapwrap{position:relative;border-radius:20px;overflow:hidden;min-height:640px;background:#E3E6DD}
 .ov-map{position:absolute;inset:0;z-index:1}
-.ov-map.flat .leaflet-tile-pane{filter:grayscale(.55) brightness(1.04) contrast(.94)}
+.ov-map.flat .leaflet-tile-pane{filter:none}
 .ov-map .leaflet-div-icon{background:none;border:0}
 .ov-map .leaflet-control-zoom{border:0;box-shadow:0 6px 24px rgba(20,22,15,.12);border-radius:10px;overflow:hidden}
 .ov-map .leaflet-control-zoom a{width:40px;height:40px;line-height:40px;color:var(--ink)}
@@ -2919,6 +2919,10 @@ html body .zhero-meta i{height:16px!important}
 :root{--btn-h:44px!important}
 html body .zhero-cta,html body .zh-tel,html body a.faq3-btn,html body section#byty a.u-cta,html body #kontakt form button[type=submit],html body nav.mnav.zm a.zm-free,html body nav.mnav.zm a.zm-tel{height:44px!important;min-height:0!important}
 html body .btn.sticky{height:50px!important}
+
+/* mapa: ostrá, bez filtrů */
+html body .ov-map .leaflet-tile-pane{filter:none!important}
+html body .ov-map img.leaflet-tile{image-rendering:auto}
 </style>
 </head>
 <body>
@@ -3015,7 +3019,7 @@ html body .btn.sticky{height:50px!important}
       <div class="ov-mapwrap" id="mapa">
         <div class="ov-map" id="lmapc" aria-label="Mapa okolí Bystrc Obora"></div>
         <a class="ov-gmap" href="https://www.google.com/maps/search/?api=1&amp;query=Rakovecká+229%2F73%2C+635+00+Brno-Bystrc" target="_blank" rel="noopener">Otevřít v Google Maps</a>
-        <div class="ov-type" role="group" aria-label="Typ mapy"><button class="on" type="button" data-t="map">Mapa</button><button type="button" data-t="sat">Satelitní</button></div>
+        <div class="ov-type" role="group" aria-label="Typ mapy"><button type="button" data-t="map">Mapa</button><button class="on" type="button" data-t="sat">Satelitní</button></div>
       </div>
     </div>
     
@@ -3255,14 +3259,16 @@ const svg=(k,c)=>`<svg class="${c||""}" viewBox="0 0 24 24" fill="none" stroke="
 const chev='<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>';
 const catsEl=document.getElementById("ovcats");
 catsEl.innerHTML=CATS.map((c,ci)=>`<div class="ovc" data-c="${ci}"><button type="button" aria-expanded="false">${svg(c.i,"ci")}<span>${c.n}</span>${chev}</button><ul>${c.items.map((p,pi)=>`<li><button type="button" data-c="${ci}" data-p="${pi}">${p.t}<small>${p.d}</small></button></li>`).join("")}</ul></div>`).join("");
-const mapEl=document.getElementById("lmapc");mapEl.classList.add("flat");
+const mapEl=document.getElementById("lmapc");
 const map=L.map(mapEl,{scrollWheelZoom:false,zoomControl:false,dragging:!L.Browser.mobile,tap:false});
 map.attributionControl.setPrefix('<a href="https://leafletjs.com" target="_blank" rel="noopener">Leaflet</a>');
 L.control.zoom({position:"bottomright"}).addTo(map);
+const R=L.Browser.retina;
+const esri=(svc,o)=>L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/"+svc+"/MapServer/tile/{z}/{y}/{x}",Object.assign({maxZoom:20,maxNativeZoom:19,detectRetina:R},o||{}));
 const layers={
- map:L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png",{maxZoom:19,attribution:'&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>'}),
- sat:L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",{maxZoom:19,attribution:'Snímky &copy; Esri'})};
-layers.map.addTo(map);
+ map:L.tileLayer("https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png",{subdomains:"abcd",maxZoom:20,attribution:'&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions" target="_blank" rel="noopener">CARTO</a>'}),
+ sat:L.layerGroup([esri("World_Imagery",{attribution:'Snímky &copy; Esri'}),esri("Reference/World_Transportation",{opacity:.9}),esri("Reference/World_Boundaries_and_Places")])};
+layers.sat.addTo(map);
 document.querySelector(".ov-type").onclick=e=>{const b=e.target.closest("button");if(!b)return;
  document.querySelectorAll(".ov-type button").forEach(x=>x.classList.toggle("on",x===b));
  const t=b.dataset.t;Object.entries(layers).forEach(([k,l])=>k===t?l.addTo(map):map.removeLayer(l));mapEl.classList.toggle("flat",t==="map")};
