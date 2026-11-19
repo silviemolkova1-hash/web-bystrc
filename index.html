@@ -2769,6 +2769,52 @@ html body .op-left .op-tab{padding:14px 0}
 
 html body .op-left{justify-content:flex-start!important}
 @media(min-width:901px){html body section#projekt .op-pics{min-height:470px!important}html body section#projekt .op-x{align-items:stretch!important}}
+
+/* ===== Ceník: modernější řádky, stavy, filtry ===== */
+html body section#byty .filters{gap:8px!important}
+html body section#byty button.chip{height:40px!important;padding:0 18px!important;border:0!important;border-radius:2px!important;background:rgba(242,240,235,.08)!important;color:var(--c-bg)!important;font-size:13px!important;text-transform:uppercase!important;letter-spacing:.08em!important;box-shadow:none!important;transition:background-color .3s ease!important}
+html body section#byty button.chip::after,html body section#byty button.chip::before{display:none!important}
+html body section#byty button.chip:hover{background:rgba(242,240,235,.16)!important}
+html body section#byty button.chip.on{background:#A5D6A7!important;color:#23261F!important}
+html body section#byty .row:not(.h){transition:background-color .3s ease}
+html body section#byty .row:not(.h):hover{background:rgba(165,214,167,.08)!important}
+html body section#byty .row.is-sold{opacity:.4}
+html body section#byty .row.is-sold .price{text-decoration:none!important}
+html body section#byty span.st{background:transparent!important;color:var(--c-bg)!important;padding:0!important;border:0!important;display:inline-flex!important;align-items:center;gap:8px;font-size:14px!important;text-transform:none!important;letter-spacing:0!important}
+html body section#byty span.st::before{content:""!important;display:block!important;width:8px;height:8px;border-radius:50%;background:#A5D6A7;flex:none}
+html body section#byty span.st.res::before{background:transparent;box-shadow:inset 0 0 0 1.5px var(--c-bg)}
+html body section#byty span.st.sold::before{background:rgba(242,240,235,.5)}
+html body section#byty .acts{display:flex!important;align-items:center;justify-content:flex-end;gap:20px}
+html body section#byty a.u-want{display:inline-flex;align-items:center;height:36px;padding:0 16px;background:#A5D6A7;color:#23261F!important;font-size:13px;text-transform:uppercase;letter-spacing:.08em;border-radius:2px;text-decoration:none!important;white-space:nowrap;transition:background-color .3s ease}
+html body section#byty a.u-want:hover{background:#8FC992}
+html body section#byty a.link{text-decoration:none!important;border-bottom:1px solid rgba(242,240,235,.4);padding-bottom:2px;transition:border-color .3s ease}
+html body section#byty a.link:hover{border-color:var(--c-bg)}
+/* ===== Lokalita: bez stínu a rámu, panel ve stylu otázek ===== */
+html body .ov-panel{box-shadow:none!important;border-radius:2px!important}
+html body .ov-mapwrap,html body .ov-map{background:transparent!important;border-radius:2px!important;overflow:hidden}
+html body .ovc .chev{width:28px!important;height:28px!important;padding:6px;border-radius:50%;box-sizing:border-box;transition:background-color .3s ease,transform .3s ease}
+html body .ovc button:hover .chev{background:rgba(165,214,167,.45)}
+html body .ovc button[aria-expanded="true"] .chev{background:#A5D6A7}
+html body .ov-gmap{background:var(--c-bg)!important;color:var(--c-ink)!important;font-size:13px!important;text-transform:uppercase;letter-spacing:.08em;height:40px!important;display:inline-flex!important;align-items:center;box-shadow:none!important;transition:background-color .3s ease}
+html body .ov-gmap:hover{background:#A5D6A7!important}
+html body .ov-type button{font-size:13px!important;text-transform:uppercase;letter-spacing:.08em}
+/* ===== Kontakt: karta s iniciálami ===== */
+html body section#kontakt .person.pc{display:flex!important;align-items:flex-start;gap:24px;margin-top:40px;padding:28px 0 0!important;border-top:1px solid rgba(242,240,235,.2)}
+.pc-av{flex:none;display:flex;align-items:center;justify-content:center;width:72px;height:72px;border-radius:50%;background:#A5D6A7;color:#23261F;font-size:22px;font-weight:500;letter-spacing:.02em}
+.pc-in{display:flex;flex-direction:column;gap:4px}
+html body section#kontakt .pc-in b{font-size:var(--t-h3)!important;font-weight:500!important;line-height:1.3}
+html body section#kontakt .pc-role{font-size:14px!important;opacity:.7;margin-bottom:10px}
+html body section#kontakt a.pc-l{font-size:var(--t-lead)!important;color:var(--c-bg)!important;text-decoration:none;width:max-content;border-bottom:1px solid transparent;transition:border-color .3s ease}
+html body section#kontakt a.pc-l:hover{border-color:var(--c-bg)}
+@media(max-width:560px){.pc-av{width:56px;height:56px;font-size:18px}html body section#kontakt .person.pc{gap:16px}}
+
+html body section#byty .row span.st.free,html body section#byty .row span.st.res,html body section#byty .row span.st.sold{background:transparent!important;color:var(--c-bg)!important;box-shadow:none!important;padding:0!important}
+html body section#byty .row.is-res{background:transparent!important}
+html body section#byty .row.is-res:hover,html body section#byty .row.is-free:hover{background:rgba(165,214,167,.08)!important}
+html body section#byty .row.is-res span,html body section#byty .row.is-res .id,html body section#byty .row.is-res .price{color:var(--c-bg)!important}
+html body section#byty a.link{border-bottom:0!important;padding-bottom:0!important;text-decoration:underline!important;text-underline-offset:4px;text-decoration-color:rgba(242,240,235,.4)!important;min-height:0!important}
+html body section#byty a.link:hover{text-decoration-color:var(--c-bg)!important}
+html body section#kontakt .person.pc .pc-av,html body section#kontakt .person.pc span.pc-av{opacity:1!important;color:#23261F!important}
 </style>
 </head>
 <body>
@@ -2848,7 +2894,7 @@ html body .op-left{justify-content:flex-start!important}
     <div class="head-row rv">
       <div>
         <h2>Najděte to své ideální místo pro život</h2>
-        <p class="lead">Vyberte si z&nbsp;nabídky nových bytů o&nbsp;dispozicích 2+kk až 4+kk. Prohlédněte si jejich plochu, umístění v&nbsp;domě, ceny i&nbsp;půdorysy a&nbsp;najděte prostor, který odpovídá vašim představám.</p>
+        <p class="lead">Byty 2+kk až 4+kk s&nbsp;terasou nebo balkonem. Ke každému je k&nbsp;dispozici půdorys.</p>
       </div>
       <div class="filters" id="filters">
         <button class="chip on" data-f="all">Všechny</button>
@@ -2862,7 +2908,7 @@ html body .op-left{justify-content:flex-start!important}
       <div class="row h"><span>Byt</span><span>Dispozice</span><span>Plocha</span><span>Venkovní plocha</span><span>Podlaží</span><span>Cena vč. DPH</span><span>Stav</span><span></span></div>
       <div id="rows"></div>
     </div>
-    <div class="u-foot"><p class="foot">Všechny uvedené ceny jsou včetně DPH. Ke každému bytu je k&nbsp;dispozici půdorys. Pokud vás některý zaujal, rádi vám poskytneme bližší informace.</p><a class="u-cta" href="#kontakt"><span>Mám zájem o byt</span><svg class="bar" width="22" height="12" viewBox="0 0 22 12" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M0 6h20M15 1l5 5-5 5"/></svg></a></div>
+    <div class="u-foot"><p class="foot">Všechny ceny jsou včetně DPH.</p><a class="u-cta" href="#kontakt"><span>Mám zájem o byt</span><svg class="bar" width="22" height="12" viewBox="0 0 22 12" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M0 6h20M15 1l5 5-5 5"/></svg></a></div>
   </div>
 </section>
 
@@ -2872,7 +2918,7 @@ html body .op-left{justify-content:flex-start!important}
       <div>
         <h2>Brno na dosah.<br>Příroda za rohem.</h2>
       </div>
-      <div class="lead"><p>Bystrc patří k&nbsp;nejzelenějším částem Brna. Projekt vzniká v&nbsp;klidném prostředí obklopeném lesy, jen kousek od Brněnské přehrady. Na procházku do přírody můžete vyrazit přímo od domu, zatímco do centra Brna se autem dostanete přibližně za 20&nbsp;minut.</p><p>Každodenní pohodlí doplňuje občanská vybavenost v&nbsp;okolí, dobrá dostupnost služeb i&nbsp;možnosti aktivního odpočinku.</p></div>
+      <div class="lead"><p>Bystrc patří k&nbsp;nejzelenějším částem Brna. Les a&nbsp;přehrada jsou kousek od domu, do centra to máte autem asi 20&nbsp;minut.</p></div>
     </div>
     <div class="ov rv">
       <div class="ov-panel">
@@ -2891,7 +2937,7 @@ html body .op-left{justify-content:flex-start!important}
 <section id="galerie" class="s-white">
   <div class="wrap">
     <h2 class="rv">Podívejte se blíže na své budoucí bydlení</h2>
-    <p class="sec-lead rv">Prohlédněte si architektonické vizualizace projektu a&nbsp;objevte podobu nových bytových domů, jejich okolí i&nbsp;detaily, které budou utvářet každodenní bydlení.</p>
+    <p class="sec-lead rv">Prohlédněte si vizualizace domů, jejich okolí i&nbsp;detailů.</p>
     <div class="gal" id="gal">
       <figure class="g1 rv"><img loading="lazy" decoding="async" src="img/hero.webp" alt="Domy zepředu"></figure>
       <figure class="g2 rv"><img loading="lazy" decoding="async" src="img/detail.webp" alt="Detail rohových oken"></figure>
@@ -2964,8 +3010,8 @@ html body .op-left{justify-content:flex-start!important}
   <div class="wrap grid">
     <div class="rv">
       <h2>Najděte svůj nový domov v Bystrci</h2>
-      <p class="lead">Zaujala vás nabídka bytů v&nbsp;Bystrci? Ozvěte se nám. Rádi vám představíme projekt, zašleme podrobnosti k&nbsp;jednotlivým bytům nebo domluvíme osobní schůzku.</p>
-      <div class="person"><b>Jana Nováková</b><span>Prodej bytů, ABC Development</span><span><a href="tel:+420777123456">+420 777 123 456</a></span><span><a href="mailto:prodej@abc-development.cz">prodej@abc-development.cz</a></span></div>
+      <p class="lead">Ozvěte se nám. Rádi vám projekt představíme, pošleme podrobnosti k&nbsp;bytům nebo domluvíme schůzku.</p>
+      <div class="person pc"><span class="pc-av" aria-hidden="true">JN</span><div class="pc-in"><b>Jana Nováková</b><span class="pc-role">Prodej bytů, ABC Development</span><a class="pc-l" href="tel:+420777123456">+420 777 123 456</a><a class="pc-l" href="mailto:prodej@abc-development.cz">prodej@abc-development.cz</a></div></div>
     </div>
     <form id="form" class="rv">
       <div><label for="f1">Jméno a příjmení</label><input id="f1" required></div>
@@ -3073,7 +3119,7 @@ function renderUnits(f){
   <div class="row is-${u.s}">
     <span class="id">${u.id}</span><span>${u.d}+kk</span><span>${u.m}</span><span>${u.o}</span><span>${u.p}</span>
     <span class="price">${u.c}</span><span class="st ${u.s}">${lab[u.s]}</span>
-    <span class="acts"><a class="link" href="#">Půdorys</a>${u.s!=="sold"?`<a class="link" href="#kontakt" onclick="pick('${u.id}')">Mám zájem</a>`:""}</span>
+    <span class="acts"><a class="link" href="#">Půdorys</a>${u.s!=="sold"?`<a class="u-want" href="#kontakt" onclick="pick('${u.id}')">Mám zájem</a>`:""}</span>
   </div>`).join("");
 }
 document.getElementById("filters").onclick=e=>{const b=e.target.closest(".chip");if(!b)return;
