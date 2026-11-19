@@ -2671,6 +2671,12 @@ html body section.zfacts.zf2{position:relative;z-index:5;overflow:visible!import
 
 html body section.zhero{position:relative;z-index:1}
 html body.on-green .btn.sticky{background:var(--c-dark)!important;color:#A5D6A7!important}
+
+/* časová osa: zelená jen jako karta uvnitř kontejneru */
+html body section.tl3-sec{background:var(--zbg)!important}
+.tl3{background:#A5D6A7;border-radius:6px;padding:clamp(40px,5.5vw,88px) clamp(28px,5.5vw,88px)}
+.tl3-list{gap:clamp(28px,3.5vw,48px)}
+@media(max-width:700px){.tl3{padding:36px 22px;border-radius:4px}}
 </style>
 </head>
 <body>
@@ -2825,7 +2831,7 @@ html body.on-green .btn.sticky{background:var(--c-dark)!important;color:#A5D6A7!
   </div>
 </section>
 <section class="tl3-sec" id="koupe" aria-labelledby="tl-h">
-  <div class="wrap tl3">
+  <div class="wrap"><div class="tl3">
     <div class="tl3-head">
       <h2 class="tl3-h" id="tl-h">Od prvního výběru až po předání klíčů</h2>
       <p class="tl3-lead">Celou koupí vás provedeme krok za krokem. Od první prohlídky až po den, kdy si odnesete klíče.</p>
@@ -2840,6 +2846,7 @@ html body.on-green .btn.sticky{background:var(--c-dark)!important;color:#A5D6A7!
         <li class="tl3-step"><span class="tl3-n" aria-hidden="true">5</span><div><h3>Předání bytu</h3><p>Po kolaudaci vám předáme klíče.</p></div></li>
       </ol>
     </div>
+  </div>
   </div>
 </section>
 <section class="qa-sec s-white" id="dotazy">
@@ -3125,6 +3132,6 @@ const tr=document.querySelector(".tl3-track");if(tr){const fill=tr.querySelector
 function u(){const r=tr.getBoundingClientRect(),m=innerHeight*.6;const pr=Math.max(0,Math.min(1,(m-r.top)/r.height));fill.style.transform="scaleY("+pr+")";st.forEach(e=>{const q=e.getBoundingClientRect();e.classList.toggle("on",q.top+28<m)})}
 addEventListener("scroll",u,{passive:true});addEventListener("resize",u);u()}
 })();</script>
-<script>(function(){const g=document.querySelector(".tl3-sec");if(!g)return;const f=()=>{const r=g.getBoundingClientRect(),m=innerHeight/2;document.body.classList.toggle("on-green",r.top<m&&r.bottom>m)};addEventListener("scroll",f,{passive:true});f()})();</script>
+<script>(function(){const g=document.querySelector(".tl3");if(!g)return;const f=()=>{const r=g.getBoundingClientRect(),m=innerHeight/2;document.body.classList.toggle("on-green",r.top<m&&r.bottom>m)};addEventListener("scroll",f,{passive:true});f()})();</script>
 </body>
 </html>
