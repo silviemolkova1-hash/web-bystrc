@@ -2449,6 +2449,19 @@ html body .zl .zl-t,html body footer.ft4 .ft-logo.zl .zl-t,html body footer.ft4 
 html body .zl .zl-t b,html body footer.ft4 .zl .zl-t b{font-weight:600!important}
 html body footer.ft4 .ft-bar-in>*{display:inline-flex!important;align-items:center;min-height:32px}
 html body footer.ft4 .ft-bar-in{align-items:center!important}
+
+/* ===== Jednotné mezery mezi sekcemi ===== */
+:root{--sec:clamp(48px,5.5vw,88px)}
+html body section#projekt,html body section#byty,html body section#lokalita,html body section#galerie,html body section.steps-sec,html body section.steps-sec.pr,html body section#standard,html body section#dotazy,html body section#kontakt,html body .zfacts{padding-top:var(--sec)!important;padding-bottom:var(--sec)!important}
+html body section#projekt>.wrap,html body section#byty>.wrap,html body section#lokalita>.wrap,html body section#galerie>.wrap,html body section#standard>.wrap,html body section#dotazy>.wrap,html body section#kontakt>.wrap,html body .pr-grid{padding-top:0!important;padding-bottom:0!important;margin-top:0!important;margin-bottom:0!important}
+html body footer.ft4 .ft-top{padding-top:var(--sec)!important;padding-bottom:var(--sec)!important}
+/* cookies a ceník bez linky, ceník jako tlačítko v hlavičce */
+html body .cookie-ico{border:0!important;box-shadow:none!important;outline-offset:3px}
+html body .cookie{border:0!important}
+html body .zcen,html body .zcen:hover,html body .zcen:focus-visible,html body .zcen.open{background:var(--c-acc)!important;color:var(--c-ink)!important;box-shadow:none!important;border:0!important}
+html body .zcen:hover{filter:brightness(.94)!important}
+html body .zcen .zcen-t{color:var(--c-ink)!important;text-transform:uppercase;letter-spacing:.08em;font-size:13px!important}
+html body .pr-grid{min-height:0!important;height:auto!important}
 </style>
 </head>
 <body>
