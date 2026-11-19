@@ -2542,6 +2542,23 @@ html body section#byty a.u-cta{background:#A5D6A7!important;color:#23261F!import
 html body section#byty a.u-cta:hover{background:#8FC992!important}
 
 html body section#byty a.u-cta,html body section#byty a.u-cta span{font-size:13px!important;text-transform:uppercase!important;letter-spacing:.08em!important;font-weight:400!important}
+
+/* ===== Otázky: dva sloupce, foto | obsah ===== */
+.faq3{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(40px,5.5vw,96px);align-items:stretch}
+.faq3-img{position:relative;min-height:520px;border-radius:2px;overflow:hidden}
+.faq3-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.faq3-body{display:flex;flex-direction:column;align-items:flex-start;justify-content:center}
+html body .faq3 .faq3-h{margin:0 0 20px!important;font-size:clamp(32px,3.4vw,48px)!important;max-width:none!important}
+.faq3-lead{font-size:17px;line-height:1.6;margin:0 0 28px;max-width:520px}
+.faq3-btn{margin:0 0 36px}
+.faq3-body .faq2-list{width:100%}
+.faq3-body .faq3-lead:last-of-type+.faq2-list{margin-top:4px}
+@media(max-width:900px){.faq3{grid-template-columns:1fr;gap:32px}.faq3-img{min-height:0;aspect-ratio:4/3;order:-1}.faq3-btn{margin-bottom:28px}}
+/* ===== Tlačítka: jeden styl i hover všude ===== */
+@media(min-width:1001px){html body a.btn.sticky,html body .btn.sticky{display:none!important}}
+html body .zhero-cta,html body .zh-tel,html body .zm-free,html body .zm-tel,html body a.faq3-btn,html body section#byty a.u-cta,html body #kontakt form button.btn.btn-dark[type=submit],html body .btn.sticky{background:#A5D6A7!important;color:#23261F!important;filter:none!important;transform:none!important;box-shadow:none!important;transition:background-color .3s ease!important}
+html body .zhero-cta:hover,html body .zh-tel:hover,html body .zm-free:hover,html body .zm-tel:hover,html body a.faq3-btn:hover,html body section#byty a.u-cta:hover,html body #kontakt form button.btn.btn-dark[type=submit]:hover,html body .btn.sticky:hover{background:#8FC992!important;filter:none!important;transform:none!important}
+html body a.faq3-btn{font-size:13px!important;text-transform:uppercase!important;letter-spacing:.08em!important;font-weight:400!important;height:var(--btn-h,50px)!important;padding:0 28px!important;border-radius:2px!important;border:0!important;display:inline-flex!important;align-items:center!important;line-height:1!important}
 </style>
 </head>
 <body>
@@ -2687,34 +2704,36 @@ html body section#byty a.u-cta,html body section#byty a.u-cta span{font-size:13p
 
 <section class="qa-sec" id="standard">
   <div class="wrap">
-    <h2 class="qa-h rv">Kvalitní standard jako součást vašeho nového domova</h2>
-    <p class="sec-lead qa-lead rv">Na komfort bydlení mají vliv především detaily. Proto se zaměřujeme na kvalitní materiály, promyšlené konstrukční řešení a&nbsp;vybavení, které vám zpříjemní každodenní život.</p>
-    <div class="qa-grid rv">
-      <div class="qa-list faq2-list">
-        <details class="qa" name="std" open><summary><span class="qt">Konstrukce a izolace</span><span class="qb" aria-hidden="true"></span></summary><p>Nosné zdivo z keramických tvárnic, kontaktní zateplení fasády minerální vatou tloušťky 200 mm a akusticky oddělené stropy mezi byty. Domy splňují energetickou třídu B.</p></details>
-        <details class="qa" name="std"><summary><span class="qt">Okna a stínění</span><span class="qb" aria-hidden="true"></span></summary><p>Hliníková okna s izolačním trojsklem, rohová okna v obývacích pokojích a venkovní žaluzie s elektrickým ovládáním ve všech obytných místnostech.</p></details>
-        <details class="qa" name="std"><summary><span class="qt">Vytápění</span><span class="qb" aria-hidden="true"></span></summary><p>Tepelné čerpadlo vzduch voda a podlahové topení ve všech místnostech. V koupelnách je navíc elektrický otopný žebřík.</p></details>
-        <details class="qa" name="std"><summary><span class="qt">Podlahy a koupelny</span><span class="qb" aria-hidden="true"></span></summary><p>Třívrstvé dřevěné podlahy v pokojích, velkoformátová dlažba v předsíni a koupelnách, závěsná WC a sprchové kouty bez vaničky.</p></details>
-      </div>
-      <div class="qa-img"><img loading="lazy" decoding="async" src="img/detail.webp" alt="Detail fasády a oken bytového domu Bystrc Obora"></div>
+    <div class="faq3 rv">
+        <div class="faq3-body">
+          <h2 class="qa-h faq3-h">Kvalitní standard jako součást vašeho nového domova</h2>
+          <p class="faq3-lead">Na komfort bydlení mají vliv především detaily. Proto se zaměřujeme na kvalitní materiály, promyšlené konstrukční řešení a&nbsp;vybavení, které vám zpříjemní každodenní život.</p>
+          <div class="qa-list faq2-list">
+            <details class="qa" name="std" open><summary><span class="qt">Konstrukce a izolace</span><span class="qb" aria-hidden="true"></span></summary><p>Nosné zdivo z keramických tvárnic, kontaktní zateplení fasády minerální vatou tloušťky 200 mm a akusticky oddělené stropy mezi byty. Domy splňují energetickou třídu B.</p></details>
+            <details class="qa" name="std"><summary><span class="qt">Okna a stínění</span><span class="qb" aria-hidden="true"></span></summary><p>Hliníková okna s izolačním trojsklem, rohová okna v obývacích pokojích a venkovní žaluzie s elektrickým ovládáním ve všech obytných místnostech.</p></details>
+            <details class="qa" name="std"><summary><span class="qt">Vytápění</span><span class="qb" aria-hidden="true"></span></summary><p>Tepelné čerpadlo vzduch voda a podlahové topení ve všech místnostech. V koupelnách je navíc elektrický otopný žebřík.</p></details>
+            <details class="qa" name="std"><summary><span class="qt">Podlahy a koupelny</span><span class="qb" aria-hidden="true"></span></summary><p>Třívrstvé dřevěné podlahy v pokojích, velkoformátová dlažba v předsíni a koupelnách, závěsná WC a sprchové kouty bez vaničky.</p></details>
+          </div>
+        </div>
+        <div class="faq3-img"><img loading="lazy" decoding="async" src="img/detail.webp" alt="Detail fasády a oken bytového domu Bystrc Obora"></div>
     </div>
   </div>
 </section>
 <section class="qa-sec s-white" id="dotazy">
   <div class="wrap">
-    <div class="faq2 rv">
-      <div class="faq2-intro">
-        <h2 class="qa-h qa-h2">Často vás zajímá</h2>
-        <p class="faq2-text">Máte otázku, která tu není? Napište nebo zavolejte, na každý dotaz odpovíme osobně.</p>
-        <a class="btn faq2-btn" href="#kontakt"><span>Kontaktovat nás</span><svg class="bar" width="22" height="12" viewBox="0 0 22 12" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M0 6h20M15 1l5 5-5 5"/></svg></a>
-        <div class="qa-img"><img loading="lazy" decoding="async" src="img/balkony.webp" alt="Balkony bytového domu Bystrc Obora v zeleni"></div>
-      </div>
-      <div class="faq2-list">
-        <details class="qa" name="faq" open><summary><span class="qt">Kdy budou byty dokončené?</span><span class="qb" aria-hidden="true"></span></summary><p>Předpokládaný termín dokončení projektu je v roce 2027.</p></details>
-        <details class="qa" name="faq"><summary><span class="qt">Je součástí bytu parkovací stání?</span><span class="qb" aria-hidden="true"></span></summary><p>Ano. Ke každému bytu patří kryté parkovací stání pod pergolou přímo u domu a je zahrnuté v ceně. Druhé stání si můžete dokoupit za 390 000 Kč.</p></details>
-        <details class="qa" name="faq"><summary><span class="qt">Je možné provádět klientské změny?</span><span class="qb" aria-hidden="true"></span></summary><p>Ano. Změny dispozic, rozvodů i vybavení koupelen můžete zadat do 31. 3. 2027. Rozsah a cenu změn s vámi projdeme na osobní schůzce.</p></details>
-        <details class="qa" name="faq"><summary><span class="qt">Pomůžete mi s financováním bytu?</span><span class="qb" aria-hidden="true"></span></summary><p>Ano, v případě zájmu vám pomůžeme zorientovat se v možnostech financování a doporučíme odborníka, který vám poradí s vyřízením hypotéky.</p></details>
-      </div>
+    <div class="faq3 faq3-imgfirst rv">
+        <div class="faq3-img"><img loading="lazy" decoding="async" src="img/balkony.webp" alt="Balkony bytového domu Bystrc Obora v zeleni"></div>
+        <div class="faq3-body">
+          <h2 class="qa-h faq3-h">Často vás zajímá</h2>
+          <p class="faq3-lead">Máte otázku, která tu není? Napište nebo zavolejte, na každý dotaz odpovíme osobně.</p>
+          <a class="btn faq3-btn" href="#kontakt">Kontaktovat nás</a>
+          <div class="qa-list faq2-list">
+            <details class="qa" name="faq" open><summary><span class="qt">Kdy budou byty dokončené?</span><span class="qb" aria-hidden="true"></span></summary><p>Předpokládaný termín dokončení projektu je v roce 2027.</p></details>
+            <details class="qa" name="faq"><summary><span class="qt">Je součástí bytu parkovací stání?</span><span class="qb" aria-hidden="true"></span></summary><p>Ano. Ke každému bytu patří kryté parkovací stání pod pergolou přímo u domu a je zahrnuté v ceně. Druhé stání si můžete dokoupit za 390 000 Kč.</p></details>
+            <details class="qa" name="faq"><summary><span class="qt">Je možné provádět klientské změny?</span><span class="qb" aria-hidden="true"></span></summary><p>Ano. Změny dispozic, rozvodů i vybavení koupelen můžete zadat do 31. 3. 2027. Rozsah a cenu změn s vámi projdeme na osobní schůzce.</p></details>
+            <details class="qa" name="faq"><summary><span class="qt">Pomůžete mi s financováním bytu?</span><span class="qb" aria-hidden="true"></span></summary><p>Ano, v případě zájmu vám pomůžeme zorientovat se v možnostech financování a doporučíme odborníka, který vám poradí s vyřízením hypotéky.</p></details>
+          </div>
+        </div>
     </div>
   </div>
 </section>
