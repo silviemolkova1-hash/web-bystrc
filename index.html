@@ -3036,6 +3036,24 @@ html body .gal figure:hover img{transform:scale(1.04)!important}
 html body section#byty{overflow:clip!important}
 html body section#byty .row.h{position:sticky;top:73px;z-index:3;background:#FAF9F5!important}
 @media(prefers-reduced-motion:reduce){img.fi{opacity:1;transition:none}html body .gal figure img{transition:none!important}}
+
+/* oprava: hlavička linka jen v šířce obsahu */
+html body.hd-scrolled header.zh{box-shadow:none!important}
+html body header.zh .zh-in{position:relative}
+html body header.zh .zh-in::after{content:"";position:absolute;left:var(--cpad);right:var(--cpad);bottom:0;height:1px;background:rgba(35,38,31,.1);opacity:0;transition:opacity .35s ease;pointer-events:none}
+html body.hd-scrolled header.zh .zh-in::after{opacity:1}
+html body.menu-open header.zh .zh-in::after{opacity:0}
+/* oprava: plynulé přiblížení fotek u otázek */
+html body .faq3-img img{transition:transform 1.2s ease,opacity .8s ease!important}
+/* oprava: kontakt bez dvojitého podtržení */
+html body section#kontakt a.pc-l,html body section#kontakt a.pc-l:hover,html body section#kontakt a.pc-l:focus-visible{text-decoration:none!important;border:0!important;box-shadow:none!important;background-image:none!important}
+html body section#kontakt a.pc-l::after,html body section#kontakt a.pc-l::before{content:none!important;display:none!important}
+html body section#kontakt a.pc-l{transition:color .3s ease!important}
+html body section#kontakt a.pc-l:hover{color:#A5D6A7!important}
+/* oprava: patička, tečka se nepodtrhává */
+html body footer.ft5 .ft5-links a+a::before{display:inline-block;text-decoration:none}
+
+html body section#kontakt#kontakt .pc a.pc-l:hover,html body section#kontakt#kontakt .pc a.pc-l:focus-visible{color:#A5D6A7!important;opacity:1!important}
 </style>
 </head>
 <body>
