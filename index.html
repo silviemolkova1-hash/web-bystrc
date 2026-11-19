@@ -2880,6 +2880,13 @@ html body .opb h3{margin:0 0 4px!important;font-size:18px!important;font-weight:
 .opa-img:hover img{transform:scale(1.03)}
 @media(max-width:900px){.opa{grid-template-columns:1fr;gap:32px}.opa-img{min-height:0;aspect-ratio:4/3}}
 @media(max-width:480px){.opa-ben{grid-template-columns:1fr}}
+
+/* výhody jako dlaždice, bez linky */
+html body .opa-ben{border-top:0!important;padding-top:0!important;gap:12px!important}
+html body .opb{background:var(--c-alt);border-radius:6px;padding:20px 22px;gap:16px;transition:background-color .3s ease}
+html body .opb:hover{background:#D9DED2}
+html body .opb svg{width:30px;height:30px}
+@media(max-width:560px){html body .opb{padding:16px 18px}}
 </style>
 </head>
 <body>
@@ -2920,16 +2927,16 @@ html body .opb h3{margin:0 0 4px!important;font-size:18px!important;font-weight:
 <section class="about sand" id="projekt">
   <div class="wrap opa rv">
     <div class="opa-l">
-      <h2 class="op-h">Místo, kde se dobře žije</h2>
+      <h2 class="op-h">Objevte místo, kde se dobře žije</h2>
       <p class="opa-lead">Dva moderní domy v&nbsp;klidné části Bystrce, obklopené zelení.</p>
       <ul class="opa-ben" aria-label="Výhody bydlení">
-          <li class="opb"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><path d="M3 27h26"/><path d="M8 27l5-17 5 17"/><path d="M15 27l6-22 6 22"/></svg><div><h3>Les hned <span class="nw">za domem</span></h3><p>Lesní cesty a cyklostezky začínají u domu.</p></div></li>
-          <li class="opb"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><path d="M3 12c3-3 5-3 8 0s5 3 8 0 5-3 8 0"/><path d="M3 19c3-3 5-3 8 0s5 3 8 0 5-3 8 0"/><path d="M3 26c3-3 5-3 8 0s5 3 8 0 5-3 8 0"/></svg><div><h3>Přehrada <span class="nw">na dosah</span></h3><p>Brněnská přehrada je 13 minut pěšky.</p></div></li>
-          <li class="opb"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><path d="M3 28h26"/><path d="M5 28V14h8v14"/><path d="M13 28V5h10v23"/><path d="M23 28V12h5v16"/><path d="M17 10h2M17 15h2M17 20h2"/></svg><div><h3>Centrum <span class="nw">za 20 minut</span></h3><p>Do centra Brna se dostanete autem.</p></div></li>
-          <li class="opb"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><path d="M4 15L16 5l12 10"/><path d="M7 13v15h18V13"/><path d="M17 14l-4 6h6l-4 6"/></svg><div><h3>Energetická <span class="nw">třída B</span></h3><p>Tepelné čerpadlo a podlahové topení.</p></div></li>
+          <li class="opb"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><path d="M3 27h26"/><path d="M8 27l5-17 5 17"/><path d="M15 27l6-22 6 22"/></svg><div><h3>Les hned <span class="nw">za domem</span></h3><p>Lesní cesty a cyklostezky.</p></div></li>
+          <li class="opb"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><path d="M3 12c3-3 5-3 8 0s5 3 8 0 5-3 8 0"/><path d="M3 19c3-3 5-3 8 0s5 3 8 0 5-3 8 0"/><path d="M3 26c3-3 5-3 8 0s5 3 8 0 5-3 8 0"/></svg><div><h3>Přehrada <span class="nw">na dosah</span></h3><p>13 minut pěšky.</p></div></li>
+          <li class="opb"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><path d="M3 28h26"/><path d="M5 28V14h8v14"/><path d="M13 28V5h10v23"/><path d="M23 28V12h5v16"/><path d="M17 10h2M17 15h2M17 20h2"/></svg><div><h3>Centrum <span class="nw">za 20 minut</span></h3><p>Autem do centra Brna.</p></div></li>
+          <li class="opb"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><path d="M4 15L16 5l12 10"/><path d="M7 13v15h18V13"/><path d="M17 14l-4 6h6l-4 6"/></svg><div><h3>Energetická <span class="nw">třída B</span></h3><p>Tepelné čerpadlo, podlahové topení.</p></div></li>
       </ul>
     </div>
-    <figure class="opa-img"><img loading="lazy" decoding="async" src="img/hero.webp" alt="Dva bytové domy Bystrc Obora mezi borovicemi"></figure>
+    <figure class="opa-img"><img loading="lazy" decoding="async" src="img/parkovani.webp" alt="Bytové domy Bystrc Obora s krytým parkováním pod pergolou"></figure>
   </div>
 </section>
 
