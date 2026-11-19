@@ -2565,6 +2565,19 @@ html body a.btn.faq3-btn:hover,html body a.btn.faq3-btn:focus-visible{background
 @media(min-width:768px){html body a.btn.sticky,html body .btn.sticky{display:none!important}}
 html body .btn.sticky{transform:translateY(110%)!important;transition:transform .4s ease,background-color .3s ease!important}
 html body.past-klid .btn.sticky{transform:none!important}
+
+/* patička: 4 sloupce */
+html body footer.ft5 .ft5-top{grid-template-columns:minmax(0,1.5fr) minmax(0,1fr) minmax(0,1.1fr) minmax(0,1.2fr)!important;column-gap:clamp(28px,4vw,64px)!important}
+.ft5-about{margin:22px 0 0;max-width:300px;font-size:15px!important;line-height:1.65!important;color:var(--c-bg)!important;opacity:.8}
+@media(max-width:1000px){html body footer.ft5 .ft5-top{grid-template-columns:1fr 1fr!important;row-gap:44px}html body footer.ft5 .ft5-brand{grid-column:1/-1}}
+@media(max-width:560px){html body footer.ft5 .ft5-top{grid-template-columns:1fr!important}html body footer.ft5 .ft5-col nav a{min-height:40px}}
+/* mobilní menu: stejné písmo odkazů i tlačítek, bez rámečku, stejný hover */
+@media(max-width:1180px){
+html body nav.mnav.zm a:not(.zm-free):not(.zm-tel),html body nav.mnav.zm a.zm-free,html body nav.mnav.zm a.zm-tel{font-size:15px!important;letter-spacing:.08em!important;text-transform:uppercase!important;font-weight:400!important}
+html body nav.mnav.zm a.zm-free,html body nav.mnav.zm a.zm-tel{border:0!important;outline:0!important;box-shadow:none!important;background:#A5D6A7!important;color:#23261F!important;transition:background-color .3s ease!important}
+html body nav.mnav.zm a.zm-free:hover,html body nav.mnav.zm a.zm-tel:hover,html body nav.mnav.zm a.zm-free:focus-visible,html body nav.mnav.zm a.zm-tel:focus-visible{background:#8FC992!important;color:#23261F!important}
+html body nav.mnav.zm a.zm-free:focus-visible,html body nav.mnav.zm a.zm-tel:focus-visible{outline:2px solid #23261F!important;outline-offset:2px!important}
+}
 </style>
 </head>
 <body>
@@ -2584,7 +2597,7 @@ html body.past-klid .btn.sticky{transform:none!important}
 <nav class="mnav zm" aria-label="Mobilní menu">
   <a href="#projekt">O projektu</a><a href="#byty">Ceník</a><a href="#lokalita">Lokalita</a><a href="#galerie">Galerie</a><a href="#standard">Standardy</a>
   <a href="#byty" class="zm-free">Volné byty</a>
-  <a href="#kontakt" class="zm-tel">Chci bydlet</a>
+  <a href="#kontakt" class="zm-tel">Kontakt</a>
 </nav>
 
 <a href="#" class="totop" aria-label="Zpět nahoru"><svg width="16" height="18" viewBox="0 0 16 18" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M8 17V1M1 8l7-7 7 7"/></svg></a>
@@ -2768,7 +2781,16 @@ html body.past-klid .btn.sticky{transform:none!important}
   <div class="wrap ft5-top">
     <div class="ft5-brand">
       <a href="#" class="ft-logo zl ft5-logo" aria-label="Bystrc Obora, zpět nahoru"><svg class="zl-ic zn" width="59" height="40" viewBox="541 231 278 189" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="9" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"><path d="M664.5 302V414H547V300L614 245L733 343"/><path d="M664.5 302L740 239L812.5 300V414H756"/><path d="M733 307V418.5"/><path d="M733 372L775 343"/><path d="M733 390L690 360"/></g></svg></a>
+      <p class="ft5-about">16 bytů 4+kk v&nbsp;klidné části Brna-Bystrce, kousek od obory. Dokončení 2027.</p>
     </div>
+    <nav class="ft5-col" aria-label="Rychlé odkazy">
+      <h3>Rychlé odkazy</h3>
+      <a href="#projekt">O projektu</a>
+      <a href="#byty">Ceník</a>
+      <a href="#lokalita">Lokalita</a>
+      <a href="#galerie">Galerie</a>
+      <a href="#standard">Standardy</a>
+    </nav>
     <div class="ft5-col">
       <h3>Kontaktujte nás</h3>
       <a href="tel:+420777123456">tel.: +420 777 123 456</a>
