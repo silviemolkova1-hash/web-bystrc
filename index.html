@@ -2580,14 +2580,6 @@ html body nav.mnav.zm a.zm-free:focus-visible,html body nav.mnav.zm a.zm-tel:foc
 }
 
 html body nav.mnav.zm a.zm-free:hover,html body nav.mnav.zm a.zm-tel:hover,html body nav.mnav.zm a.zm-free:active,html body nav.mnav.zm a.zm-tel:active{opacity:1!important;transform:none!important}
-
-/* hlavička: šipka u Chci bydlet až po najetí */
-html body .zh-tel{display:inline-flex!important;align-items:center!important;gap:0!important}
-html body .zh-tel .zh-ar{flex:none;width:0;margin-left:0;opacity:0;transform:translateX(-6px);transition:width .3s ease,margin-left .3s ease,opacity .3s ease,transform .3s ease}
-html body .zh-tel:hover .zh-ar,html body .zh-tel:focus-visible .zh-ar{width:22px;margin-left:14px;opacity:1;transform:none}
-@media(prefers-reduced-motion:reduce){html body .zh-tel .zh-ar{transition:none}}
-
-html body .zh-tel{justify-content:center!important;min-width:184px!important;box-sizing:border-box}
 </style>
 </head>
 <body>
@@ -2600,7 +2592,7 @@ html body .zh-tel{justify-content:center!important;min-width:184px!important;box
   <div class="zh-in">
     <a href="#" class="zl" aria-label="Bystrc Obora, úvod"><svg class="zl-ic zn" width="59" height="40" viewBox="541 231 278 189" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="9" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"><path d="M664.5 302V414H547V300L614 245L733 343"/><path d="M664.5 302L740 239L812.5 300V414H756"/><path d="M733 307V418.5"/><path d="M733 372L775 343"/><path d="M733 390L690 360"/></g></svg></a>
     <nav class="zh-nav" aria-label="Hlavní menu"><a href="#projekt">O projektu</a><a href="#byty">Ceník</a><a href="#lokalita">Lokalita</a><a href="#galerie">Galerie</a><a href="#standard">Standardy</a></nav>
-    <a class="zh-tel" href="#kontakt"><span>Chci bydlet</span><svg class="zh-ar" width="22" height="12" viewBox="0 0 22 12" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M0 6h20M15 1l5 5-5 5"/></svg></a>
+    <a class="zh-tel" href="#kontakt">Chci bydlet</a>
     <button class="burger zb" aria-label="Otevřít menu" aria-expanded="false"><span></span></button>
   </div>
 </header>
