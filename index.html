@@ -2887,6 +2887,18 @@ html body .opb{background:var(--c-alt);border-radius:6px;padding:20px 22px;gap:1
 html body .opb:hover{background:#D9DED2}
 html body .opb svg{width:30px;height:30px}
 @media(max-width:560px){html body .opb{padding:16px 18px}}
+
+/* střídání fotek v O projektu */
+.opa-sl img{opacity:0;transition:opacity 1.4s ease,transform 1.2s ease!important}
+.opa-sl img.on{opacity:1}
+.opa-dots{position:absolute;left:50%;bottom:18px;transform:translateX(-50%);display:flex;gap:4px;z-index:2}
+.opa-dots button{all:unset;box-sizing:border-box;width:28px;height:28px;display:flex;align-items:center;justify-content:center;cursor:pointer}
+.opa-dots button::before{content:"";width:9px;height:9px;border-radius:50%;border:1.5px solid #fff;box-sizing:border-box;transition:background-color .3s ease}
+.opa-dots button.on::before{background:#fff}
+.opa-dots button:focus-visible{outline:2px solid #fff;outline-offset:-4px;border-radius:50%}
+@media(prefers-reduced-motion:reduce){.opa-sl img{transition:none!important}}
+
+.opa-dots{background:rgba(20,28,19,.28);border-radius:20px;padding:0 6px}
 </style>
 </head>
 <body>
@@ -2927,7 +2939,7 @@ html body .opb svg{width:30px;height:30px}
 <section class="about sand" id="projekt">
   <div class="wrap opa rv">
     <div class="opa-l">
-      <h2 class="op-h">Objevte místo, kde se dobře žije</h2>
+      <h2 class="op-h">Objevte místo, kde se vám bude dobře žít</h2>
       <p class="opa-lead">Dva moderní domy v&nbsp;klidné části Bystrce, obklopené zelení.</p>
       <ul class="opa-ben" aria-label="Výhody bydlení">
           <li class="opb"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><path d="M3 27h26"/><path d="M8 27l5-17 5 17"/><path d="M15 27l6-22 6 22"/></svg><div><h3>Les hned <span class="nw">za domem</span></h3><p>Lesní cesty a cyklostezky.</p></div></li>
@@ -2936,7 +2948,12 @@ html body .opb svg{width:30px;height:30px}
           <li class="opb"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><path d="M4 15L16 5l12 10"/><path d="M7 13v15h18V13"/><path d="M17 14l-4 6h6l-4 6"/></svg><div><h3>Energetická <span class="nw">třída B</span></h3><p>Tepelné čerpadlo, podlahové topení.</p></div></li>
       </ul>
     </div>
-    <figure class="opa-img"><img loading="lazy" decoding="async" src="img/parkovani.webp" alt="Bytové domy Bystrc Obora s krytým parkováním pod pergolou"></figure>
+    <figure class="opa-img opa-sl">
+      <img class="on" loading="lazy" decoding="async" src="img/parkovani.webp" alt="Bytové domy Bystrc Obora s krytým parkováním pod pergolou">
+      <img class="" loading="lazy" decoding="async" src="img/balkony.webp" alt="Balkony bytového domu obrácené do zeleně">
+      <img class="" loading="lazy" decoding="async" src="img/letecky.webp" alt="Letecký pohled na oba domy mezi stromy">
+      <div class="opa-dots"><button type="button" class="on" aria-label="Fotka 1 ze 3" aria-current="true"></button><button type="button" class="" aria-label="Fotka 2 ze 3"></button><button type="button" class="" aria-label="Fotka 3 ze 3"></button></div>
+    </figure>
   </div>
 </section>
 
@@ -3321,5 +3338,11 @@ function u(){const r=tr.getBoundingClientRect(),m=innerHeight*.6;const pr=Math.m
 addEventListener("scroll",u,{passive:true});addEventListener("resize",u);u()}
 })();</script>
 <script>(function(){const g=document.querySelector(".tl3");if(!g)return;const f=()=>{const r=g.getBoundingClientRect(),m=innerHeight/2;document.body.classList.toggle("on-green",r.top<m&&r.bottom>m)};addEventListener("scroll",f,{passive:true});f()})();</script>
+<script>(function(){const f=document.querySelector(".opa-sl");if(!f)return;const im=[...f.querySelectorAll("img")],d=[...f.querySelectorAll(".opa-dots button")];let k=0,t=null;const rm=matchMedia("(prefers-reduced-motion:reduce)").matches;
+im.forEach(i=>i.loading="eager");
+function go(n){k=n;im.forEach((x,i)=>x.classList.toggle("on",i===n));d.forEach((x,i)=>{x.classList.toggle("on",i===n);if(i===n)x.setAttribute("aria-current","true");else x.removeAttribute("aria-current")})}
+function play(){clearInterval(t);if(!rm)t=setInterval(()=>go((k+1)%im.length),5000)}
+d.forEach((b,i)=>b.addEventListener("click",()=>{go(i);play()}));
+new IntersectionObserver(e=>{e[0].isIntersecting?play():clearInterval(t)},{threshold:.3}).observe(f)})();</script>
 </body>
 </html>
