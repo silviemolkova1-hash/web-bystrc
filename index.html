@@ -2425,7 +2425,12 @@ html body .zh-in{align-items:baseline!important;flex-wrap:wrap;align-content:cen
 html body header.zh .zb{align-self:center}
 @media(max-width:1180px){html body .zh-in{flex-wrap:nowrap;align-items:center!important}html body .zl{align-self:center}}
 
-/* ===== Písmo General Sans ===== */
+/* ===== Písmo General Sans (vlastní soubory ve složce fonts, záloha Fontshare) ===== */
+@font-face{font-family:'General Sans';src:url(fonts/GeneralSans-Regular.woff2) format('woff2');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'General Sans';src:url(fonts/GeneralSans-Medium.woff2) format('woff2');font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:'General Sans';src:url(fonts/GeneralSans-Semibold.woff2) format('woff2');font-weight:600;font-style:normal;font-display:swap}
+@font-face{font-family:'General Sans';src:url(fonts/GeneralSans-Bold.woff2) format('woff2');font-weight:700;font-style:normal;font-display:swap}
+
 html body h1,html body h2,html body .zhero-h,html body .pp-h,html body section h2{font-weight:500!important;letter-spacing:-.025em!important;line-height:1.1!important}
 html body h3,html body .qa summary .qt,html body .benefit h3{font-weight:500!important;letter-spacing:-.01em!important}
 html body .zl .zl-t b{font-weight:600!important}
