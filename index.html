@@ -2829,6 +2829,37 @@ html body section.zben .zben-list li:hover .zben-ic{background:#A5D6A7}
 @media(max-width:700px){html body section.zben > .wrap{margin:12px 12px 0!important;padding:40px 18px!important}}
 
 @media(max-width:700px){br.br-d{display:none}}
+
+/* ===== Kontaktní formulář: jemný, bez karty, podtržená pole ===== */
+html body section#kontakt form.zqf{background:transparent!important;padding:0!important;border:0!important;box-shadow:none!important;display:grid!important;grid-template-columns:1fr 1fr;column-gap:clamp(28px,3.5vw,56px);row-gap:0;align-self:start;color:var(--c-bg)}
+.zq-col{display:flex;flex-direction:column;gap:28px}
+.zq{position:relative;padding-top:18px}
+html body section#kontakt .zq input,html body section#kontakt .zq textarea,html body section#kontakt .zq select{display:block;width:100%;background:transparent!important;border:0!important;border-bottom:1px solid rgba(242,240,235,.45)!important;border-radius:0!important;color:var(--c-bg)!important;font:inherit;font-size:16px!important;padding:8px 0!important;height:44px;box-shadow:none!important;outline:0;transition:border-color .3s ease}
+html body section#kontakt .zq textarea{height:120px;resize:vertical;padding-top:10px!important}
+html body section#kontakt .zq select{appearance:none;-webkit-appearance:none;cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none' stroke='%23F2F0EB' stroke-width='1.4'%3E%3Cpath d='M1 1l5 5 5-5'/%3E%3C/svg%3E")!important;background-repeat:no-repeat!important;background-position:right 2px center!important;padding-right:24px!important}
+html body section#kontakt .zq select option{color:#23261F}
+html body section#kontakt .zq input:focus,html body section#kontakt .zq textarea:focus,html body section#kontakt .zq select:focus{border-bottom-color:var(--c-bg)!important}
+html body section#kontakt .zq label{position:absolute;left:0;top:28px;font-size:16px!important;color:var(--c-bg)!important;opacity:.75;pointer-events:none;transition:top .25s ease,font-size .25s ease,opacity .25s ease;margin:0!important}
+html body section#kontakt .zq input:focus+label,html body section#kontakt .zq input:not(:placeholder-shown)+label,html body section#kontakt .zq textarea:focus+label,html body section#kontakt .zq textarea:not(:placeholder-shown)+label,html body section#kontakt .zq label.zq-up{top:0;font-size:13px!important;opacity:.6}
+html body section#kontakt form.tried .zq input:invalid,html body section#kontakt form.tried .zq textarea:invalid{border-bottom-color:#F2B8C6!important}
+.zq-check{display:flex;align-items:flex-start;gap:12px;cursor:pointer;font-size:14px;line-height:1.5;color:var(--c-bg);margin-top:4px}
+.zq-check input{position:absolute;opacity:0;width:1px;height:1px}
+.zq-box{flex:none;width:18px;height:18px;margin-top:1px;border-radius:50%;border:1px solid rgba(242,240,235,.7);transition:background-color .2s ease,border-color .2s ease;position:relative}
+.zq-check input:checked+.zq-box{background:#A5D6A7;border-color:#A5D6A7}
+.zq-check input:checked+.zq-box::after{content:"";position:absolute;left:5px;top:2px;width:5px;height:9px;border:solid #23261F;border-width:0 1.5px 1.5px 0;transform:rotate(45deg)}
+.zq-check input:focus-visible+.zq-box{outline:2px solid var(--c-bg);outline-offset:2px}
+html body section#kontakt form.tried .zq-check input:invalid+.zq-box{border-color:#F2B8C6}
+.zq-check a{color:var(--c-bg)!important;text-decoration:underline;text-underline-offset:3px}
+.zq-note{margin:-12px 0 0;font-size:13px;opacity:.6;color:var(--c-bg)}
+html body section#kontakt form.zqf .zq-btn{align-self:flex-start;margin-top:4px}
+html body section#kontakt form.zqf .thanks{grid-column:1/-1}
+@media(max-width:700px){html body section#kontakt form.zqf{grid-template-columns:1fr;row-gap:28px}}
+
+html body section#kontakt .zq-check span,html body section#kontakt .zq-check{color:var(--c-bg)!important;font-size:14px!important;opacity:1!important}
+html body section#kontakt .zq{padding-top:22px}
+html body section#kontakt .zq label{top:32px}
+
+html body section#kontakt .zq input:focus,html body section#kontakt .zq input:focus-visible,html body section#kontakt .zq textarea:focus,html body section#kontakt .zq textarea:focus-visible,html body section#kontakt .zq select:focus,html body section#kontakt .zq select:focus-visible{outline:0!important;border-bottom-color:var(--c-bg)!important;box-shadow:0 1px 0 0 var(--c-bg)!important}
 </style>
 </head>
 <body>
@@ -2860,7 +2891,7 @@ html body section.zben .zben-list li:hover .zben-ic{background:#A5D6A7}
     <div class="zhero-in"><div class="zhero-c">
     <h1 class="zhero-h"><span class="sr">Bystrc Obora: </span><span class="zl1">Moderní bydlení</span><span class="zl2">v&nbsp;srdci přírody</span></h1>
     <div class="zhero-side">
-      <a class="zhero-cta" href="#byty">Zobrazit volné byty</a>
+      <a class="zhero-cta" href="#byty">Volné jednotky</a>
       <p class="zhero-meta"><span>16 bytů 4+kk</span><i aria-hidden="true"></i><span>Dokončení 2027</span></p>
     </div>
     </div></div>
@@ -3027,14 +3058,20 @@ html body section.zben .zben-list li:hover .zben-ic{background:#A5D6A7}
       <p class="lead">Ozvěte se nám. Rádi vám projekt představíme, pošleme podrobnosti k&nbsp;bytům nebo domluvíme schůzku.</p>
       <div class="person pc"><span class="pc-av" aria-hidden="true">JN</span><div class="pc-in"><b>Jana Nováková</b><span class="pc-role">Prodej bytů, ABC Development</span><a class="pc-l" href="tel:+420777123456">+420 777 123 456</a><a class="pc-l" href="mailto:prodej@abc-development.cz">prodej@abc-development.cz</a></div></div>
     </div>
-    <form id="form" class="rv">
-      <div><label for="f1">Jméno a příjmení</label><input id="f1" required></div>
-      <div><label for="f2">Telefon</label><input id="f2" type="tel"></div>
-      <div class="full"><label for="f3">E-mail</label><input id="f3" type="email" required></div>
-      <div class="full"><label for="sel">O který byt máte zájem?</label><select id="sel"><option>Zatím nevím</option></select></div>
-      <div class="full"><label for="f5">Vaše zpráva</label><textarea id="f5"></textarea></div>
-      <label class="check full"><input type="checkbox" required> Beru na vědomí <a href="ochrana-osobnich-udaju.html" style="text-decoration:underline">zásady ochrany osobních údajů</a>.</label>
-      <div class="full"><button class="btn btn-dark" type="submit"><span>Odeslat poptávku</span><svg class="bar" width="22" height="12" viewBox="0 0 22 12" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M0 6h20M15 1l5 5-5 5"/></svg></button></div>
+    <form id="form" class="zqf rv" novalidate>
+      <div class="zq-col">
+        <div class="zq"><input id="f1" type="text" placeholder=" " required autocomplete="given-name"><label for="f1">Jméno*</label></div>
+        <div class="zq"><input id="f1b" type="text" placeholder=" " required autocomplete="family-name"><label for="f1b">Příjmení*</label></div>
+        <div class="zq"><input id="f3" type="email" placeholder=" " required autocomplete="email"><label for="f3">E-mail*</label></div>
+        <div class="zq"><input id="f2" type="tel" placeholder=" " autocomplete="tel"><label for="f2">Telefon</label></div>
+      </div>
+      <div class="zq-col">
+        <div class="zq zq-sel"><select id="sel" aria-label="O který byt máte zájem?"><option>Zatím nevím</option></select><label for="sel" class="zq-up">O který byt máte zájem?</label></div>
+        <div class="zq zq-ta"><textarea id="f5" placeholder=" " required></textarea><label for="f5">Zpráva*</label></div>
+        <label class="zq-check"><input type="checkbox" required><span class="zq-box" aria-hidden="true"></span><span>Souhlasím se <a href="ochrana-osobnich-udaju.html">zpracováním osobních údajů</a>.*</span></label>
+        <p class="zq-note">* povinné údaje</p>
+        <button class="btn btn-dark zq-btn" type="submit"><span>Odeslat</span><svg class="bar" width="22" height="12" viewBox="0 0 22 12" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M0 6h20M15 1l5 5-5 5"/></svg></button>
+      </div>
       <div class="thanks" id="thanks">Náhled: formulář se zatím nikam neodesílá. Na webu se napojí na Web3Forms.</div>
     </form>
   </div>
@@ -3225,7 +3262,7 @@ catsEl.addEventListener("click",e=>{const pb=e.target.closest("li button");if(pb
 const io2=new IntersectionObserver(e=>h.classList.toggle("scrolled",!e[0].isIntersecting),{rootMargin:"-70px 0px 0px 0px",threshold:0});
 io2.observe(hero)})();
 watch();
-document.getElementById("form").addEventListener("submit",e=>{e.preventDefault();document.getElementById("thanks").style.display="block"});
+document.getElementById("form").addEventListener("submit",e=>{e.preventDefault();const f=e.target;if(!f.checkValidity()){f.classList.add("tried");const x=f.querySelector(":invalid");x&&x.focus();return}document.getElementById("thanks").style.display="block"});
 
 (function(){const st=document.querySelector(".steps"),ind=st&&st.querySelector(".ind"),items=st?[...st.querySelectorAll(".step")]:[];if(!ind)return;
 function go(el){items.forEach(x=>x.classList.toggle("on",x===el));ind.style.width=el.offsetWidth+"px";ind.style.transform="translateX("+el.offsetLeft+"px)"}
