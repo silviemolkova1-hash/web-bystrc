@@ -2472,6 +2472,57 @@ html body footer.ft4 .ft-logo.zl{color:var(--c-bg)!important;align-items:center!
 @media(max-width:700px){html body .zl .zl-ic.zn,html body footer.ft4 .ft-logo.zl .zl-ic.zn{width:53px!important;height:36px!important}}
 html body footer.ft4 .ft-brand{align-items:flex-start!important;text-align:left!important}
 html body footer.ft4 .ft-brand .ft-logo{align-self:flex-start!important;margin-left:0!important}
+
+/* ===== FAQ podle vzoru: úvod vlevo, otázky vpravo ===== */
+.faq2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(40px,6vw,110px);align-items:start}
+.faq2-intro{display:flex;flex-direction:column;align-items:flex-start}
+.faq2-intro .qa-h2{margin:0 0 24px!important}
+.faq2-text{font-size:18px;line-height:1.6;max-width:440px;margin:0 0 32px}
+.faq2-btn{margin-bottom:48px}
+.faq2-intro .qa-img{width:100%;aspect-ratio:4/3;overflow:hidden;border-radius:2px}
+.faq2-intro .qa-img img{width:100%;height:100%;object-fit:cover;display:block}
+.faq2-list{border-top:1px solid rgba(35,38,31,.2)}
+.faq2-list details.qa{border-bottom:1px solid rgba(35,38,31,.2)!important;border-top:0!important}
+.faq2-list details.qa summary{display:flex!important;justify-content:space-between;align-items:center;gap:24px;padding:22px 0!important;font-size:20px!important;grid-template-columns:none!important}
+.faq2-list details.qa summary .qt{flex:1}
+.faq2-list details.qa .qb{position:relative;width:14px!important;height:14px!important;flex:none;background:transparent!important;box-shadow:none!important;border:0!important;border-radius:0!important}
+.faq2-list details.qa .qb::before,.faq2-list details.qa .qb::after{content:"";position:absolute;left:50%;top:50%;width:14px;height:1.5px;background:currentColor;transform:translate(-50%,-50%);transition:transform .35s ease}
+.faq2-list details.qa .qb::after{transform:translate(-50%,-50%) rotate(90deg)}
+.faq2-list details.qa[open]:not(.closing) .qb::after{transform:translate(-50%,-50%) rotate(0deg)}
+.faq2-list details.qa p{margin:0 0 24px!important;padding:0!important;font-size:16px;line-height:1.65;max-width:560px}
+@media(max-width:900px){.faq2{grid-template-columns:1fr}.faq2-btn{margin-bottom:32px}.faq2-list details.qa summary{font-size:18px!important}}
+/* ===== Patička podle vzoru ===== */
+footer.ft5{background:var(--c-dark)!important;color:var(--c-bg)!important}
+.ft5-top{display:grid!important;grid-template-columns:minmax(0,2fr) minmax(0,1fr) minmax(0,1fr);gap:40px;padding-top:var(--sec)!important;padding-bottom:56px!important}
+.ft5-brand{display:flex;flex-direction:column;align-items:flex-start}
+.ft5-dev{margin:14px 0 36px;font-size:14px!important;letter-spacing:.04em;opacity:.85;color:var(--c-bg)}
+.ft5-dev b{font-weight:600}
+.ft5-soc{list-style:none;margin:0;padding:0;display:flex}
+.ft5-soc li{display:flex}
+.ft5-soc li+li{border-left:1px solid rgba(242,240,235,.5)}
+.ft5-soc a{display:flex;align-items:center;justify-content:center;width:56px;height:52px;color:var(--c-bg)!important;transition:opacity .25s}
+.ft5-soc li:first-child a{width:auto;padding-right:24px;justify-content:flex-start}
+.ft5-soc a:hover{opacity:.65}
+.ft5-col{display:flex;flex-direction:column}
+html body footer.ft5 .ft5-col h3{font-size:12px!important;font-weight:500!important;text-transform:uppercase!important;letter-spacing:.12em!important;opacity:1!important;margin:0 0 18px!important;color:var(--c-bg)!important}
+html body footer.ft5 .ft5-col a,html body footer.ft5 .ft5-col span{font-size:16px!important;line-height:1.7!important;color:var(--c-bg)!important;text-decoration:none;min-height:0!important;display:block!important}
+html body footer.ft5 .ft5-col a:hover{opacity:.7}
+.ft5-gap{margin-top:16px}
+.ft5-bar{display:flex!important;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px 24px;padding-top:28px!important;padding-bottom:32px!important;position:relative}
+.ft5-bar::before{content:"";position:absolute;left:var(--cpad);right:var(--cpad);top:0;height:1px;background:rgba(242,240,235,.45)}
+html body footer.ft5 .ft5-bar,html body footer.ft5 .ft5-bar span,html body footer.ft5 .ft5-bar a{font-size:14px!important;color:var(--c-bg)!important;line-height:1.6!important;background:transparent!important}
+.ft5-links{display:flex!important;flex-wrap:wrap;gap:0}
+.ft5-links a+a::before{content:"·";margin:0 8px;opacity:.7}
+html body footer.ft5 .ft5-links a{text-decoration:none}
+html body footer.ft5 .ft5-links a:hover{text-decoration:underline;text-underline-offset:3px}
+html body footer.ft5 :focus-visible{outline-color:var(--c-bg)!important}
+@media(max-width:900px){.ft5-top{grid-template-columns:1fr 1fr;row-gap:44px}.ft5-brand{grid-column:1/-1}}
+@media(max-width:560px){.ft5-top{grid-template-columns:1fr}.ft5-bar{flex-direction:column;align-items:flex-start;padding-bottom:84px!important}html body footer.ft5 .ft5-col a{min-height:44px!important;display:flex!important;align-items:center}}
+
+html body footer.ft5 .ft5-brand .ft5-logo{width:auto!important;height:auto!important;margin:0!important;padding:0!important;align-self:flex-start!important;justify-content:flex-start!important;transform:none!important}
+html body footer.ft5 .ft5-soc a{color:var(--c-bg)!important}
+
+@media(max-width:560px){.ft5-links{gap:6px 20px}.ft5-links a+a::before{content:none}}
 </style>
 </head>
 <body>
@@ -2632,14 +2683,18 @@ html body footer.ft4 .ft-brand .ft-logo{align-self:flex-start!important;margin-l
 </section>
 <section class="qa-sec s-white" id="dotazy">
   <div class="wrap">
-    <div class="qa-grid qa-rev qa-al rv">
-      <div class="qa-img"><img loading="lazy" decoding="async" src="img/balkony.webp" alt="Balkony bytového domu Bystrc Obora v zeleni"></div>
-      <div class="qa-list">
+    <div class="faq2 rv">
+      <div class="faq2-intro">
         <h2 class="qa-h qa-h2">Často vás zajímá</h2>
-        <details class="qa" name="faq" open><summary><span class="qn">01</span><span class="qt">Kdy budou byty dokončené?</span><span class="qb" aria-hidden="true"></span></summary><p>Předpokládaný termín dokončení projektu je v roce 2027.</p></details>
-        <details class="qa" name="faq"><summary><span class="qn">02</span><span class="qt">Je součástí bytu parkovací stání?</span><span class="qb" aria-hidden="true"></span></summary><p>Ano. Ke každému bytu patří kryté parkovací stání pod pergolou přímo u domu a je zahrnuté v ceně. Druhé stání si můžete dokoupit za 390 000 Kč.</p></details>
-        <details class="qa" name="faq"><summary><span class="qn">03</span><span class="qt">Je možné provádět klientské změny?</span><span class="qb" aria-hidden="true"></span></summary><p>Ano. Změny dispozic, rozvodů i vybavení koupelen můžete zadat do 31. 3. 2027. Rozsah a cenu změn s vámi projdeme na osobní schůzce.</p></details>
-        <details class="qa" name="faq"><summary><span class="qn">04</span><span class="qt">Pomůžete mi s financováním bytu?</span><span class="qb" aria-hidden="true"></span></summary><p>Ano, v případě zájmu vám pomůžeme zorientovat se v možnostech financování a doporučíme odborníka, který vám poradí s vyřízením hypotéky.</p></details>
+        <p class="faq2-text">Máte otázku, která tu není? Napište nebo zavolejte, na každý dotaz odpovíme osobně.</p>
+        <a class="btn btn-dark faq2-btn" href="#kontakt"><span>Kontaktovat nás</span><svg class="bar" width="22" height="12" viewBox="0 0 22 12" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M0 6h20M15 1l5 5-5 5"/></svg></a>
+        <div class="qa-img"><img loading="lazy" decoding="async" src="img/balkony.webp" alt="Balkony bytového domu Bystrc Obora v zeleni"></div>
+      </div>
+      <div class="faq2-list">
+        <details class="qa" name="faq" open><summary><span class="qt">Kdy budou byty dokončené?</span><span class="qb" aria-hidden="true"></span></summary><p>Předpokládaný termín dokončení projektu je v roce 2027.</p></details>
+        <details class="qa" name="faq"><summary><span class="qt">Je součástí bytu parkovací stání?</span><span class="qb" aria-hidden="true"></span></summary><p>Ano. Ke každému bytu patří kryté parkovací stání pod pergolou přímo u domu a je zahrnuté v ceně. Druhé stání si můžete dokoupit za 390 000 Kč.</p></details>
+        <details class="qa" name="faq"><summary><span class="qt">Je možné provádět klientské změny?</span><span class="qb" aria-hidden="true"></span></summary><p>Ano. Změny dispozic, rozvodů i vybavení koupelen můžete zadat do 31. 3. 2027. Rozsah a cenu změn s vámi projdeme na osobní schůzce.</p></details>
+        <details class="qa" name="faq"><summary><span class="qt">Pomůžete mi s financováním bytu?</span><span class="qb" aria-hidden="true"></span></summary><p>Ano, v případě zájmu vám pomůžeme zorientovat se v možnostech financování a doporučíme odborníka, který vám poradí s vyřízením hypotéky.</p></details>
       </div>
     </div>
   </div>
@@ -2665,15 +2720,34 @@ html body footer.ft4 .ft-brand .ft-logo{align-self:flex-start!important;margin-l
   </div>
 </section>
 
-<footer class="ft4">
-  <div class="wrap ft-top">
-    <div class="ft-col ft-brand"><a href="#" class="ft-logo zl" aria-label="Bystrc Obora, zpět nahoru"><svg class="zl-ic zn" width="59" height="40" viewBox="541 231 278 189" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="9" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"><path d="M664.5 302V414H547V300L614 245L733 343"/><path d="M664.5 302L740 239L812.5 300V414H756"/><path d="M733 307V418.5"/><path d="M733 372L775 343"/><path d="M733 390L690 360"/></g></svg></a></div>
-    <nav class="ft-col" aria-label="O projektu"><h3>O projektu</h3><a href="#projekt">O projektu</a><a href="#byty">Ceník</a><a href="#lokalita">Lokalita</a><a href="#standard">Standardy</a></nav>
-    <nav class="ft-col" aria-label="Další informace"><h3>Další informace</h3><a href="#galerie">Galerie</a><a href="#dotazy">FAQ</a><a href="#kontakt">Kontakt</a></nav>
-    <div class="ft-col"><h3>Kontakt</h3><span>ABC Development s.r.o.</span><span>Rakovecká 229/73, Brno-Bystrc</span><a href="tel:+420777123456">+420 777 123 456</a><a href="mailto:prodej@abc-development.cz">prodej@abc-development.cz</a></div>
+<footer class="ft4 ft5">
+  <div class="wrap ft5-top">
+    <div class="ft5-brand">
+      <a href="#" class="ft-logo zl ft5-logo" aria-label="Bystrc Obora, zpět nahoru"><svg class="zl-ic zn" width="59" height="40" viewBox="541 231 278 189" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="9" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"><path d="M664.5 302V414H547V300L614 245L733 343"/><path d="M664.5 302L740 239L812.5 300V414H756"/><path d="M733 307V418.5"/><path d="M733 372L775 343"/><path d="M733 390L690 360"/></g></svg></a>
+      <p class="ft5-dev">developed by <b>ABC Development</b></p>
+      <ul class="ft5-soc" aria-label="Sociální sítě">
+        <li><a href="https://www.instagram.com/abcdevelopment.cz" aria-label="Instagram"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a></li>
+        <li><a href="https://www.facebook.com/abcdevelopment.cz" aria-label="Facebook"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-1.6 19.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 12 2z"/></svg></a></li>
+        <li><a href="https://www.linkedin.com/company/abc-development-cz" aria-label="LinkedIn"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.75h4v11H3zm7 0h3.8v1.6h.05c.53-1 1.83-2 3.77-2 4.03 0 4.78 2.6 4.78 6v6.4h-4v-5.7c0-1.36-.02-3.1-1.9-3.1-1.9 0-2.2 1.48-2.2 3v5.8h-4z"/></svg></a></li>
+      </ul>
+    </div>
+    <div class="ft5-col">
+      <h3>Kontaktujte nás</h3>
+      <a href="tel:+420777123456">tel.: +420 777 123 456</a>
+      <a href="mailto:prodej@abc-development.cz">prodej@abc-development.cz</a>
+    </div>
+    <div class="ft5-col">
+      <h3>ABC Development s.r.o.</h3>
+      <span>Kanceláře: Rakovecká 229/73</span>
+      <span>635 00 Brno-Bystrc</span>
+      <span class="ft5-gap">Sídlo: Kounicova 12</span>
+      <span>602 00 Brno</span>
+      <span>IČ: 12345678</span>
+    </div>
   </div>
-  <div class="ft-bar">
-    <div class="wrap ft-bar-in"><span>© 2026 Bystrc Obora</span><span class="ft-links"><a href="ochrana-osobnich-udaju.html">Zásady ochrany osobních údajů</a><a href="#" id="cookieOpen">Nastavení cookies</a></span></div>
+  <div class="wrap ft5-bar">
+    <span>© 2026 Bystrc Obora by ABC Development</span>
+    <span class="ft5-links"><a href="ochrana-osobnich-udaju.html">Ochrana osobních údajů</a><a href="cookies.html">Cookies</a><a href="#" id="cookieOpen">Nastavení cookies</a></span>
   </div>
 </footer>
 
