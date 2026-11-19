@@ -2737,6 +2737,27 @@ html body section#kontakt .contact-person b,html body section#kontakt b{font-siz
 @media(max-width:700px){:root{--t-lead:17px;--t-h3:20px}}
 
 .op-head{align-items:start!important}
+
+/* ===== 4 hlavní výhody pod úvodem (inspirace: výrazné ikony, krátký text) ===== */
+html body section.zben{padding:var(--sec) 0 0!important;background:var(--zbg)}
+.zben-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(20px,3vw,48px)}
+.zben-list li{display:flex;flex-direction:column;align-items:center;text-align:center;gap:20px}
+.zben-ic{display:flex;align-items:center;justify-content:center;width:84px;height:84px;border-radius:50%;background:#A5D6A7;color:var(--c-dark);transition:transform .4s ease}
+.zben-list li:hover .zben-ic{transform:translateY(-4px)}
+.zben-t{font-size:var(--t-h3);font-weight:500;line-height:1.25;letter-spacing:-.01em;color:var(--c-ink)}
+@media(max-width:900px){.zben-list{grid-template-columns:1fr 1fr;row-gap:40px}}
+@media(max-width:560px){.zben-ic{width:68px;height:68px}.zben-ic svg{width:28px;height:28px}.zben-list{gap:32px 16px}}
+/* ===== O projektu: nadpis a výhody vlevo, fotka vpravo, jeden blok ===== */
+html body section#projekt .op-x{margin-top:0!important;align-items:stretch}
+.op-left{display:flex;flex-direction:column;justify-content:space-between;gap:clamp(32px,4vw,56px)}
+html body .op-left .op-head{display:block!important;margin:0!important}
+html body .op-left .op-h{margin:0 0 20px!important}
+html body .op-left .op-txt p{max-width:520px}
+html body .op-left .op-tabs{justify-content:flex-end}
+html body .op-left .op-tab:first-child{padding-top:0}
+@media(max-width:900px){.op-left{gap:28px}}
+
+@media(max-width:900px){html body .op-left{display:contents}html body .op-left .op-head{order:1}html body section#projekt .op-pics{order:2}html body .op-left .op-tabs{order:3}}
 </style>
 </head>
 <body>
@@ -2774,21 +2795,33 @@ html body section#kontakt .contact-person b,html body section#kontakt b{font-siz
     </div></div>
   </div>
 </section>
+<section class="zben" aria-label="Hlavní výhody">
+  <div class="wrap">
+    <ul class="zben-list rv">
+      <li><span class="zben-ic"><svg width="34" height="34" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><path d="M3 27h26"/><path d="M8 27l5-17 5 17"/><path d="M15 27l6-22 6 22"/></svg></span><span class="zben-t">Les hned za domem</span></li>
+      <li><span class="zben-ic"><svg width="34" height="34" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><path d="M3 12c3-3 5-3 8 0s5 3 8 0 5-3 8 0"/><path d="M3 19c3-3 5-3 8 0s5 3 8 0 5-3 8 0"/><path d="M3 26c3-3 5-3 8 0s5 3 8 0 5-3 8 0"/></svg></span><span class="zben-t">Přehrada na dosah</span></li>
+      <li><span class="zben-ic"><svg width="34" height="34" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><path d="M3 28h26"/><path d="M5 28V14h8v14"/><path d="M13 28V5h10v23"/><path d="M23 28V12h5v16"/><path d="M17 10h2M17 15h2M17 20h2"/></svg></span><span class="zben-t">Centrum za 20 minut</span></li>
+      <li><span class="zben-ic"><svg width="34" height="34" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><path d="M4 15L16 5l12 10"/><path d="M7 13v15h18V13"/><path d="M17 14l-4 6h6l-4 6"/></svg></span><span class="zben-t">Energetická třída B</span></li>
+    </ul>
+  </div>
+</section>
 <section class="about sand" id="projekt">
   <div class="wrap op">
-    <div class="op-head rv">
+    <div class="op-x rv">
+      <div class="op-left">
+      <div class="op-head">
       <h2 class="op-h">Místo, kde se dobře žije.</h2>
       <div class="op-txt">
         <p>Dva moderní domy v&nbsp;klidné části Bystrce, obklopené zelení. Les začíná hned za domem, Brněnská přehrada je 13&nbsp;minut pěšky a&nbsp;do centra Brna to máte autem za 20&nbsp;minut. Velká okna a&nbsp;prosklené balkony propojují byty s&nbsp;okolím, vlastní vjezd a&nbsp;kryté parkování dodávají každodennímu bydlení soukromí.</p>
       </div>
     </div>
-    <div class="op-x rv">
       <ul class="op-tabs" aria-label="Výhody bydlení">
         <li><button type="button" class="op-tab on" data-k="0" aria-pressed="true"><span class="op-tt">Příroda na dosah</span><span class="op-td"><span>Lesní cesty a cyklostezky začínají hned za domem.</span></span></button></li>
         <li><button type="button" class="op-tab" data-k="1" aria-pressed="false"><span class="op-tt">Zázemí pro rodinný život</span><span class="op-td"><span>Dostatek soukromí a&nbsp;prostoru pro děti, páry i&nbsp;jednotlivce.</span></span></button></li>
         <li><button type="button" class="op-tab" data-k="2" aria-pressed="false"><span class="op-tt">Pohodlné parkování</span><span class="op-td"><span>Kryté parkovací stání pod pergolou přímo u domu vám usnadní každodenní příjezdy i odjezdy.</span></span></button></li>
         <li><button type="button" class="op-tab" data-k="3" aria-pressed="false"><span class="op-tt">Světlo a výhledy</span><span class="op-td"><span>Velká a rohová okna vpouštějí do interiéru dostatek denního světla. Prosklené balkony navíc otevírají výhledy do okolní zeleně.</span></span></button></li>
       </ul>
+      </div>
       <div class="op-pics">
         <img class="on" decoding="async" src="img/hero.webp" alt="Domy Bystrc Obora mezi borovicemi">
         <img class="" loading="lazy" decoding="async" src="img/balkony.webp" alt="Prosklené balkony obrácené do zeleně">
