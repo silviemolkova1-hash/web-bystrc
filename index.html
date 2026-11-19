@@ -3075,6 +3075,36 @@ html body .cookie-ico{width:44px!important;height:44px!important;right:12px!impo
 html body .cookie-ico svg{width:20px!important;height:20px!important}
 html body .cookie-ico::before{content:none}
 @media(max-width:767px){html body.past-klid .cookie-ico{bottom:66px!important}}
+
+/* ===== Ceník na mobilu a tabletu: posuvná tabulka s pevným sloupcem Byt ===== */
+.tbl-hint{display:none}
+@media(max-width:1000px){
+html body section#byty#byty .table{overflow-x:auto!important;-webkit-overflow-scrolling:touch;scrollbar-width:thin;border-top:1px solid rgba(35,38,31,.2)!important;margin:0 calc(var(--cpad)*-1);padding:0 var(--cpad)}
+html body section#byty#byty .row,html body section#byty#byty .row.h{display:grid!important;grid-template-columns:72px 90px 84px 128px 80px 132px 112px 168px!important;grid-template-areas:none!important;width:max-content!important;min-width:100%;column-gap:0!important;row-gap:0!important;align-items:center!important;padding:0!important;margin:0!important}
+html body section#byty#byty .row:not(.h){min-height:60px}
+html body section#byty#byty .row.h{position:static!important;min-height:44px}
+html body section#byty#byty .row > *{grid-area:auto!important;display:flex!important;align-items:center;padding:12px 10px 12px 0!important;margin:0!important;font-size:15px!important;white-space:nowrap}
+html body section#byty#byty .row > *::before{content:none!important;display:none!important}
+html body section#byty#byty .row.h > *{font-size:12px!important;opacity:.7}
+html body section#byty#byty .row > *:first-child{position:sticky;left:calc(var(--cpad)*-1);z-index:2;background:#FAF9F5;padding-left:var(--cpad)!important;margin-left:calc(var(--cpad)*-1)!important;box-shadow:6px 0 8px -6px rgba(35,38,31,.18)}
+html body section#byty#byty .row .id{font-size:18px!important}
+html body section#byty#byty .row:not(.h):hover{padding-left:0!important;padding-right:0!important}
+html body section#byty#byty .row:not(.h):hover > *:first-child{background:#EDEFEA}
+html body section#byty#byty .row .acts{justify-content:flex-start!important;gap:16px}
+html body section#byty#byty .row span.st{height:26px;padding:0 9px!important;display:inline-flex!important;align-self:center}
+.tbl-hint{display:flex;align-items:center;gap:10px;margin:0 0 10px;font-size:13px;color:#23261F;opacity:.6}
+}
+@media(min-width:1001px){.tbl-hint{display:none!important}}
+
+@media(max-width:1000px){
+html body section#byty#byty .row.h > *{opacity:1!important;color:rgba(35,38,31,.62)!important}
+html body section#byty#byty .row.is-sold > *{opacity:1!important}
+html body section#byty#byty .row.is-sold > span:not(.st):not(.acts),html body section#byty#byty .row.is-sold .id,html body section#byty#byty .row.is-sold .acts a{color:rgba(35,38,31,.4)!important}
+html body section#byty#byty .row > *:first-child{background:#FAF9F5!important}
+html body section#byty#byty .row:not(.h):hover > *:first-child{background:#EDEFEA!important}
+html body section#byty#byty .row span.st{font-size:13px!important;height:26px!important;padding:0 9px!important}
+html body section#byty#byty .row .st{padding:0 9px!important}
+}
 </style>
 </head>
 <body>
@@ -3148,6 +3178,7 @@ html body .cookie-ico::before{content:none}
         <button class="chip" data-f="free">Pouze volné</button>
       </div>
     </div>
+    <p class="tbl-hint" aria-hidden="true">Tabulku posuňte do strany <svg width="22" height="12" viewBox="0 0 22 12" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M0 6h20M15 1l5 5-5 5"/></svg></p>
     <div class="table rv">
       <div class="row h"><span>Byt</span><span>Dispozice</span><span>Plocha</span><span>Venkovní plocha</span><span>Podlaží</span><span>Cena vč. DPH</span><span>Stav</span><span></span></div>
       <div id="rows"></div>
