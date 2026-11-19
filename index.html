@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Bystrc Obora: náhled úvodní stránky</title>
-<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%22-20%20-20%20368%20368%22%3E%3Crect%20x%3D%22-20%22%20y%3D%22-20%22%20width%3D%22368%22%20height%3D%22368%22%20fill%3D%22%231E2016%22/%3E%3Cg%20transform%3D%22translate%280%2C70%29%22%20fill%3D%22none%22%20stroke%3D%22%23fff%22%20stroke-width%3D%2220%22%3E%3Cpolyline%20points%3D%2210%2C190%2010%2C110%2060%2C60%20110%2C110%20110%2C190%22/%3E%3Cpolyline%20points%3D%22125%2C190%20125%2C110%20175%2C60%20225%2C110%20225%2C190%22/%3E%3Cpolygon%20points%3D%22248%2C190%20263%2C112%20278%2C190%22/%3E%3Cpolygon%20points%3D%22285%2C190%20302%2C92%20319%2C190%22/%3E%3Cline%20x1%3D%220%22%20y1%3D%22190%22%20x2%3D%22328%22%20y2%3D%22190%22/%3E%3C/g%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2212%22%20fill%3D%22%23fff%22%2F%3E%3Cg%20transform%3D%22translate%284.2%2011.6%29%20scale%28.2%29%22%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22%231E2A1D%22%20stroke-width%3D%2213%22%20stroke-linejoin%3D%22miter%22%20stroke-miterlimit%3D%2210%22%3E%3Cg%20transform%3D%22translate%28-541%20-231%29%22%3E%3Cpath%20d%3D%22M664.5%20302V414H547V300L614%20245L733%20343%22%2F%3E%3Cpath%20d%3D%22M664.5%20302L740%20239L812.5%20300V414H756%22%2F%3E%3Cpath%20d%3D%22M733%20307V418.5%22%2F%3E%3Cpath%20d%3D%22M733%20372L775%20343%22%2F%3E%3Cpath%20d%3D%22M733%20390L690%20360%22%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
@@ -2523,6 +2523,25 @@ html body footer.ft5 .ft5-brand .ft5-logo{width:auto!important;height:auto!impor
 html body footer.ft5 .ft5-soc a{color:var(--c-bg)!important}
 
 @media(max-width:560px){.ft5-links{gap:6px 20px}.ft5-links a+a::before{content:none}}
+
+/* tlačítka: jeden styl všude (zelené, verzálky) */
+html body a.faq2-btn,html body .u-cta,html body #kontakt button[type=submit],html body .btn.sticky{background:#A5D6A7!important;color:#23261F!important;font-size:13px!important;font-weight:400!important;text-transform:uppercase!important;letter-spacing:.08em!important;height:var(--btn-h,50px)!important;min-height:0!important;padding:0 28px!important;border-radius:2px!important;border:0!important;box-shadow:none!important;display:inline-flex!important;align-items:center!important;gap:14px!important;line-height:1!important}
+html body a.faq2-btn:hover,html body .u-cta:hover,html body #kontakt button[type=submit]:hover,html body .btn.sticky:hover{background:#8FC992!important}
+/* otázky: užší */
+html body .faq2-list details.qa summary{padding:16px 0!important}
+html body .faq2-list details.qa p{margin:0 0 18px!important}
+html body #standard .faq2-list{border-top:1px solid rgba(35,38,31,.2)}
+
+html body section .faq2-list details.qa{padding:0!important;margin:0!important}
+html body section .faq2-list details.qa .qb,html body section#standard .faq2-list details.qa .qb{box-shadow:none!important;background:transparent!important;border:0!important}
+
+html body #kontakt form button.btn.btn-dark[type=submit]{background:#A5D6A7!important;color:#23261F!important;font-size:13px!important;text-transform:uppercase!important;letter-spacing:.08em!important;font-weight:400!important}
+html body #kontakt form button.btn.btn-dark[type=submit]:hover{background:#8FC992!important}
+
+html body section#byty a.u-cta{background:#A5D6A7!important;color:#23261F!important;filter:none!important}
+html body section#byty a.u-cta:hover{background:#8FC992!important}
+
+html body section#byty a.u-cta,html body section#byty a.u-cta span{font-size:13px!important;text-transform:uppercase!important;letter-spacing:.08em!important;font-weight:400!important}
 </style>
 </head>
 <body>
@@ -2671,11 +2690,11 @@ html body footer.ft5 .ft5-soc a{color:var(--c-bg)!important}
     <h2 class="qa-h rv">Kvalitní standard jako součást vašeho nového domova</h2>
     <p class="sec-lead qa-lead rv">Na komfort bydlení mají vliv především detaily. Proto se zaměřujeme na kvalitní materiály, promyšlené konstrukční řešení a&nbsp;vybavení, které vám zpříjemní každodenní život.</p>
     <div class="qa-grid rv">
-      <div class="qa-list">
-        <details class="qa" name="std" open><summary><span class="qn">01</span><span class="qt">Konstrukce a izolace</span><span class="qb" aria-hidden="true"></span></summary><p>Nosné zdivo z keramických tvárnic, kontaktní zateplení fasády minerální vatou tloušťky 200 mm a akusticky oddělené stropy mezi byty. Domy splňují energetickou třídu B.</p></details>
-        <details class="qa" name="std"><summary><span class="qn">02</span><span class="qt">Okna a stínění</span><span class="qb" aria-hidden="true"></span></summary><p>Hliníková okna s izolačním trojsklem, rohová okna v obývacích pokojích a venkovní žaluzie s elektrickým ovládáním ve všech obytných místnostech.</p></details>
-        <details class="qa" name="std"><summary><span class="qn">03</span><span class="qt">Vytápění</span><span class="qb" aria-hidden="true"></span></summary><p>Tepelné čerpadlo vzduch voda a podlahové topení ve všech místnostech. V koupelnách je navíc elektrický otopný žebřík.</p></details>
-        <details class="qa" name="std"><summary><span class="qn">04</span><span class="qt">Podlahy a koupelny</span><span class="qb" aria-hidden="true"></span></summary><p>Třívrstvé dřevěné podlahy v pokojích, velkoformátová dlažba v předsíni a koupelnách, závěsná WC a sprchové kouty bez vaničky.</p></details>
+      <div class="qa-list faq2-list">
+        <details class="qa" name="std" open><summary><span class="qt">Konstrukce a izolace</span><span class="qb" aria-hidden="true"></span></summary><p>Nosné zdivo z keramických tvárnic, kontaktní zateplení fasády minerální vatou tloušťky 200 mm a akusticky oddělené stropy mezi byty. Domy splňují energetickou třídu B.</p></details>
+        <details class="qa" name="std"><summary><span class="qt">Okna a stínění</span><span class="qb" aria-hidden="true"></span></summary><p>Hliníková okna s izolačním trojsklem, rohová okna v obývacích pokojích a venkovní žaluzie s elektrickým ovládáním ve všech obytných místnostech.</p></details>
+        <details class="qa" name="std"><summary><span class="qt">Vytápění</span><span class="qb" aria-hidden="true"></span></summary><p>Tepelné čerpadlo vzduch voda a podlahové topení ve všech místnostech. V koupelnách je navíc elektrický otopný žebřík.</p></details>
+        <details class="qa" name="std"><summary><span class="qt">Podlahy a koupelny</span><span class="qb" aria-hidden="true"></span></summary><p>Třívrstvé dřevěné podlahy v pokojích, velkoformátová dlažba v předsíni a koupelnách, závěsná WC a sprchové kouty bez vaničky.</p></details>
       </div>
       <div class="qa-img"><img loading="lazy" decoding="async" src="img/detail.webp" alt="Detail fasády a oken bytového domu Bystrc Obora"></div>
     </div>
@@ -2687,7 +2706,7 @@ html body footer.ft5 .ft5-soc a{color:var(--c-bg)!important}
       <div class="faq2-intro">
         <h2 class="qa-h qa-h2">Často vás zajímá</h2>
         <p class="faq2-text">Máte otázku, která tu není? Napište nebo zavolejte, na každý dotaz odpovíme osobně.</p>
-        <a class="btn btn-dark faq2-btn" href="#kontakt"><span>Kontaktovat nás</span><svg class="bar" width="22" height="12" viewBox="0 0 22 12" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M0 6h20M15 1l5 5-5 5"/></svg></a>
+        <a class="btn faq2-btn" href="#kontakt"><span>Kontaktovat nás</span><svg class="bar" width="22" height="12" viewBox="0 0 22 12" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M0 6h20M15 1l5 5-5 5"/></svg></a>
         <div class="qa-img"><img loading="lazy" decoding="async" src="img/balkony.webp" alt="Balkony bytového domu Bystrc Obora v zeleni"></div>
       </div>
       <div class="faq2-list">
@@ -2724,12 +2743,6 @@ html body footer.ft5 .ft5-soc a{color:var(--c-bg)!important}
   <div class="wrap ft5-top">
     <div class="ft5-brand">
       <a href="#" class="ft-logo zl ft5-logo" aria-label="Bystrc Obora, zpět nahoru"><svg class="zl-ic zn" width="59" height="40" viewBox="541 231 278 189" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="9" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"><path d="M664.5 302V414H547V300L614 245L733 343"/><path d="M664.5 302L740 239L812.5 300V414H756"/><path d="M733 307V418.5"/><path d="M733 372L775 343"/><path d="M733 390L690 360"/></g></svg></a>
-      <p class="ft5-dev">developed by <b>ABC Development</b></p>
-      <ul class="ft5-soc" aria-label="Sociální sítě">
-        <li><a href="https://www.instagram.com/abcdevelopment.cz" aria-label="Instagram"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a></li>
-        <li><a href="https://www.facebook.com/abcdevelopment.cz" aria-label="Facebook"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-1.6 19.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 12 2z"/></svg></a></li>
-        <li><a href="https://www.linkedin.com/company/abc-development-cz" aria-label="LinkedIn"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.75h4v11H3zm7 0h3.8v1.6h.05c.53-1 1.83-2 3.77-2 4.03 0 4.78 2.6 4.78 6v6.4h-4v-5.7c0-1.36-.02-3.1-1.9-3.1-1.9 0-2.2 1.48-2.2 3v5.8h-4z"/></svg></a></li>
-      </ul>
     </div>
     <div class="ft5-col">
       <h3>Kontaktujte nás</h3>
