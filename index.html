@@ -2923,6 +2923,23 @@ html body .btn.sticky{height:50px!important}
 /* mapa: ostrá, bez filtrů */
 html body .ov-map .leaflet-tile-pane{filter:none!important}
 html body .ov-map img.leaflet-tile{image-rendering:auto}
+
+/* ===== Paleta webu: jen tyto barvy ===== */
+:root{--p-bezova:#F2F0EB;--p-salvej:#E3E6DD;--p-salvej-hover:#D9DED2;--p-zelena:#1E2A1D;--p-text:#23261F;--p-akcent:#A5D6A7;--p-akcent-hover:#8FC992;--p-ruzova:#F2B8C6}
+/* bílá -> béžová */
+html body .zhero-h,html body .zhero-h span,html body .zhero-meta,html body .zhero-meta span{color:var(--p-bezova)!important}
+html body .zhero-meta i{background:rgba(242,240,235,.5)!important}
+html body .cookie,html body .cookie-ico{background:var(--p-bezova)!important}
+html body .cookie button{border-color:rgba(35,38,31,.25)!important}
+html body .opa-dots button.on::before{background:rgba(30,42,29,.45)!important}
+html body .opa-dots button::before,html body .opa-dots button:hover::before{background:rgba(30,42,29,.22)}
+html body .zhero-meta{background:rgba(30,42,29,.22)!important}
+/* ovládání mapy v paletě */
+html body .leaflet-control-zoom a,html body .leaflet-bar a{background:var(--p-bezova)!important;color:var(--p-text)!important;border-color:rgba(35,38,31,.15)!important}
+html body .leaflet-control-zoom a:hover{background:var(--p-akcent)!important}
+html body .leaflet-control-zoom{border-color:rgba(35,38,31,.15)!important}
+html body .leaflet-control-attribution{background:rgba(242,240,235,.85)!important;color:var(--p-text)!important}
+html body .leaflet-control-attribution a{color:var(--p-text)!important}
 </style>
 </head>
 <body>
