@@ -3012,6 +3012,30 @@ html body section#lokalita .ov-panel{background:#FAF9F5!important}
 /* lokalita: vybraná položka v barvě filtrů, bez lemování */
 html body .ovc li button.sel{background:#EDEFEA!important;border-color:transparent!important;color:#23261F!important;box-shadow:none!important}
 html body .ovc li button:hover{background:#EDEFEA!important}
+
+/* ===== Šperky ===== */
+/* 2) pomalý zoom úvodní fotky */
+@keyframes zKen{from{transform:scale(1)}to{transform:scale(1.05)}}
+html body .zhero-media img{animation:zKen 24s ease-in-out infinite alternate!important;transform-origin:60% 50%;will-change:transform}
+@media(prefers-reduced-motion:reduce){html body .zhero-media img{animation:none!important}}
+/* 3) jednotné zaoblení 4 px */
+html body .zhero-media,html body .opb,html body .tl3,html body .opa-img,html body .faq3-img,html body .ov-mapwrap,html body .ov-map,html body .ov-panel,html body .gal figure,html body .gal img,html body section#kontakt form#form,html body .cookie{border-radius:4px!important}
+html body .gal figure{overflow:hidden}
+/* 4) hlavička při scrollování: matné sklo a linka */
+html body header.zh{transition:background-color .35s ease,box-shadow .35s ease,backdrop-filter .35s ease!important}
+html body.hd-scrolled header.zh{background:rgba(237,239,234,.78)!important;-webkit-backdrop-filter:blur(14px) saturate(1.2);backdrop-filter:blur(14px) saturate(1.2);box-shadow:0 1px 0 rgba(35,38,31,.08)!important}
+html body.menu-open header.zh{background:#EDEFEA!important;-webkit-backdrop-filter:none;backdrop-filter:none}
+/* 5) plynulé načítání fotek */
+img.fi{opacity:0;transition:opacity .8s ease}
+img.fi.ld{opacity:1}
+/* 6) galerie: přiblížení a ztlumení ostatních */
+html body .gal figure img{transition:transform .8s ease,opacity .45s ease!important}
+html body .gal:hover figure:not(:hover) img{opacity:.6}
+html body .gal figure:hover img{transform:scale(1.04)!important}
+/* 7) ceník: záhlaví tabulky zůstává nahoře */
+html body section#byty{overflow:clip!important}
+html body section#byty .row.h{position:sticky;top:73px;z-index:3;background:#FAF9F5!important}
+@media(prefers-reduced-motion:reduce){img.fi{opacity:1;transition:none}html body .gal figure img{transition:none!important}}
 </style>
 </head>
 <body>
@@ -3462,5 +3486,7 @@ function go(n){k=n;im.forEach((x,i)=>x.classList.toggle("on",i===n));d.forEach((
 function play(){clearInterval(t);if(!rm)t=setInterval(()=>go((k+1)%im.length),5000)}
 d.forEach((b,i)=>b.addEventListener("click",()=>{go(i);play()}));
 new IntersectionObserver(e=>{e[0].isIntersecting?play():clearInterval(t)},{threshold:.3}).observe(f)})();</script>
+<script>(function(){const f=()=>document.body.classList.toggle("hd-scrolled",scrollY>8);addEventListener("scroll",f,{passive:true});f();
+document.querySelectorAll('img[loading="lazy"]').forEach(i=>{if(i.closest(".opa-sl,.gal,.zhero"))return;i.classList.add("fi");const ok=()=>i.classList.add("ld");if(i.complete&&i.naturalWidth)ok();else{i.addEventListener("load",ok,{once:true});i.addEventListener("error",ok,{once:true})}})})();</script>
 </body>
 </html>
