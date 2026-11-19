@@ -2607,6 +2607,70 @@ html body .tl-h{margin:0 0 clamp(40px,4.5vw,64px)!important;max-width:720px}
 html body .tl-step h3{margin:0 0 8px!important;font-size:18px!important}
 .tl-step p{margin:0;font-size:15px;line-height:1.6;max-width:220px}
 @media(max-width:900px){.tl-list{grid-template-columns:1fr;gap:28px}.tl-list::before{top:28px;bottom:28px;left:28px;right:auto;width:1px;height:auto}.tl-step{display:grid;grid-template-columns:56px 1fr;column-gap:20px;align-items:start}.tl-ic{grid-row:1/3;margin:0}.tl-step h3{margin-top:14px!important}.tl-step p{max-width:none}}
+
+/* ===== 1A: tmavý pruh s čísly přes spodek úvodní fotky ===== */
+html body .zhero-h{bottom:110px!important}
+html body .zhero-side{bottom:116px!important}
+html body section.zfacts.zf2{padding:0 0 clamp(56px,6vw,96px)!important;background:var(--zbg)!important}
+.zf2-band{list-style:none;margin:-56px 0 0;padding:clamp(28px,3vw,44px) clamp(28px,3.5vw,56px);position:relative;z-index:3;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;background:var(--c-dark);color:var(--c-bg);border-radius:2px}
+.zf2-band li{display:flex;flex-direction:column;gap:6px}
+.zf2-band b{font-size:clamp(34px,3.6vw,52px);font-weight:500;line-height:1;letter-spacing:-.02em;font-variant-numeric:tabular-nums;color:#A5D6A7}
+.zf2-band span{font-size:15px;line-height:1.4;opacity:.85}
+html body .zf2 .zf-lead{margin:clamp(48px,5vw,80px) auto 0!important;max-width:820px;text-align:center}
+@media(max-width:900px){.zf2-band{grid-template-columns:1fr 1fr;row-gap:28px}}
+@media(max-width:700px){html body .zhero-h{bottom:214px!important}html body .zhero-side{bottom:64px!important}.zf2-band{margin-top:-40px;padding:26px 22px}}
+/* ===== 2A: výhody s měnící se fotkou ===== */
+.op-x{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(32px,5vw,88px);align-items:stretch;margin-top:clamp(8px,1vw,16px)}
+.op-tabs{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;justify-content:center}
+.op-tab{all:unset;box-sizing:border-box;display:block;width:100%;cursor:pointer;padding:20px 0;color:var(--c-ink)}
+.op-tt{display:block;font-size:clamp(24px,2.4vw,34px);font-weight:500;letter-spacing:-.015em;line-height:1.15;opacity:.32;transition:opacity .35s ease}
+.op-tab:hover .op-tt,.op-tab.on .op-tt{opacity:1}
+.op-td{display:grid;grid-template-rows:0fr;transition:grid-template-rows .45s ease}
+.op-td>span{overflow:hidden;font-size:16px;line-height:1.6;max-width:440px;opacity:0;transition:opacity .35s ease}
+.op-tab.on .op-td{grid-template-rows:1fr}
+.op-tab.on .op-td>span{opacity:1;padding-top:12px}
+.op-bar{display:block;height:3px;margin-top:18px;background:transparent;overflow:hidden;border-radius:2px}
+.op-tab.on .op-bar{background:rgba(35,38,31,.1)}
+.op-bar i{display:block;height:100%;width:100%;background:#A5D6A7;transform:scaleX(0);transform-origin:left}
+.op-x.run .op-tab.on .op-bar i{animation:opBar 6s linear forwards}
+.op-x.stop .op-tab.on .op-bar i{animation:none;transform:scaleX(1)}
+@keyframes opBar{to{transform:scaleX(1)}}
+.op-tab:focus-visible{outline:2px solid var(--c-ink);outline-offset:4px}
+.op-pics{position:relative;min-height:560px;border-radius:2px;overflow:hidden;background:var(--c-alt)}
+.op-pics img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.04);transition:opacity .7s ease,transform 1.2s ease}
+.op-pics img.on{opacity:1;transform:none}
+@media(max-width:900px){.op-x{grid-template-columns:1fr;gap:24px}.op-pics{order:-1;min-height:0;aspect-ratio:4/3}.op-tab{padding:14px 0}}
+@media(prefers-reduced-motion:reduce){.op-pics img,.op-td,.op-tt{transition:none}}
+/* ===== 3A: světle zelená sekce, osa s vyplňováním ===== */
+html body section.tl3-sec{background:#A5D6A7!important;color:var(--c-ink);padding-block:var(--sec)!important}
+.tl3{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(32px,6vw,110px);align-items:start}
+.tl3-head{position:sticky;top:120px}
+html body .tl3-h{margin:0 0 20px!important;font-size:clamp(34px,3.8vw,54px)!important;line-height:1.08!important;color:var(--c-ink)!important}
+.tl3-lead{font-size:17px;line-height:1.6;margin:0;max-width:420px}
+html body a.btn.tl3-btn{background:var(--c-dark)!important;color:var(--c-bg)!important;font-size:13px!important;text-transform:uppercase!important;letter-spacing:.08em!important;height:var(--btn-h,50px)!important;padding:0 28px!important;border-radius:2px!important;border:0!important;display:inline-flex!important;align-items:center!important;box-shadow:none!important;transition:background-color .3s ease!important}
+html body a.btn.tl3-btn:hover{background:#2E3B2C!important;color:var(--c-bg)!important}
+.tl3-track{position:relative;padding-left:0}
+.tl3-line{position:absolute;left:31px;top:12px;bottom:12px;width:2px;background:rgba(30,42,29,.18)}
+.tl3-line i{position:absolute;inset:0;background:var(--c-dark);transform:scaleY(0);transform-origin:top;transition:transform .15s linear}
+.tl3-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:clamp(40px,5vw,72px)}
+.tl3-step{display:grid;grid-template-columns:64px 1fr;column-gap:clamp(20px,3vw,40px);align-items:start;opacity:.45;transition:opacity .4s ease}
+.tl3-step.on{opacity:1}
+.tl3-n{position:relative;z-index:1;display:flex;align-items:center;justify-content:center;width:64px;height:64px;border-radius:50%;background:#A5D6A7;border:2px solid rgba(30,42,29,.25);font-size:26px;font-weight:500;font-variant-numeric:tabular-nums;color:var(--c-dark);transition:background-color .4s ease,color .4s ease,border-color .4s ease}
+.tl3-step.on .tl3-n{background:var(--c-dark);border-color:var(--c-dark);color:#A5D6A7}
+html body .tl3-step h3{margin:14px 0 8px!important;font-size:clamp(22px,2vw,28px)!important;color:var(--c-ink)!important}
+.tl3-step p{margin:0;font-size:16px;line-height:1.6;max-width:440px}
+@media(max-width:900px){.tl3{grid-template-columns:1fr;gap:40px}.tl3-head{position:static}.tl3-step{grid-template-columns:52px 1fr}.tl3-n{width:52px;height:52px;font-size:21px}.tl3-line{left:25px}.tl3-step h3{margin-top:10px!important}}
+@media(prefers-reduced-motion:reduce){.tl3-step{opacity:1}.tl3-line i{transition:none}}
+
+html body section.zf2 ul.zf2-band{margin:-56px 0 0!important}
+@media(max-width:700px){html body section.zf2 ul.zf2-band{margin-top:-40px!important}}
+.tl3-head{position:static}
+html body.on-green .zcen{background:var(--c-dark)!important;color:#A5D6A7!important}
+
+html body section.zfacts.zf2{position:relative;z-index:5;overflow:visible!important}
+
+html body section.zhero{position:relative;z-index:1}
+html body.on-green .btn.sticky{background:var(--c-dark)!important;color:#A5D6A7!important}
 </style>
 </head>
 <body>
@@ -2644,15 +2708,15 @@ html body .tl-step h3{margin:0 0 8px!important;font-size:18px!important}
     </div></div>
   </div>
 </section>
-<section class="zfacts" aria-label="Projekt v číslech">
-  <div class="zf-in">
-    <p class="zf-lead">Dva moderní domy v&nbsp;klidné části Bystrce, obklopené zelení a jen 13&nbsp;minut pěšky od Brněnské přehrady. Do centra Brna jste za 20&nbsp;minut.</p>
-    <ul class="zf-list">
-      <li><span class="zf-ic" aria-hidden="true"><svg class="ic" width="44" height="30" viewBox="0 0 44 30" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="miter" stroke-linecap="square"><polygon points="9,28 15,6 21,28"/><polygon points="20,28 27,2 34,28"/><line x1="0" y1="28.5" x2="44" y2="28.5"/></svg></span><span>Příroda a klid<br>za okny</span></li>
-      <li><span class="zf-ic" aria-hidden="true"><svg class="ic" width="44" height="30" viewBox="0 0 44 30" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="miter" stroke-linecap="square"><polyline points="3,28 3,13 11,5 19,13 19,28"/><polyline points="24,28 24,13 32,5 40,13 40,28"/><line x1="0" y1="28.5" x2="44" y2="28.5"/></svg></span><span>16 bytů<br>dispozice 4+kk</span></li>
-      <li><span class="zf-ic" aria-hidden="true"><svg class="ic" width="44" height="30" viewBox="0 0 44 30" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="miter" stroke-linecap="square"><path d="M2 12c4-4 7-4 10 0s6 4 10 0 7-4 10 0 6 4 10 0"/><path d="M2 21c4-4 7-4 10 0s6 4 10 0 7-4 10 0 6 4 10 0"/></svg></span><span>13 minut pěšky<br>k Brněnské přehradě</span></li>
-      <li><span class="zf-ic" aria-hidden="true"><svg class="ic" width="44" height="30" viewBox="0 0 44 30" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="miter" stroke-linecap="square"><rect x="7" y="4" width="30" height="24"/><line x1="7" y1="11" x2="37" y2="11"/><line x1="14" y1="1" x2="14" y2="6"/><line x1="30" y1="1" x2="30" y2="6"/></svg></span><span>2027<br>plánované dokončení</span></li>
+<section class="zfacts zf2" aria-label="Projekt v číslech">
+  <div class="wrap">
+    <ul class="zf2-band">
+      <li><b>16</b><span>bytů 4+kk</span></li>
+      <li><b>13 min</b><span>pěšky k Brněnské přehradě</span></li>
+      <li><b>20 min</b><span>do centra Brna</span></li>
+      <li><b>2027</b><span>plánované dokončení</span></li>
     </ul>
+    <p class="zf-lead">Dva moderní domy v&nbsp;klidné části Bystrce, obklopené zelení a jen 13&nbsp;minut pěšky od Brněnské přehrady. Do centra Brna jste za 20&nbsp;minut.</p>
   </div>
 </section>
 <section class="about sand" id="projekt">
@@ -2664,13 +2728,20 @@ html body .tl-step h3{margin:0 0 8px!important;font-size:18px!important}
         <p>Jen 16 bytů v&nbsp;klidné části Brna-Bystrce. Velká okna a&nbsp;prosklené balkony propojují byty s&nbsp;okolní zelení, vlastní vjezd a&nbsp;kryté parkování dodávají každodennímu bydlení pohodlí i&nbsp;soukromí.</p>
       </div>
     </div>
-    <figure class="op-img rv"><img loading="lazy" decoding="async" src="img/letecky.webp" alt="Pohled shora na dva bytové domy Bystrc Obora mezi stromy"></figure>
-    <ul class="op-ben rv" aria-label="Výhody bydlení">
-        <li class="op-b"><svg class="ic" width="44" height="30" viewBox="0 0 44 30" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="miter" stroke-linecap="square" aria-hidden="true"><polygon points="9,28 15,6 21,28"/><polygon points="20,28 27,2 34,28"/><line x1="0" y1="28.5" x2="44" y2="28.5"/></svg><h3>Příroda na dosah</h3><p>Lesní cesty a cyklostezky začínají hned za domem.</p></li>
-        <li class="op-b"><svg class="ic" width="44" height="30" viewBox="0 0 44 30" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="miter" stroke-linecap="square" aria-hidden="true"><polyline points="4,28.5 4,4 40,4 40,28.5"/><line x1="15" y1="4" x2="15" y2="20"/><line x1="29" y1="4" x2="29" y2="20"/><line x1="12" y1="20" x2="18" y2="20"/><line x1="26" y1="20" x2="32" y2="20"/><line x1="0" y1="28.5" x2="44" y2="28.5"/></svg><h3>Zázemí pro rodinný život</h3><p>Dostatek soukromí a&nbsp;prostoru pro děti, páry i&nbsp;jednotlivce.</p></li>
-        <li class="op-b"><svg class="ic" width="44" height="30" viewBox="0 0 44 30" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="miter" stroke-linecap="square" aria-hidden="true"><polyline points="2,10 22,3 42,10"/><line x1="6" y1="8.6" x2="6" y2="28.5"/><line x1="38" y1="8.6" x2="38" y2="28.5"/><polyline points="12,25 12,19 15,15 29,15 32,19 32,25 12,25"/><line x1="0" y1="28.5" x2="44" y2="28.5"/></svg><h3>Pohodlné parkování</h3><p>Kryté parkovací stání pod pergolou přímo u domu vám usnadní každodenní příjezdy i odjezdy.</p></li>
-        <li class="op-b"><svg class="ic" width="44" height="30" viewBox="0 0 44 30" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="miter" stroke-linecap="square" aria-hidden="true"><rect x="8" y="3" width="28" height="22"/><line x1="22" y1="3" x2="22" y2="25"/><line x1="8" y1="14" x2="36" y2="14"/><line x1="0" y1="28.5" x2="44" y2="28.5"/></svg><h3>Světlo a výhledy</h3><p>Velká a rohová okna vpouštějí do interiéru dostatek denního světla. Prosklené balkony navíc otevírají výhledy do okolní zeleně.</p></li>
-    </ul>
+    <div class="op-x rv">
+      <ul class="op-tabs" aria-label="Výhody bydlení">
+        <li><button type="button" class="op-tab on" data-k="0" aria-pressed="true"><span class="op-tt">Příroda na dosah</span><span class="op-td"><span>Lesní cesty a cyklostezky začínají hned za domem.</span></span><span class="op-bar" aria-hidden="true"><i></i></span></button></li>
+        <li><button type="button" class="op-tab" data-k="1" aria-pressed="false"><span class="op-tt">Zázemí pro rodinný život</span><span class="op-td"><span>Dostatek soukromí a&nbsp;prostoru pro děti, páry i&nbsp;jednotlivce.</span></span><span class="op-bar" aria-hidden="true"><i></i></span></button></li>
+        <li><button type="button" class="op-tab" data-k="2" aria-pressed="false"><span class="op-tt">Pohodlné parkování</span><span class="op-td"><span>Kryté parkovací stání pod pergolou přímo u domu vám usnadní každodenní příjezdy i odjezdy.</span></span><span class="op-bar" aria-hidden="true"><i></i></span></button></li>
+        <li><button type="button" class="op-tab" data-k="3" aria-pressed="false"><span class="op-tt">Světlo a výhledy</span><span class="op-td"><span>Velká a rohová okna vpouštějí do interiéru dostatek denního světla. Prosklené balkony navíc otevírají výhledy do okolní zeleně.</span></span><span class="op-bar" aria-hidden="true"><i></i></span></button></li>
+      </ul>
+      <div class="op-pics">
+        <img class="on" decoding="async" src="img/hero.webp" alt="Domy Bystrc Obora mezi borovicemi">
+        <img class="" loading="lazy" decoding="async" src="img/balkony.webp" alt="Prosklené balkony obrácené do zeleně">
+        <img class="" loading="lazy" decoding="async" src="img/parkovani.webp" alt="Kryté parkování pod pergolou u domu">
+        <img class="" loading="lazy" decoding="async" src="img/detail.webp" alt="Rohová okna, která vpouštějí do bytů denní světlo">
+      </div>
+    </div>
   </div>
 </section>
 
@@ -2753,16 +2824,22 @@ html body .tl-step h3{margin:0 0 8px!important;font-size:18px!important}
     </div>
   </div>
 </section>
-<section class="tl-sec" id="koupe" aria-labelledby="tl-h">
-  <div class="wrap">
-    <h2 class="tl-h rv" id="tl-h">Od prvního výběru až po předání klíčů</h2>
-    <ol class="tl-list rv">
-      <li class="tl-step"><span class="tl-ic" aria-hidden="true"><svg class="pr-svg" width="34" height="24" viewBox="0 0 44 30" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="miter" stroke-linecap="square" aria-hidden="true"><polyline points="4,28.5 4,14 15,4 26,14 26,28.5"/><circle cx="31" cy="15" r="6"/><line x1="35.5" y1="19.5" x2="40" y2="24"/><line x1="0" y1="28.5" x2="44" y2="28.5"/></svg></span><h3>Prohlídka a výběr</h3><p>Vyberete si byt a domluvíme schůzku.</p></li>
-      <li class="tl-step"><span class="tl-ic" aria-hidden="true"><svg class="pr-svg" width="34" height="24" viewBox="0 0 44 30" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="miter" stroke-linecap="square" aria-hidden="true"><polyline points="14,28.5 14,3 32,3 32,24 23,18 14,24"/><line x1="0" y1="28.5" x2="44" y2="28.5"/></svg></span><h3>Rezervace</h3><p>Byt vám podržíme a projdeme podmínky.</p></li>
-      <li class="tl-step"><span class="tl-ic" aria-hidden="true"><svg class="pr-svg" width="34" height="24" viewBox="0 0 44 30" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="miter" stroke-linecap="square" aria-hidden="true"><polyline points="10,28.5 10,2 28,2 34,8 34,28.5"/><polyline points="28,2 28,8 34,8"/><line x1="15" y1="13" x2="29" y2="13"/><line x1="15" y1="18" x2="29" y2="18"/><line x1="15" y1="23" x2="24" y2="23"/><line x1="0" y1="28.5" x2="44" y2="28.5"/></svg></span><h3>Smlouva o smlouvě budoucí</h3><p>Připravíme smlouvu a platební kalendář.</p></li>
-      <li class="tl-step"><span class="tl-ic" aria-hidden="true"><svg class="pr-svg" width="34" height="24" viewBox="0 0 44 30" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="miter" stroke-linecap="square" aria-hidden="true"><rect x="4" y="6" width="36" height="18"/><circle cx="22" cy="15" r="4.5"/><line x1="9" y1="11" x2="9" y2="19"/><line x1="35" y1="11" x2="35" y2="19"/><line x1="0" y1="28.5" x2="44" y2="28.5"/></svg></span><h3>Financování</h3><p>Poradíme s hypotékou.</p></li>
-      <li class="tl-step"><span class="tl-ic" aria-hidden="true"><svg class="pr-svg" width="34" height="24" viewBox="0 0 44 30" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="miter" stroke-linecap="square" aria-hidden="true"><circle cx="12" cy="15" r="7"/><circle cx="12" cy="15" r="2"/><polyline points="19,15 38,15 38,21"/><line x1="32" y1="15" x2="32" y2="20"/><line x1="0" y1="28.5" x2="44" y2="28.5"/></svg></span><h3>Předání bytu</h3><p>Po kolaudaci vám předáme klíče.</p></li>
-    </ol>
+<section class="tl3-sec" id="koupe" aria-labelledby="tl-h">
+  <div class="wrap tl3">
+    <div class="tl3-head">
+      <h2 class="tl3-h" id="tl-h">Od prvního výběru až po předání klíčů</h2>
+      <p class="tl3-lead">Celou koupí vás provedeme krok za krokem. Od první prohlídky až po den, kdy si odnesete klíče.</p>
+    </div>
+    <div class="tl3-track">
+      <span class="tl3-line" aria-hidden="true"><i></i></span>
+      <ol class="tl3-list">
+        <li class="tl3-step"><span class="tl3-n" aria-hidden="true">1</span><div><h3>Prohlídka a výběr</h3><p>Vyberete si byt a domluvíme schůzku.</p></div></li>
+        <li class="tl3-step"><span class="tl3-n" aria-hidden="true">2</span><div><h3>Rezervace</h3><p>Byt vám podržíme a projdeme podmínky.</p></div></li>
+        <li class="tl3-step"><span class="tl3-n" aria-hidden="true">3</span><div><h3>Smlouva o smlouvě budoucí</h3><p>Připravíme smlouvu a platební kalendář.</p></div></li>
+        <li class="tl3-step"><span class="tl3-n" aria-hidden="true">4</span><div><h3>Financování</h3><p>Poradíme s hypotékou.</p></div></li>
+        <li class="tl3-step"><span class="tl3-n" aria-hidden="true">5</span><div><h3>Předání bytu</h3><p>Po kolaudaci vám předáme klíče.</p></div></li>
+      </ol>
+    </div>
   </div>
 </section>
 <section class="qa-sec s-white" id="dotazy">
@@ -3038,5 +3115,16 @@ const m=document.querySelector(".zm");if(!m)return;const upd=()=>{const o=docume
 </script>
 <script>(function(){const c=document.querySelector(".zcen"),h=document.querySelector(".zhero");if(!c||!h)return;const f=()=>{const past=h.getBoundingClientRect().bottom<70;c.classList.toggle("show",past);c.tabIndex=past?0:-1};addEventListener("scroll",f,{passive:true});addEventListener("resize",f);f()})();</script>
 <script>(function(){const t=document.getElementById("projekt");const f=()=>{if(!t)return;document.body.classList.toggle("past-klid",t.getBoundingClientRect().bottom<=innerHeight)};addEventListener("scroll",f,{passive:true});addEventListener("resize",f);f()})();</script>
+<script>(function(){
+const box=document.querySelector(".op-x");if(box){const tabs=[...box.querySelectorAll(".op-tab")],pics=[...box.querySelectorAll(".op-pics img")];let k=0,t=null;const rm=matchMedia("(prefers-reduced-motion:reduce)").matches;
+function set(n,user){k=n;tabs.forEach((b,i)=>{b.classList.toggle("on",i===n);b.setAttribute("aria-pressed",i===n)});pics.forEach((p,i)=>p.classList.toggle("on",i===n));box.classList.remove("run");if(!rm&&!user){void box.offsetWidth;box.classList.add("run")}}
+function loop(){clearInterval(t);if(rm)return;box.classList.add("run");t=setInterval(()=>set((k+1)%tabs.length),6000)}
+tabs.forEach((b,i)=>{b.addEventListener("click",()=>{set(i,true);clearInterval(t);box.classList.add("stop")});b.addEventListener("mouseenter",()=>{if(matchMedia("(hover:hover)").matches){set(i,true);clearInterval(t);box.classList.add("stop")}})});
+const io=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting&&!box.classList.contains("stop"))loop();else clearInterval(t)})},{threshold:.35});io.observe(box)}
+const tr=document.querySelector(".tl3-track");if(tr){const fill=tr.querySelector(".tl3-line i"),st=[...tr.querySelectorAll(".tl3-step")];
+function u(){const r=tr.getBoundingClientRect(),m=innerHeight*.6;const pr=Math.max(0,Math.min(1,(m-r.top)/r.height));fill.style.transform="scaleY("+pr+")";st.forEach(e=>{const q=e.getBoundingClientRect();e.classList.toggle("on",q.top+28<m)})}
+addEventListener("scroll",u,{passive:true});addEventListener("resize",u);u()}
+})();</script>
+<script>(function(){const g=document.querySelector(".tl3-sec");if(!g)return;const f=()=>{const r=g.getBoundingClientRect(),m=innerHeight/2;document.body.classList.toggle("on-green",r.top<m&&r.bottom>m)};addEventListener("scroll",f,{passive:true});f()})();</script>
 </body>
 </html>
