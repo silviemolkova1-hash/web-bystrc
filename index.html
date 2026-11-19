@@ -2754,10 +2754,21 @@ html body .op-left .op-head{display:block!important;margin:0!important}
 html body .op-left .op-h{margin:0 0 20px!important}
 html body .op-left .op-txt p{max-width:520px}
 html body .op-left .op-tabs{justify-content:flex-end}
-html body .op-left .op-tab:first-child{padding-top:0}
+html body .op-left .op-tabs li:first-child .op-tab{padding-top:0}
 @media(max-width:900px){.op-left{gap:28px}}
 
 @media(max-width:900px){html body .op-left{display:contents}html body .op-left .op-head{order:1}html body section#projekt .op-pics{order:2}html body .op-left .op-tabs{order:3}}
+
+html body .op-left{justify-content:center!important;gap:clamp(36px,3.5vw,48px)!important}
+html body .op-left .op-tabs{justify-content:flex-start!important}
+html body section#projekt .op-pics{min-height:540px}
+@media(max-width:900px){html body section#projekt .op-pics{min-height:0}}
+
+@media(min-width:901px){html body section#projekt .op-x{grid-template-columns:minmax(0,1fr) minmax(0,1.05fr)!important;gap:clamp(32px,4.5vw,72px)!important}}
+html body .op-left .op-tab{padding:14px 0}
+
+html body .op-left{justify-content:flex-start!important}
+@media(min-width:901px){html body section#projekt .op-pics{min-height:470px!important}html body section#projekt .op-x{align-items:stretch!important}}
 </style>
 </head>
 <body>
@@ -2810,7 +2821,7 @@ html body .op-left .op-tab:first-child{padding-top:0}
     <div class="op-x rv">
       <div class="op-left">
       <div class="op-head">
-      <h2 class="op-h">Místo, kde se dobře žije.</h2>
+      <h2 class="op-h">Místo, kde se dobře žije</h2>
       <div class="op-txt">
         <p>Dva moderní domy v&nbsp;klidné části Bystrce, obklopené zelení.</p>
       </div>
