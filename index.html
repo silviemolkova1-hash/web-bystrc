@@ -2674,6 +2674,25 @@ html body section.tl3-sec{background:var(--zbg)!important}
 .tl3{background:#A5D6A7;border-radius:6px;padding:clamp(40px,5.5vw,88px) clamp(28px,5.5vw,88px)}
 .tl3-list{gap:clamp(28px,3.5vw,48px)}
 @media(max-width:700px){.tl3{padding:36px 22px;border-radius:4px}}
+
+/* ===== Lehce dynamičtější: čísla, otázky, fotky ===== */
+html body .zf-list.zf-num{border:0!important;max-width:1176px!important;gap:clamp(20px,3vw,48px)!important;margin-top:clamp(40px,4.5vw,64px)!important}
+html body .zf-list.zf-num li{border:0!important;padding:0!important;display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:flex-start!important;text-align:center;gap:10px}
+.zf-num b{font-size:clamp(40px,4.4vw,64px);font-weight:500;line-height:1;letter-spacing:-.025em;font-variant-numeric:tabular-nums;color:var(--c-ink)}
+.zf-num .zc-l{font-size:15px;line-height:1.4;opacity:.75}
+@media(max-width:1000px){html body .zf-list.zf-num{row-gap:36px!important}}
+@media(max-width:560px){html body .zf-list.zf-num{grid-template-columns:1fr 1fr!important}html body .zf-list.zf-num li{align-items:flex-start!important;text-align:left}}
+/* otázky: jemný posun při najetí, otevřená otázka se zeleným kolečkem */
+html body .faq2-list details.qa summary .qt{transition:transform .3s ease}
+html body .faq2-list details.qa summary:hover .qt{transform:translateX(6px)}
+html body section .faq2-list details.qa .qb{width:32px!important;height:32px!important;border-radius:50%!important;transition:background-color .3s ease!important}
+html body section .faq2-list details.qa .qb::before,html body section .faq2-list details.qa .qb::after{width:12px!important}
+html body section .faq2-list details.qa summary:hover .qb{background:rgba(165,214,167,.45)!important}
+html body section .faq2-list details.qa[open]:not(.closing) .qb{background:#A5D6A7!important}
+/* fotky u otázek: pomalé přiblížení při najetí */
+.faq3-img img{transition:transform 1.2s ease}
+.faq3-img:hover img{transform:scale(1.04)}
+@media(prefers-reduced-motion:reduce){html body .faq2-list details.qa summary .qt,.faq3-img img{transition:none}}
 </style>
 </head>
 <body>
@@ -2714,11 +2733,11 @@ html body section.tl3-sec{background:var(--zbg)!important}
 <section class="zfacts" aria-label="Projekt v číslech">
   <div class="zf-in">
     <p class="zf-lead">Dva moderní domy v&nbsp;klidné části Bystrce, obklopené zelení a jen 13&nbsp;minut pěšky od Brněnské přehrady. Do centra Brna jste za 20&nbsp;minut.</p>
-    <ul class="zf-list">
-      <li><span class="zf-ic" aria-hidden="true"><svg class="ic" width="44" height="30" viewBox="0 0 44 30" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="miter" stroke-linecap="square"><polygon points="9,28 15,6 21,28"/><polygon points="20,28 27,2 34,28"/><line x1="0" y1="28.5" x2="44" y2="28.5"/></svg></span><span>Příroda a klid<br>za okny</span></li>
-      <li><span class="zf-ic" aria-hidden="true"><svg class="ic" width="44" height="30" viewBox="0 0 44 30" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="miter" stroke-linecap="square"><polyline points="3,28 3,13 11,5 19,13 19,28"/><polyline points="24,28 24,13 32,5 40,13 40,28"/><line x1="0" y1="28.5" x2="44" y2="28.5"/></svg></span><span>16 bytů<br>dispozice 4+kk</span></li>
-      <li><span class="zf-ic" aria-hidden="true"><svg class="ic" width="44" height="30" viewBox="0 0 44 30" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="miter" stroke-linecap="square"><path d="M2 12c4-4 7-4 10 0s6 4 10 0 7-4 10 0 6 4 10 0"/><path d="M2 21c4-4 7-4 10 0s6 4 10 0 7-4 10 0 6 4 10 0"/></svg></span><span>13 minut pěšky<br>k Brněnské přehradě</span></li>
-      <li><span class="zf-ic" aria-hidden="true"><svg class="ic" width="44" height="30" viewBox="0 0 44 30" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="miter" stroke-linecap="square"><rect x="7" y="4" width="30" height="24"/><line x1="7" y1="11" x2="37" y2="11"/><line x1="14" y1="1" x2="14" y2="6"/><line x1="30" y1="1" x2="30" y2="6"/></svg></span><span>2027<br>plánované dokončení</span></li>
+    <ul class="zf-list zf-num">
+      <li><b><span class="zc" data-to="16">16</span></b><span class="zc-l">bytů 4+kk</span></li>
+      <li><b><span class="zc" data-to="13">13</span> min</b><span class="zc-l">pěšky k Brněnské přehradě</span></li>
+      <li><b><span class="zc" data-to="20">20</span> min</b><span class="zc-l">autem do centra Brna</span></li>
+      <li><b><span class="zc" data-to="2027">2027</span></b><span class="zc-l">plánované dokončení</span></li>
     </ul>
   </div>
 </section>
@@ -3130,5 +3149,8 @@ function u(){const r=tr.getBoundingClientRect(),m=innerHeight*.6;const pr=Math.m
 addEventListener("scroll",u,{passive:true});addEventListener("resize",u);u()}
 })();</script>
 <script>(function(){const g=document.querySelector(".tl3");if(!g)return;const f=()=>{const r=g.getBoundingClientRect(),m=innerHeight/2;document.body.classList.toggle("on-green",r.top<m&&r.bottom>m)};addEventListener("scroll",f,{passive:true});f()})();</script>
+<script>(function(){const els=[...document.querySelectorAll(".zc")];if(!els.length)return;if(matchMedia("(prefers-reduced-motion:reduce)").matches)return;
+const run=e=>{const to=+e.dataset.to,from=to>1000?to-12:0,t0=performance.now(),d=1400;const f=n=>{const p=Math.min(1,(n-t0)/d),q=1-Math.pow(1-p,3);e.textContent=Math.round(from+(to-from)*q);if(p<1)requestAnimationFrame(f)};f(t0)};
+const io=new IntersectionObserver(x=>x.forEach(y=>{if(y.isIntersecting){run(y.target);io.unobserve(y.target)}}),{threshold:.6});els.forEach(e=>io.observe(e))})();</script>
 </body>
 </html>
