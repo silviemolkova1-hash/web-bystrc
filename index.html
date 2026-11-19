@@ -2907,6 +2907,13 @@ html body .opb svg{width:30px;height:30px}
 .opa-dots{background:transparent!important;padding:0!important}
 .opa-dots button::before,.opa-dots button:hover::before,.opa-dots button.on::before{width:10px!important;height:10px!important;border:0!important;box-shadow:none!important;outline:0!important;transform:none!important}
 .opa-dots button:hover,.opa-dots button:active{transform:none!important;background:transparent!important}
+
+/* jemné tmavé podbarvení: údaje v úvodu a tečky u fotek */
+html body .zhero-meta{display:inline-flex!important;align-items:center;height:36px;padding:0 16px!important;background:rgba(0,0,0,.22);border-radius:2px;margin:0!important}
+html body .zhero-meta i{height:16px!important}
+.opa-dots button::before,.opa-dots button:hover::before{background:rgba(0,0,0,.22)!important}
+.opa-dots button.on::before{background:rgba(0,0,0,.45)!important}
+@media(max-width:700px){html body .zhero-meta{align-self:flex-start}}
 </style>
 </head>
 <body>
