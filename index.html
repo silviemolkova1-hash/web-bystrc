@@ -2898,13 +2898,15 @@ html body .opb svg{width:30px;height:30px}
 .opa-dots button:focus-visible{outline:2px solid #fff;outline-offset:-4px;border-radius:50%}
 @media(prefers-reduced-motion:reduce){.opa-sl img{transition:none!important}}
 
-.opa-dots{background:rgba(20,28,19,.28);border-radius:20px;padding:0 6px}
 
 .opa-dots button::before{border:0!important;background:var(--c-alt)!important}
 .opa-dots button.on::before{background:#D9DED2!important}
 
 .opa-dots button::before{transition:background-color .3s ease,transform .3s ease!important}
-.opa-dots button.on::before{transform:scale(1.4)}
+
+.opa-dots{background:transparent!important;padding:0!important}
+.opa-dots button::before,.opa-dots button:hover::before,.opa-dots button.on::before{width:10px!important;height:10px!important;border:0!important;box-shadow:none!important;outline:0!important;transform:none!important}
+.opa-dots button:hover,.opa-dots button:active{transform:none!important;background:transparent!important}
 </style>
 </head>
 <body>
