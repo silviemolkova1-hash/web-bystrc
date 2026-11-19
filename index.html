@@ -2862,6 +2862,24 @@ html body section.zben .zben-t{font-size:16px!important;font-weight:500;line-hei
 
 html body.on-green .zcen,html body.on-green .zcen .zcen-t,html body.on-green .zcen .zcen-i,html body.on-green .zcen svg{color:#A5D6A7!important}
 html body.on-green .zcen:hover,html body.on-green .zcen:focus-visible{background:var(--c-dark)!important;filter:none!important}
+
+/* ===== O projektu, varianta A: text a výhody vlevo, fotka vpravo ===== */
+html body section#projekt{padding-top:var(--sec)!important}
+.opa{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,5vw,88px);align-items:stretch}
+.opa-l{display:flex;flex-direction:column;justify-content:center}
+html body .opa .op-h{margin:0 0 16px!important}
+.opa-lead{margin:0 0 clamp(28px,3vw,40px);font-size:var(--t-lead);line-height:1.6;max-width:520px}
+.opa-ben{list-style:none;margin:0;padding:clamp(24px,2.6vw,32px) 0 0;border-top:1px solid rgba(35,38,31,.18);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,2.6vw,36px) clamp(20px,2.6vw,36px)}
+.opb{display:flex;gap:14px;align-items:flex-start}
+.opb svg{flex:none;width:32px;height:32px;color:var(--c-dark);margin-top:2px}
+html body .opb h3{margin:0 0 4px!important;font-size:18px!important;font-weight:500!important;line-height:1.3!important}
+.opb .nw{white-space:nowrap}
+.opb p{margin:0;font-size:15px;line-height:1.5;opacity:.8}
+.opa-img{margin:0;position:relative;min-height:460px;border-radius:2px;overflow:hidden}
+.opa-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;transition:transform 1.2s ease}
+.opa-img:hover img{transform:scale(1.03)}
+@media(max-width:900px){.opa{grid-template-columns:1fr;gap:32px}.opa-img{min-height:0;aspect-ratio:4/3}}
+@media(max-width:480px){.opa-ben{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -2899,40 +2917,19 @@ html body.on-green .zcen:hover,html body.on-green .zcen:focus-visible{background
     </div></div>
   </div>
 </section>
-<section class="zben" aria-label="Hlavní výhody">
-  <div class="wrap">
-    <ul class="zben-list rv">
-      <li><span class="zben-ic"><svg width="34" height="34" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><path d="M3 27h26"/><path d="M8 27l5-17 5 17"/><path d="M15 27l6-22 6 22"/></svg></span><span class="zben-t">Les hned<br>za domem</span></li>
-      <li><span class="zben-ic"><svg width="34" height="34" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><path d="M3 12c3-3 5-3 8 0s5 3 8 0 5-3 8 0"/><path d="M3 19c3-3 5-3 8 0s5 3 8 0 5-3 8 0"/><path d="M3 26c3-3 5-3 8 0s5 3 8 0 5-3 8 0"/></svg></span><span class="zben-t">Přehrada<br>na dosah</span></li>
-      <li><span class="zben-ic"><svg width="34" height="34" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><path d="M3 28h26"/><path d="M5 28V14h8v14"/><path d="M13 28V5h10v23"/><path d="M23 28V12h5v16"/><path d="M17 10h2M17 15h2M17 20h2"/></svg></span><span class="zben-t">Centrum<br>za 20 minut</span></li>
-      <li><span class="zben-ic"><svg width="34" height="34" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><path d="M4 15L16 5l12 10"/><path d="M7 13v15h18V13"/><path d="M17 14l-4 6h6l-4 6"/></svg></span><span class="zben-t">Energetická<br>třída B</span></li>
-    </ul>
-  </div>
-</section>
 <section class="about sand" id="projekt">
-  <div class="wrap op">
-    <div class="op-x rv">
-      <div class="op-left">
-      <div class="op-head">
+  <div class="wrap opa rv">
+    <div class="opa-l">
       <h2 class="op-h">Místo, kde se dobře žije</h2>
-      <div class="op-txt">
-        <p>Dva moderní domy v&nbsp;klidné části Bystrce, obklopené zelení.</p>
-      </div>
-    </div>
-      <ul class="op-tabs" aria-label="Výhody bydlení">
-        <li><button type="button" class="op-tab on" data-k="0" aria-pressed="true"><span class="op-tt">Příroda na dosah</span><span class="op-td"><span>Lesní cesty a cyklostezky začínají hned za domem.</span></span></button></li>
-        <li><button type="button" class="op-tab" data-k="1" aria-pressed="false"><span class="op-tt">Zázemí pro rodinný život</span><span class="op-td"><span>Dostatek soukromí a&nbsp;prostoru pro děti, páry i&nbsp;jednotlivce.</span></span></button></li>
-        <li><button type="button" class="op-tab" data-k="2" aria-pressed="false"><span class="op-tt">Pohodlné parkování</span><span class="op-td"><span>Kryté parkovací stání pod pergolou přímo u domu vám usnadní každodenní příjezdy i odjezdy.</span></span></button></li>
-        <li><button type="button" class="op-tab" data-k="3" aria-pressed="false"><span class="op-tt">Světlo a výhledy</span><span class="op-td"><span>Velká a rohová okna vpouštějí do interiéru dostatek denního světla. Prosklené balkony navíc otevírají výhledy do okolní zeleně.</span></span></button></li>
+      <p class="opa-lead">Dva moderní domy v&nbsp;klidné části Bystrce, obklopené zelení.</p>
+      <ul class="opa-ben" aria-label="Výhody bydlení">
+          <li class="opb"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><path d="M3 27h26"/><path d="M8 27l5-17 5 17"/><path d="M15 27l6-22 6 22"/></svg><div><h3>Les hned <span class="nw">za domem</span></h3><p>Lesní cesty a cyklostezky začínají u domu.</p></div></li>
+          <li class="opb"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><path d="M3 12c3-3 5-3 8 0s5 3 8 0 5-3 8 0"/><path d="M3 19c3-3 5-3 8 0s5 3 8 0 5-3 8 0"/><path d="M3 26c3-3 5-3 8 0s5 3 8 0 5-3 8 0"/></svg><div><h3>Přehrada <span class="nw">na dosah</span></h3><p>Brněnská přehrada je 13 minut pěšky.</p></div></li>
+          <li class="opb"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><path d="M3 28h26"/><path d="M5 28V14h8v14"/><path d="M13 28V5h10v23"/><path d="M23 28V12h5v16"/><path d="M17 10h2M17 15h2M17 20h2"/></svg><div><h3>Centrum <span class="nw">za 20 minut</span></h3><p>Do centra Brna se dostanete autem.</p></div></li>
+          <li class="opb"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><path d="M4 15L16 5l12 10"/><path d="M7 13v15h18V13"/><path d="M17 14l-4 6h6l-4 6"/></svg><div><h3>Energetická <span class="nw">třída B</span></h3><p>Tepelné čerpadlo a podlahové topení.</p></div></li>
       </ul>
-      </div>
-      <div class="op-pics">
-        <img class="on" decoding="async" src="img/hero.webp" alt="Domy Bystrc Obora mezi borovicemi">
-        <img class="" loading="lazy" decoding="async" src="img/balkony.webp" alt="Prosklené balkony obrácené do zeleně">
-        <img class="" loading="lazy" decoding="async" src="img/parkovani.webp" alt="Kryté parkování pod pergolou u domu">
-        <img class="" loading="lazy" decoding="async" src="img/detail.webp" alt="Rohová okna, která vpouštějí do bytů denní světlo">
-      </div>
     </div>
+    <figure class="opa-img"><img loading="lazy" decoding="async" src="img/hero.webp" alt="Dva bytové domy Bystrc Obora mezi borovicemi"></figure>
   </div>
 </section>
 
