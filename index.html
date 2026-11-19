@@ -2780,10 +2780,6 @@ html body section#byty .row:not(.h){transition:background-color .3s ease}
 html body section#byty .row:not(.h):hover{background:rgba(165,214,167,.08)!important}
 html body section#byty .row.is-sold{opacity:.4}
 html body section#byty .row.is-sold .price{text-decoration:none!important}
-html body section#byty span.st{background:transparent!important;color:var(--c-bg)!important;padding:0!important;border:0!important;display:inline-flex!important;align-items:center;gap:8px;font-size:14px!important;text-transform:none!important;letter-spacing:0!important}
-html body section#byty span.st::before{content:""!important;display:block!important;width:8px;height:8px;border-radius:50%;background:#A5D6A7;flex:none}
-html body section#byty span.st.res::before{background:transparent;box-shadow:inset 0 0 0 1.5px var(--c-bg)}
-html body section#byty span.st.sold::before{background:rgba(242,240,235,.5)}
 html body section#byty .acts{display:flex!important;align-items:center;justify-content:flex-end;gap:20px}
 html body section#byty a.u-want{display:inline-flex;align-items:center;height:36px;padding:0 16px;background:#A5D6A7;color:#23261F!important;font-size:13px;text-transform:uppercase;letter-spacing:.08em;border-radius:2px;text-decoration:none!important;white-space:nowrap;transition:background-color .3s ease}
 html body section#byty a.u-want:hover{background:#8FC992}
@@ -2808,13 +2804,31 @@ html body section#kontakt a.pc-l{font-size:var(--t-lead)!important;color:var(--c
 html body section#kontakt a.pc-l:hover{border-color:var(--c-bg)}
 @media(max-width:560px){.pc-av{width:56px;height:56px;font-size:18px}html body section#kontakt .person.pc{gap:16px}}
 
-html body section#byty .row span.st.free,html body section#byty .row span.st.res,html body section#byty .row span.st.sold{background:transparent!important;color:var(--c-bg)!important;box-shadow:none!important;padding:0!important}
 html body section#byty .row.is-res{background:transparent!important}
 html body section#byty .row.is-res:hover,html body section#byty .row.is-free:hover{background:rgba(165,214,167,.08)!important}
 html body section#byty .row.is-res span,html body section#byty .row.is-res .id,html body section#byty .row.is-res .price{color:var(--c-bg)!important}
 html body section#byty a.link{border-bottom:0!important;padding-bottom:0!important;text-decoration:underline!important;text-underline-offset:4px;text-decoration-color:rgba(242,240,235,.4)!important;min-height:0!important}
 html body section#byty a.link:hover{text-decoration-color:var(--c-bg)!important}
 html body section#kontakt .person.pc .pc-av,html body section#kontakt .person.pc span.pc-av{opacity:1!important;color:#23261F!important}
+
+/* ceník: stavy jako štítky, Mám zájem jako odkaz */
+html body section#byty .row span.st{display:inline-flex!important;align-items:center;gap:6px;height:28px;padding:0 10px!important;border-radius:2px!important;font-size:13px!important;color:#23261F!important;box-shadow:none!important}
+html body section#byty .row span.st::before{content:none!important;display:none!important}
+html body section#byty .row span.st.free{background:#A5D6A7!important}
+html body section#byty .row span.st.res{background:var(--c-bg)!important}
+html body section#byty .row span.st.sold{background:#F2B8C6!important}
+html body section#byty .row.is-sold{opacity:1!important}
+html body section#byty .row.is-sold > span:not(.st):not(.acts),html body section#byty .row.is-sold .acts{opacity:.4}
+html body section#byty .head-row p.lead{max-width:none!important}
+/* výhody pod úvodem: vlastní pozadí a víc vzduchu */
+html body section.zben{padding:0!important;background:var(--zbg)!important}
+html body section.zben > .wrap{background:var(--c-alt);border-radius:6px;padding:clamp(44px,5vw,72px) clamp(24px,4vw,64px)!important;max-width:none!important;margin:20px 20px 0!important}
+html body section.zben .zben-list{max-width:1176px;margin:0 auto}
+html body section.zben .zben-ic{background:var(--zbg)}
+html body section.zben .zben-list li:hover .zben-ic{background:#A5D6A7}
+@media(max-width:700px){html body section.zben > .wrap{margin:12px 12px 0!important;padding:40px 18px!important}}
+
+@media(max-width:700px){br.br-d{display:none}}
 </style>
 </head>
 <body>
@@ -3009,7 +3023,7 @@ html body section#kontakt .person.pc .pc-av,html body section#kontakt .person.pc
 <section class="contact" id="kontakt">
   <div class="wrap grid">
     <div class="rv">
-      <h2>Najděte svůj nový domov v Bystrci</h2>
+      <h2>Najděte svůj nový domov <br class="br-d">v&nbsp;Bystrci</h2>
       <p class="lead">Ozvěte se nám. Rádi vám projekt představíme, pošleme podrobnosti k&nbsp;bytům nebo domluvíme schůzku.</p>
       <div class="person pc"><span class="pc-av" aria-hidden="true">JN</span><div class="pc-in"><b>Jana Nováková</b><span class="pc-role">Prodej bytů, ABC Development</span><a class="pc-l" href="tel:+420777123456">+420 777 123 456</a><a class="pc-l" href="mailto:prodej@abc-development.cz">prodej@abc-development.cz</a></div></div>
     </div>
@@ -3119,7 +3133,7 @@ function renderUnits(f){
   <div class="row is-${u.s}">
     <span class="id">${u.id}</span><span>${u.d}+kk</span><span>${u.m}</span><span>${u.o}</span><span>${u.p}</span>
     <span class="price">${u.c}</span><span class="st ${u.s}">${lab[u.s]}</span>
-    <span class="acts"><a class="link" href="#">Půdorys</a>${u.s!=="sold"?`<a class="u-want" href="#kontakt" onclick="pick('${u.id}')">Mám zájem</a>`:""}</span>
+    <span class="acts"><a class="link" href="#">Půdorys</a>${u.s!=="sold"?`<a class="link" href="#kontakt" onclick="pick('${u.id}')">Mám zájem</a>`:""}</span>
   </div>`).join("");
 }
 document.getElementById("filters").onclick=e=>{const b=e.target.closest(".chip");if(!b)return;
